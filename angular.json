@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "alfred-website"
+    }
+  },
+  "defaultProject": "alfred-website",
+  "cli": {
+    "analytics": "a14ca57f-bed6-4673-9256-084986e797b0"
+  }
 }
