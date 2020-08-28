@@ -1,0 +1,35 @@
+.title-container {
+  display: unset;
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+
+  .main-title {
+    top: 30px;
+    left: 30px;
+    width: fit-content;
+    position: relative;
+    padding: 20px;
+    font-size: 30px;
+  }
+  .sub-title {
+    top: 10px;
+    right: 10px;
+    width: fit-content;
+    position: absolute;
+    padding: 10px;
+    font-size: 15px;
+
+  }
+}
+
+
+
+
+
+
+.elevated-box {
+  background-color: var(--off-white);
+  border-radius: 30px;
+  box-shadow: -10px -10px 15px 5px #fff, 10px 10px 15px 5px #cecece;
+}
