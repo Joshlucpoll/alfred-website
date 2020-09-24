@@ -1,4 +1,28 @@
-<div class="title-container">
-  <div class="elevated-box main-title">Alfie Hilton</div>
-  <div class="elevated-box sub-title">3D Model Designer</div>
+<div class="main" id="main">
+  <div class="content">
+    <div class="main-section-container">
+      <div class="main-section-wrapper">
+        
+        <div class="title">{{ MainTitle }}</div>
+        <span class="custom-br"></span>
+        <div class="header">
+          <nav class="navigation">
+            <a class="link" href="/">work</a>
+            <a class="link" href="/about">about</a>
+            <a class="link" href="/contact">contact</a>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+    <div class="projects-container">
+      <div class="projects">
+        <li *ngFor="let project of projects" class="project">
+          <img src={{project.image}} class="images"/>
+          <div class="project-info">{{ project.title }}</div>
+        </li>
+      </div>
+    </div>
+  </div>
+
 </div>
