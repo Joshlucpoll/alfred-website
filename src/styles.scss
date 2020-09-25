@@ -1,11 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #272727;
+  background-color: #181A1B;
   overflow-y: hidden;
 
   font-family: 'Montserrat', sans-serif;
-  // scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -14,4 +13,33 @@ body {
 
 ::-webkit-scrollbar-thumb {
   display: none;
+}
+
+#model-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 80px);
+  height: calc(100vh - 40px);
+  margin: 20px 40px;
+  background-color: #fff;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#model-close-button {
+  position: fixed;
+  top: 25px;
+  right: 50px;
+
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+canvas {
+  cursor: grab;
 }

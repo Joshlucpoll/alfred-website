@@ -1,0 +1,112 @@
+@media only screen and (min-width: 600px) {
+      
+  .main-section-container {
+    position: fixed;
+    width: 40vw;
+    height: 100%;
+    display: inline-block;
+
+    .main-section-wrapper {
+      height: 100%;
+      width: 100%;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .title {
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+      }
+
+      .custom-br {
+        display:block;
+        width: 25%;
+        height: 2px;
+        opacity: 0.3;
+        background-color: #fff;
+      }
+
+      .header {
+        font-size: 40px;
+      
+        .navigation {
+          height: 100%;
+          margin-right: 20px;
+      
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+      
+          .link {
+            text-decoration: none;
+            color: white;
+            margin: 20px 0;
+          }
+        }
+      }
+    }
+  }
+  
+  .images-container {
+    display: inline-block;
+    margin-left: 40vw;
+    
+    .images {
+      position: absolute;
+      top: 0;
+      height: 100%;
+
+      display: flex;
+      flex-direction: row;
+
+      .item {
+        position: relative;
+        width: 50vw;
+        height: 100vh;
+        transition: width ease 500ms;
+        list-style: none;
+        
+        .description {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          height: calc(100% - 10vw);
+          width: calc(100% - 10vw);
+
+          color: rgba(255, 255, 255, 0.6);
+          padding: 5vw;
+          font-size: 16px;
+
+          background-color: #131414ea;
+
+          span {
+            margin-bottom: 20px;
+            text-align: start;
+            color: white;
+          }
+
+          .model-button {
+            position: relative;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            color: #000;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+
+        .image {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
