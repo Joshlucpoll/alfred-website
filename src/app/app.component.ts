@@ -48,39 +48,48 @@ export class AppComponent implements OnInit {
         top: 0,
         left: 0,
       });
+      window.scroll({
+        top: 0,
+        left: 0,
+      });
     });
   }
 
   currentTile: number = 0;
 
   scrollHorizontally($event) {
-    console.log(this.currentTile);
-    const tiles = document.getElementsByClassName("item");
 
-    $event = window.event || $event;
-    $event.preventDefault();
-    
-    var direction = Math.max(-1, Math.min(1, ($event.wheelDelta || -$event.detail)));
-    this.currentTile -= direction;
-    
-    if (this.currentTile >= tiles.length) {
-      this.currentTile = tiles.length - 1;
-    }
-    if (this.currentTile < 0) {
-      this.currentTile = 0;
-    }
-    
-    if (this.currentTile === 0) {
-      document.getElementById("main").scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth',
-      });
-    }
-    else {
-      document.getElementsByClassName("item")[this.currentTile].scrollIntoView({
-        behavior: 'smooth'
-      });
+    if (window.innerWidth > 600) {
+
+      console.log("scrilliong")
+      
+      const tiles = document.getElementsByClassName("item");
+  
+      $event = window.event || $event;
+      $event.preventDefault();
+      
+      var direction = Math.max(-1, Math.min(1, ($event.wheelDelta || -$event.detail)));
+      this.currentTile -= direction;
+      
+      if (this.currentTile >= tiles.length) {
+        this.currentTile = tiles.length - 1;
+      }
+      if (this.currentTile < 0) {
+        this.currentTile = 0;
+      }
+      
+      if (this.currentTile === 0) {
+        document.getElementById("main").scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
+      }
+      else {
+        document.getElementsByClassName("item")[this.currentTile].scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
     }
   }
 

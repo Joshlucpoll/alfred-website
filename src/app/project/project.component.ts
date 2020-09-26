@@ -89,10 +89,12 @@ export class ProjectComponent implements OnInit {
 
         if (this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height !== windowSize) {
           renderer.setSize( this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80 );
+          
           camera.aspect = (this.el.getBoundingClientRect().width - 20) / (this.el.getBoundingClientRect().height - 80);
           camera.updateProjectionMatrix();
+          controls.update()
         }
-        controls.update()
+        
         renderer.render( scene, camera );
       }
       animate();
