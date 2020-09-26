@@ -1,57 +1,72 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  transition,
-  style,
-  query,
-  animate,
-} from '@angular/animations';
+import { trigger, animate, transition, style, query } from '@angular/animations';
 import { Router, RouterOutlet } from '@angular/router';
-
-const fader =
-trigger('routeAnimations', [
-  transition('* <=> *', [
-      // Set a default  style for enter and leave
-      query(':enter, :leave', [
-        style({
-          position: 'absolute',
-          left: 0,
-          opacity: 0,
-          transform: 'translateX(100%)',
-        }),
-      ], {optional: true}),
-      // Animate the new page in
-      query(':enter', [
-        animate('600ms ease', style({ opacity: 1, transform: 'translateX(0)' })),
-      ])
-    ]),
-]);
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [fader]
+  animations: [
+    trigger('fadeAnimation', [
+    transition( '* => *', [
+        query(':enter', 
+            [
+                style({ opacity: 0 })
+            ], 
+            { optional: true }
+        ),
+        query(':leave', 
+            [
+                style({ opacity: 1 }),
+                animate('200ms', style({ opacity: 0, position: "absolute" }))
+            ], 
+            { optional: true }
+        ),
+        query(':enter', 
+            [
+                style({ opacity: 0 }),
+                animate('200ms 200ms', style({ opacity: 1 })),
+            ], 
+            { optional: true }
+        )
+    ])])
+  ]
 })
+
 export class AppComponent implements OnInit {
 
-  // outlet: RouterOutlet;
-  
-  // prepareRoute(outlet: RouterOutlet) {
-  //   return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  // }
+
+  getRouterOutletState(outlet) {
+    if (window.innerWidth > 600) {
+      return outlet.isActivated ? outlet.activatedRoute : '';
+    }
+  }
 
   constructor(private router: Router) {
     router.events.subscribe((val) => {
       this.currentTile = 0;
-      document.getElementById("main").scroll({
-        top: 0,
-        left: 0,
-      });
-      window.scroll({
-        top: 0,
-        left: 0,
-      });
+      if (window.innerWidth > 600) {
+        setTimeout(() => {
+          document.getElementById("main").scroll({
+            top: 0,
+            left: 0,
+          });
+          window.scroll({
+            top: 0,
+            left: 0,
+          });
+        }, 250);
+      }
+      else {
+        document.getElementById("main").scroll({
+          top: 0,
+          left: 0,
+        });
+        window.scroll({
+          top: 0,
+          left: 0,
+        });
+      }
     });
   }
 
