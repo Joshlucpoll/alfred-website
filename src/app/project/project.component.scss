@@ -62,13 +62,16 @@
 
       display: flex;
       flex-direction: row;
-
+      
       .item {
         position: relative;
         width: 50vw;
         height: 100vh;
+        padding: 0 10px;
         transition: width ease 500ms;
         list-style: none;
+        background-color: #131414ea;
+
         
         .description {
           display: flex;
@@ -77,19 +80,17 @@
           flex-direction: column;
           height: calc(100% - 10vw);
           width: calc(100% - 10vw);
-
+          
           color: rgba(255, 255, 255, 0.6);
           padding: 5vw;
           font-size: 16px;
-
-          background-color: #131414ea;
-
+          
           span {
             margin-bottom: 20px;
             text-align: start;
             color: white;
           }
-
+          
           .model-button {
             position: relative;
             margin-top: 40px;
@@ -100,11 +101,11 @@
             cursor: pointer;
           }
         }
-
+        
         .image {
           height: 100%;
           width: 100%;
-          object-fit: cover;
+          object-fit: contain;
         }
       }
     }
@@ -183,7 +184,6 @@
         position: relative;
         width: 100%;
         list-style: none;
-        cursor: pointer;
         
         .description {
           display: flex;
@@ -219,7 +219,7 @@
         .image {
           height: 100%;
           width: 100%;
-          object-fit: cover;
+          object-fit: contain;
         }
       }
     }

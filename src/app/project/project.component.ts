@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { environment } from './../../environments/environment';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import * as THREE from 'three';
@@ -27,77 +28,87 @@ export class ProjectComponent implements OnInit {
 
   initialiseModel() {
     if (!document.getElementById("model-container")) {
-      this.el = document.createElement("div");
-      this.el.id = "model-container";
-
-      let closeButton = document.createElement("img");
-      closeButton.id = "model-close-button";
-      closeButton.src = "https://img.icons8.com/metro/52/000000/close-window.png";
-
-      closeButton.addEventListener('click', () => {
-        renderer.dispose()
-        this.el.parentNode.removeChild(this.el);
-      })
-
-      document.getElementById("main").appendChild(this.el);
-      this.el.appendChild(closeButton);
-
-
-      let renderer = new THREE.WebGLRenderer({antialias: true});
-      renderer.setSize( this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80 );
-      this.el.appendChild( renderer.domElement );
-      
-      let scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x320E3B)
-
-      let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.set( 2, 1, 2 );
-
-      scene.add(camera)
-
-      var loader = new GLTFLoader();
-
-      loader.load( '../../assets/models/scene.gltf', function ( gltf ) {
+      if (this.project.model !== false) {
+        this.el = document.createElement("div");
+        this.el.id = "model-container";
+  
+        let closeButton = document.createElement("img");
+        closeButton.id = "model-close-button";
+        closeButton.src = "https://img.icons8.com/metro/52/000000/close-window.png";
+  
+        closeButton.addEventListener('click', () => {
+          renderer.dispose()
+          this.el.parentNode.removeChild(this.el);
+        })
+  
+        document.getElementById("main").appendChild(this.el);
+        this.el.appendChild(closeButton);
+  
+  
+        let renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setSize( this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80 );
+        this.el.appendChild( renderer.domElement );
         
-        scene.add( gltf.scene );
+        let scene = new THREE.Scene();
+        
 
-      }, undefined, function ( error ) {
-
-        console.error( error );
-        return null;
-
-      });
-
-      var controls = new OrbitControls( camera, renderer.domElement );
-      controls.target = new THREE.Vector3(0, 0, 0);
-      controls.enableDamping = true;
-
-
-      var pointLight = new THREE.PointLight( 0xffffff, 5, 100 );
-      pointLight.position.set( 10, 10, 10 );
-      scene.add( pointLight );
-      var pointLight = new THREE.PointLight( 0xffffff, 5, 100 );
-      pointLight.position.set( -10, 10, -10 );
-      scene.add( pointLight );
-      
-      controls.update()
-
-      var windowSize = this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height;
-      
-      const animate = () => {
-        requestAnimationFrame( animate );
-
-        if (this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height !== windowSize) {
-          renderer.setSize( this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80 );
+        // scene.fog = new THREE.Fog(new THREE.Color(0xffffff), 0, 20)
+        scene.background = new THREE.Color(0xDCDCDC)
+  
+        let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(
+          this.project.model.cameraPosition.x,
+          this.project.model.cameraPosition.y,
+          this.project.model.cameraPosition.z
+        );
+  
+        scene.add(camera)
+  
+        var loader = new GLTFLoader();
+        
+  
+        loader.load(this.project.model.path, function ( gltf ) {
           
-          camera.aspect = (this.el.getBoundingClientRect().width - 20) / (this.el.getBoundingClientRect().height - 80);
-          camera.updateProjectionMatrix();
-          controls.update()
-        }
+          scene.add( gltf.scene );
+  
+        }, undefined, function ( error ) {
+  
+          console.error( error );
+          return null;
+  
+        });
+  
+        var controls = new OrbitControls( camera, renderer.domElement );
+        controls.target = new THREE.Vector3(0, 0, 0);
+        controls.enableDamping = true;
+  
+  
+        var pointLight = new THREE.PointLight( 0xffffff, this.project.lightIntensity, 100 );
+        pointLight.position.set( 10, 10, 10 );
+        scene.add( pointLight );
+        var pointLight = new THREE.PointLight( 0xffffff, this.project.lightIntensity, 100 );
+        pointLight.position.set( -10, 10, -10 );
+        scene.add( pointLight );
         
-        renderer.render( scene, camera );
+        controls.update()
+  
+        var windowSize = this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height;
+        
+        const animate = () => {
+          requestAnimationFrame( animate );
+  
+          if (this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height !== windowSize) {
+            renderer.setSize( this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80 );
+            
+            camera.aspect = (this.el.getBoundingClientRect().width - 20) / (this.el.getBoundingClientRect().height - 80);
+            camera.updateProjectionMatrix();
+            controls.update()
+          }
+          
+          renderer.render( scene, camera );
+        }
+        animate();
       }
-      animate();
     }
   }
 }
