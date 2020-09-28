@@ -408,7 +408,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function ProjectComponent_div_20_Template(rf, ctx) { if (rf & 1) {
     const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProjectComponent_div_20_Template_div_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r2.initialiseModel(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "View in 3D");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -433,59 +433,62 @@ class ProjectComponent {
     }
     initialiseModel() {
         if (!document.getElementById("model-container")) {
-            this.el = document.createElement("div");
-            this.el.id = "model-container";
-            let closeButton = document.createElement("img");
-            closeButton.id = "model-close-button";
-            closeButton.src = "https://img.icons8.com/metro/52/000000/close-window.png";
-            closeButton.addEventListener('click', () => {
-                renderer.dispose();
-                this.el.parentNode.removeChild(this.el);
-            });
-            document.getElementById("main").appendChild(this.el);
-            this.el.appendChild(closeButton);
-            let renderer = new three__WEBPACK_IMPORTED_MODULE_1__["WebGLRenderer"]({ antialias: true });
-            renderer.setSize(this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80);
-            this.el.appendChild(renderer.domElement);
-            let scene = new three__WEBPACK_IMPORTED_MODULE_1__["Scene"]();
-            scene.background = new three__WEBPACK_IMPORTED_MODULE_1__["Color"](0x320E3B);
-            let camera = new three__WEBPACK_IMPORTED_MODULE_1__["PerspectiveCamera"](75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.set(2, 1, 2);
-            scene.add(camera);
-            var loader = new three_examples_jsm_loaders_GLTFLoader__WEBPACK_IMPORTED_MODULE_2__["GLTFLoader"]();
-            loader.load('../../assets/models/scene.gltf', function (gltf) {
-                scene.add(gltf.scene);
-            }, undefined, function (error) {
-                console.error(error);
-                return null;
-            });
-            var controls = new three_examples_jsm_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_3__["OrbitControls"](camera, renderer.domElement);
-            controls.target = new three__WEBPACK_IMPORTED_MODULE_1__["Vector3"](0, 0, 0);
-            controls.enableDamping = true;
-            var pointLight = new three__WEBPACK_IMPORTED_MODULE_1__["PointLight"](0xffffff, 5, 100);
-            pointLight.position.set(10, 10, 10);
-            scene.add(pointLight);
-            var pointLight = new three__WEBPACK_IMPORTED_MODULE_1__["PointLight"](0xffffff, 5, 100);
-            pointLight.position.set(-10, 10, -10);
-            scene.add(pointLight);
-            controls.update();
-            var windowSize = this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height;
-            const animate = () => {
-                requestAnimationFrame(animate);
-                if (this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height !== windowSize) {
-                    renderer.setSize(this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80);
-                    camera.aspect = (this.el.getBoundingClientRect().width - 20) / (this.el.getBoundingClientRect().height - 80);
-                    camera.updateProjectionMatrix();
-                    controls.update();
-                }
-                renderer.render(scene, camera);
-            };
-            animate();
+            if (this.project.model !== false) {
+                this.el = document.createElement("div");
+                this.el.id = "model-container";
+                let closeButton = document.createElement("img");
+                closeButton.id = "model-close-button";
+                closeButton.src = "https://img.icons8.com/metro/52/000000/close-window.png";
+                closeButton.addEventListener('click', () => {
+                    renderer.dispose();
+                    this.el.parentNode.removeChild(this.el);
+                });
+                document.getElementById("main").appendChild(this.el);
+                this.el.appendChild(closeButton);
+                let renderer = new three__WEBPACK_IMPORTED_MODULE_1__["WebGLRenderer"]({ antialias: true });
+                renderer.setSize(this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80);
+                this.el.appendChild(renderer.domElement);
+                let scene = new three__WEBPACK_IMPORTED_MODULE_1__["Scene"]();
+                // scene.fog = new THREE.Fog(new THREE.Color(0xffffff), 0, 20)
+                scene.background = new three__WEBPACK_IMPORTED_MODULE_1__["Color"](0xDCDCDC);
+                let camera = new three__WEBPACK_IMPORTED_MODULE_1__["PerspectiveCamera"](75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                camera.position.set(this.project.model.cameraPosition.x, this.project.model.cameraPosition.y, this.project.model.cameraPosition.z);
+                scene.add(camera);
+                var loader = new three_examples_jsm_loaders_GLTFLoader__WEBPACK_IMPORTED_MODULE_2__["GLTFLoader"]();
+                loader.load(this.project.model.path, function (gltf) {
+                    scene.add(gltf.scene);
+                }, undefined, function (error) {
+                    console.error(error);
+                    return null;
+                });
+                var controls = new three_examples_jsm_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_3__["OrbitControls"](camera, renderer.domElement);
+                controls.target = new three__WEBPACK_IMPORTED_MODULE_1__["Vector3"](0, 0, 0);
+                controls.enableDamping = true;
+                var pointLight = new three__WEBPACK_IMPORTED_MODULE_1__["PointLight"](0xffffff, this.project.lightIntensity, 100);
+                pointLight.position.set(10, 10, 10);
+                scene.add(pointLight);
+                var pointLight = new three__WEBPACK_IMPORTED_MODULE_1__["PointLight"](0xffffff, this.project.lightIntensity, 100);
+                pointLight.position.set(-10, 10, -10);
+                scene.add(pointLight);
+                controls.update();
+                var windowSize = this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height;
+                const animate = () => {
+                    requestAnimationFrame(animate);
+                    if (this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height !== windowSize) {
+                        renderer.setSize(this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80);
+                        camera.aspect = (this.el.getBoundingClientRect().width - 20) / (this.el.getBoundingClientRect().height - 80);
+                        camera.updateProjectionMatrix();
+                        controls.update();
+                    }
+                    renderer.render(scene, camera);
+                };
+                animate();
+            }
         }
     }
 }
 ProjectComponent.ɵfac = function ProjectComponent_Factory(t) { return new (t || ProjectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"])); };
-ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProjectComponent, selectors: [["app-project"]], decls: 24, vars: 5, consts: [["id", "main-section-container", 1, "main-section-container"], [1, "main-section-wrapper"], [1, "title"], [1, "custom-br"], [1, "header"], [1, "navigation"], ["routerLink", "/", "routerLinkActive", "active", 1, "link"], ["routerLink", "/about", "routerLinkActive", "active", 1, "link"], ["routerLink", "/contact", "routerLinkActive", "active", 1, "link"], [1, "images-container"], [1, "images"], [1, "item"], [1, "description"], ["class", "model-button", 3, "click", 4, "ngIf"], [1, "item", "item-colour"], [1, "image", 3, "src"], ["class", "item item-colour", 4, "ngFor", "ngForOf"], [1, "model-button", 3, "click"]], template: function ProjectComponent_Template(rf, ctx) { if (rf & 1) {
+ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProjectComponent, selectors: [["app-project"]], decls: 27, vars: 5, consts: [["id", "main-section-container", 1, "main-section-container"], [1, "main-section-wrapper"], [1, "title"], [1, "custom-br"], [1, "header"], [1, "navigation"], ["routerLink", "/", "routerLinkActive", "active", 1, "link"], ["routerLink", "/about", "routerLinkActive", "active", 1, "link"], ["routerLink", "/contact", "routerLinkActive", "active", 1, "link"], [1, "images-container"], [1, "images"], [1, "item"], [1, "description"], ["class", "model-button", 3, "click", 4, "ngIf"], [1, "item", "item-colour"], [1, "image", 3, "src"], ["class", "item item-colour", 4, "ngFor", "ngForOf"], ["routerLink", "/", "routerLinkActive", "active", 1, "next-project"], [1, "model-button", 3, "click"]], template: function ProjectComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -522,6 +525,11 @@ ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "img", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, ProjectComponent_li_23_Template, 2, 1, "li", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "li", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Next Project \u27F6");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
@@ -530,12 +538,12 @@ ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.project.description, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.project.model === true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.project.model !== false);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", ctx.project.titleImage, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.project.images);
-    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkActive"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"]], styles: ["@media only screen and (min-width: 600px) {\n  .main-section-container[_ngcontent-%COMP%] {\n    position: fixed;\n    width: 40vw;\n    height: 100%;\n    display: inline-block;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%] {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-evenly;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%] {\n    color: white;\n    font-size: 50px;\n    font-weight: bold;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .custom-br[_ngcontent-%COMP%] {\n    display: block;\n    width: 25%;\n    height: 2px;\n    opacity: 0.3;\n    background-color: #fff;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] {\n    font-size: 40px;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%] {\n    height: 100%;\n    margin-right: 20px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-end;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%] {\n    text-decoration: none;\n    color: white;\n    margin: 20px 0;\n  }\n\n  .images-container[_ngcontent-%COMP%] {\n    display: inline-block;\n    margin-left: 40vw;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%] {\n    position: absolute;\n    top: 0;\n    height: 100%;\n    display: flex;\n    flex-direction: row;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%] {\n    position: relative;\n    width: 50vw;\n    height: 100vh;\n    transition: width ease 500ms;\n    list-style: none;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column;\n    height: calc(100% - 10vw);\n    width: calc(100% - 10vw);\n    color: rgba(255, 255, 255, 0.6);\n    padding: 5vw;\n    font-size: 16px;\n    background-color: #131414ea;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    margin-bottom: 20px;\n    text-align: start;\n    color: white;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   .model-button[_ngcontent-%COMP%] {\n    position: relative;\n    margin-top: 40px;\n    padding: 20px;\n    background-color: #fff;\n    color: #000;\n    border-radius: 5px;\n    cursor: pointer;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .image[_ngcontent-%COMP%] {\n    height: 100%;\n    width: 100%;\n    object-fit: cover;\n  }\n}\n@media only screen and (max-width: 600px) {\n  .main-section-container[_ngcontent-%COMP%] {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 50vh;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%] {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-evenly;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%] {\n    color: white;\n    font-size: 50px;\n    font-weight: bold;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .custom-br[_ngcontent-%COMP%] {\n    display: block;\n    width: 25%;\n    height: 2px;\n    opacity: 0.3;\n    background-color: #fff;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] {\n    font-size: 40px;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%] {\n    height: 100%;\n    margin-right: 20px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-end;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%] {\n    text-decoration: none;\n    color: white;\n    margin: 20px 0;\n  }\n\n  .images-container[_ngcontent-%COMP%] {\n    margin-top: 50vh;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%] {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item-colour[_ngcontent-%COMP%] {\n    background-color: #181A1B;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%] {\n    position: relative;\n    width: 100%;\n    list-style: none;\n    cursor: pointer;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column;\n    height: calc(100% - 10vw);\n    width: calc(100% - 10vw);\n    color: rgba(255, 255, 255, 0.6);\n    padding: 5vw;\n    font-size: 16px;\n    background-color: #131414ea;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    margin-bottom: 20px;\n    text-align: start;\n    color: white;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   .model-button[_ngcontent-%COMP%] {\n    position: relative;\n    margin-top: 40px;\n    padding: 20px;\n    background-color: #fff;\n    color: #000;\n    border-radius: 5px;\n    cursor: pointer;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .image[_ngcontent-%COMP%] {\n    height: 100%;\n    width: 100%;\n    object-fit: cover;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvamVjdC9wcm9qZWN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUU7SUFDRSxlQUFBO0lBQ0EsV0FBQTtJQUNBLFlBQUE7SUFDQSxxQkFBQTtFQUFGO0VBRUU7SUFDRSxZQUFBO0lBQ0EsV0FBQTtJQUVBLGFBQUE7SUFDQSxzQkFBQTtJQUNBLG1CQUFBO0lBQ0EsNkJBQUE7RUFESjtFQUdJO0lBQ0UsWUFBQTtJQUNBLGVBQUE7SUFDQSxpQkFBQTtFQUROO0VBSUk7SUFDRSxjQUFBO0lBQ0EsVUFBQTtJQUNBLFdBQUE7SUFDQSxZQUFBO0lBQ0Esc0JBQUE7RUFGTjtFQUtJO0lBQ0UsZUFBQTtFQUhOO0VBS007SUFDRSxZQUFBO0lBQ0Esa0JBQUE7SUFFQSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSxtQkFBQTtJQUNBLHlCQUFBO0VBSlI7RUFNUTtJQUNFLHFCQUFBO0lBQ0EsWUFBQTtJQUNBLGNBQUE7RUFKVjs7RUFXQTtJQUNFLHFCQUFBO0lBQ0EsaUJBQUE7RUFSRjtFQVVFO0lBQ0Usa0JBQUE7SUFDQSxNQUFBO0lBQ0EsWUFBQTtJQUVBLGFBQUE7SUFDQSxtQkFBQTtFQVRKO0VBV0k7SUFDRSxrQkFBQTtJQUNBLFdBQUE7SUFDQSxhQUFBO0lBQ0EsNEJBQUE7SUFDQSxnQkFBQTtFQVROO0VBV007SUFDRSxhQUFBO0lBQ0EsbUJBQUE7SUFDQSx1QkFBQTtJQUNBLHNCQUFBO0lBQ0EseUJBQUE7SUFDQSx3QkFBQTtJQUVBLCtCQUFBO0lBQ0EsWUFBQTtJQUNBLGVBQUE7SUFFQSwyQkFBQTtFQVhSO0VBYVE7SUFDRSxtQkFBQTtJQUNBLGlCQUFBO0lBQ0EsWUFBQTtFQVhWO0VBY1E7SUFDRSxrQkFBQTtJQUNBLGdCQUFBO0lBQ0EsYUFBQTtJQUNBLHNCQUFBO0lBQ0EsV0FBQTtJQUNBLGtCQUFBO0lBQ0EsZUFBQTtFQVpWO0VBZ0JNO0lBQ0UsWUFBQTtJQUNBLFdBQUE7SUFDQSxpQkFBQTtFQWRSO0FBQ0Y7QUFxQkE7RUFFRTtJQUNFLGVBQUE7SUFDQSxNQUFBO0lBQ0EsT0FBQTtJQUNBLFdBQUE7SUFDQSxZQUFBO0VBcEJGO0VBc0JFO0lBQ0UsWUFBQTtJQUNBLFdBQUE7SUFFQSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSxtQkFBQTtJQUNBLDZCQUFBO0VBckJKO0VBdUJJO0lBQ0UsWUFBQTtJQUNBLGVBQUE7SUFDQSxpQkFBQTtFQXJCTjtFQXdCSTtJQUNFLGNBQUE7SUFDQSxVQUFBO0lBQ0EsV0FBQTtJQUNBLFlBQUE7SUFDQSxzQkFBQTtFQXRCTjtFQXlCSTtJQUNFLGVBQUE7RUF2Qk47RUF5Qk07SUFDRSxZQUFBO0lBQ0Esa0JBQUE7SUFFQSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSxtQkFBQTtJQUNBLHlCQUFBO0VBeEJSO0VBMEJRO0lBQ0UscUJBQUE7SUFDQSxZQUFBO0lBQ0EsY0FBQTtFQXhCVjs7RUErQkE7SUFDRSxnQkFBQTtFQTVCRjtFQThCRTtJQUNFLFdBQUE7SUFFQSxhQUFBO0lBQ0Esc0JBQUE7RUE3Qko7RUErQkk7SUFDRSx5QkFBQTtFQTdCTjtFQWdDSTtJQUNFLGtCQUFBO0lBQ0EsV0FBQTtJQUNBLGdCQUFBO0lBQ0EsZUFBQTtFQTlCTjtFQWdDTTtJQUNFLGFBQUE7SUFDQSxtQkFBQTtJQUNBLHVCQUFBO0lBQ0Esc0JBQUE7SUFDQSx5QkFBQTtJQUNBLHdCQUFBO0lBRUEsK0JBQUE7SUFDQSxZQUFBO0lBQ0EsZUFBQTtJQUVBLDJCQUFBO0VBaENSO0VBa0NRO0lBQ0UsbUJBQUE7SUFDQSxpQkFBQTtJQUNBLFlBQUE7RUFoQ1Y7RUFtQ1E7SUFDRSxrQkFBQTtJQUNBLGdCQUFBO0lBQ0EsYUFBQTtJQUNBLHNCQUFBO0lBQ0EsV0FBQTtJQUNBLGtCQUFBO0lBQ0EsZUFBQTtFQWpDVjtFQXFDTTtJQUNFLFlBQUE7SUFDQSxXQUFBO0lBQ0EsaUJBQUE7RUFuQ1I7QUFDRiIsImZpbGUiOiJzcmMvYXBwL3Byb2plY3QvcHJvamVjdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNjAwcHgpIHtcbiAgICAgIFxuICAubWFpbi1zZWN0aW9uLWNvbnRhaW5lciB7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHdpZHRoOiA0MHZ3O1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cbiAgICAubWFpbi1zZWN0aW9uLXdyYXBwZXIge1xuICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICBcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xuXG4gICAgICAudGl0bGUge1xuICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgIGZvbnQtc2l6ZTogNTBweDtcbiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgICB9XG5cbiAgICAgIC5jdXN0b20tYnIge1xuICAgICAgICBkaXNwbGF5OmJsb2NrO1xuICAgICAgICB3aWR0aDogMjUlO1xuICAgICAgICBoZWlnaHQ6IDJweDtcbiAgICAgICAgb3BhY2l0eTogMC4zO1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICAgICAgfVxuXG4gICAgICAuaGVhZGVyIHtcbiAgICAgICAgZm9udC1zaXplOiA0MHB4O1xuICAgICAgXG4gICAgICAgIC5uYXZpZ2F0aW9uIHtcbiAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xuICAgICAgXG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcbiAgICAgIFxuICAgICAgICAgIC5saW5rIHtcbiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgICAgICAgIG1hcmdpbjogMjBweCAwO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxuICBcbiAgLmltYWdlcy1jb250YWluZXIge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBtYXJnaW4tbGVmdDogNDB2dztcbiAgICBcbiAgICAuaW1hZ2VzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIHRvcDogMDtcbiAgICAgIGhlaWdodDogMTAwJTtcblxuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XG5cbiAgICAgIC5pdGVtIHtcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICB3aWR0aDogNTB2dztcbiAgICAgICAgaGVpZ2h0OiAxMDB2aDtcbiAgICAgICAgdHJhbnNpdGlvbjogd2lkdGggZWFzZSA1MDBtcztcbiAgICAgICAgbGlzdC1zdHlsZTogbm9uZTtcbiAgICAgICAgXG4gICAgICAgIC5kZXNjcmlwdGlvbiB7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgaGVpZ2h0OiBjYWxjKDEwMCUgLSAxMHZ3KTtcbiAgICAgICAgICB3aWR0aDogY2FsYygxMDAlIC0gMTB2dyk7XG5cbiAgICAgICAgICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjYpO1xuICAgICAgICAgIHBhZGRpbmc6IDV2dztcbiAgICAgICAgICBmb250LXNpemU6IDE2cHg7XG5cbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTMxNDE0ZWE7XG5cbiAgICAgICAgICBzcGFuIHtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBzdGFydDtcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICAubW9kZWwtYnV0dG9uIHtcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDQwcHg7XG4gICAgICAgICAgICBwYWRkaW5nOiAyMHB4O1xuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgICAgICAgICAgIGNvbG9yOiAjMDAwO1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgIC5pbWFnZSB7XG4gICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIG9iamVjdC1maXQ6IGNvdmVyO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG5cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xuICAgICAgXG4gIC5tYWluLXNlY3Rpb24tY29udGFpbmVyIHtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAwO1xuICAgIGxlZnQ6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiA1MHZoO1xuXG4gICAgLm1haW4tc2VjdGlvbi13cmFwcGVyIHtcbiAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgIHdpZHRoOiAxMDAlO1xuXG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcblxuICAgICAgLnRpdGxlIHtcbiAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgICBmb250LXNpemU6IDUwcHg7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgfVxuXG4gICAgICAuY3VzdG9tLWJyIHtcbiAgICAgICAgZGlzcGxheTpibG9jaztcbiAgICAgICAgd2lkdGg6IDI1JTtcbiAgICAgICAgaGVpZ2h0OiAycHg7XG4gICAgICAgIG9wYWNpdHk6IDAuMztcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgICAgIH1cblxuICAgICAgLmhlYWRlciB7XG4gICAgICAgIGZvbnQtc2l6ZTogNDBweDtcbiAgICAgIFxuICAgICAgICAubmF2aWdhdGlvbiB7XG4gICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgIG1hcmdpbi1yaWdodDogMjBweDtcbiAgICAgIFxuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gICAgICBcbiAgICAgICAgICAubGluayB7XG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgICAgICBtYXJnaW46IDIwcHggMDtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbiAgXG4gIC5pbWFnZXMtY29udGFpbmVyIHtcbiAgICBtYXJnaW4tdG9wOiA1MHZoO1xuICAgIFxuICAgIC5pbWFnZXMge1xuICAgICAgd2lkdGg6IDEwMCU7XG5cbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuXG4gICAgICAuaXRlbS1jb2xvdXIge1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTgxQTFCO1xuICAgICAgfVxuXG4gICAgICAuaXRlbSB7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIGxpc3Qtc3R5bGU6IG5vbmU7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgXG4gICAgICAgIC5kZXNjcmlwdGlvbiB7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgaGVpZ2h0OiBjYWxjKDEwMCUgLSAxMHZ3KTtcbiAgICAgICAgICB3aWR0aDogY2FsYygxMDAlIC0gMTB2dyk7XG5cbiAgICAgICAgICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjYpO1xuICAgICAgICAgIHBhZGRpbmc6IDV2dztcbiAgICAgICAgICBmb250LXNpemU6IDE2cHg7XG5cbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTMxNDE0ZWE7XG5cbiAgICAgICAgICBzcGFuIHtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBzdGFydDtcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICAubW9kZWwtYnV0dG9uIHtcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDQwcHg7XG4gICAgICAgICAgICBwYWRkaW5nOiAyMHB4O1xuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgICAgICAgICAgIGNvbG9yOiAjMDAwO1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgIC5pbWFnZSB7XG4gICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIG9iamVjdC1maXQ6IGNvdmVyO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */"] });
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkActive"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"]], styles: ["@media only screen and (min-width: 600px) {\n  .main-section-container[_ngcontent-%COMP%] {\n    position: fixed;\n    width: 40vw;\n    height: 100%;\n    display: inline-block;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%] {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-evenly;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%] {\n    color: white;\n    font-size: 50px;\n    font-weight: bold;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .custom-br[_ngcontent-%COMP%] {\n    display: block;\n    width: 25%;\n    height: 2px;\n    opacity: 0.3;\n    background-color: #fff;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] {\n    font-size: 40px;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%] {\n    height: 100%;\n    margin-right: 20px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-end;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%] {\n    text-decoration: none;\n    color: white;\n    margin: 20px 0;\n  }\n\n  .images-container[_ngcontent-%COMP%] {\n    display: inline-block;\n    margin-left: 40vw;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%] {\n    position: absolute;\n    top: 0;\n    height: 100%;\n    display: flex;\n    flex-direction: row;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%] {\n    position: relative;\n    width: 50vw;\n    height: 100vh;\n    padding: 0 10px;\n    transition: width ease 500ms;\n    list-style: none;\n    background-color: #131414ea;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column;\n    height: calc(100% - 10vw);\n    width: calc(100% - 10vw);\n    color: rgba(255, 255, 255, 0.6);\n    padding: 5vw;\n    font-size: 16px;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    margin-bottom: 20px;\n    text-align: start;\n    color: white;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   .model-button[_ngcontent-%COMP%] {\n    position: relative;\n    margin-top: 40px;\n    padding: 20px;\n    background-color: #fff;\n    color: #000;\n    border-radius: 5px;\n    cursor: pointer;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .image[_ngcontent-%COMP%] {\n    height: 100%;\n    width: 100%;\n    object-fit: contain;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .next-project[_ngcontent-%COMP%] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column;\n    height: calc(100% - 10vw);\n    width: calc(100% - 10vw);\n    color: rgba(255, 255, 255, 0.6);\n    padding: 5vw;\n    font-size: 16px;\n    cursor: pointer;\n    transition: color 300ms ease;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .next-project[_ngcontent-%COMP%]:hover {\n    color: rgba(255, 255, 255, 0.9);\n  }\n}\n@media only screen and (max-width: 600px) {\n  .main-section-container[_ngcontent-%COMP%] {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 50vh;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%] {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-evenly;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%] {\n    color: white;\n    font-size: 50px;\n    font-weight: bold;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .custom-br[_ngcontent-%COMP%] {\n    display: block;\n    width: 25%;\n    height: 2px;\n    opacity: 0.3;\n    background-color: #fff;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] {\n    font-size: 40px;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%] {\n    height: 100%;\n    margin-right: 20px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-end;\n  }\n  .main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%] {\n    text-decoration: none;\n    color: white;\n    margin: 20px 0;\n  }\n\n  .images-container[_ngcontent-%COMP%] {\n    margin-top: 50vh;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%] {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item-colour[_ngcontent-%COMP%] {\n    background-color: #181A1B;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%] {\n    position: relative;\n    width: 100%;\n    list-style: none;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column;\n    height: calc(100% - 10vw);\n    width: calc(100% - 10vw);\n    color: rgba(255, 255, 255, 0.6);\n    padding: 5vw;\n    font-size: 16px;\n    background-color: #131414ea;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    margin-bottom: 20px;\n    text-align: start;\n    color: white;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   .model-button[_ngcontent-%COMP%] {\n    position: relative;\n    margin-top: 40px;\n    padding: 20px;\n    background-color: #fff;\n    color: #000;\n    border-radius: 5px;\n    cursor: pointer;\n  }\n  .images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .image[_ngcontent-%COMP%] {\n    height: 100%;\n    width: 100%;\n    object-fit: contain;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvamVjdC9wcm9qZWN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUU7SUFDRSxlQUFBO0lBQ0EsV0FBQTtJQUNBLFlBQUE7SUFDQSxxQkFBQTtFQUFGO0VBRUU7SUFDRSxZQUFBO0lBQ0EsV0FBQTtJQUVBLGFBQUE7SUFDQSxzQkFBQTtJQUNBLG1CQUFBO0lBQ0EsNkJBQUE7RUFESjtFQUdJO0lBQ0UsWUFBQTtJQUNBLGVBQUE7SUFDQSxpQkFBQTtFQUROO0VBSUk7SUFDRSxjQUFBO0lBQ0EsVUFBQTtJQUNBLFdBQUE7SUFDQSxZQUFBO0lBQ0Esc0JBQUE7RUFGTjtFQUtJO0lBQ0UsZUFBQTtFQUhOO0VBS007SUFDRSxZQUFBO0lBQ0Esa0JBQUE7SUFFQSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSxtQkFBQTtJQUNBLHlCQUFBO0VBSlI7RUFNUTtJQUNFLHFCQUFBO0lBQ0EsWUFBQTtJQUNBLGNBQUE7RUFKVjs7RUFXQTtJQUNFLHFCQUFBO0lBQ0EsaUJBQUE7RUFSRjtFQVVFO0lBQ0Usa0JBQUE7SUFDQSxNQUFBO0lBQ0EsWUFBQTtJQUVBLGFBQUE7SUFDQSxtQkFBQTtFQVRKO0VBV0k7SUFDRSxrQkFBQTtJQUNBLFdBQUE7SUFDQSxhQUFBO0lBQ0EsZUFBQTtJQUNBLDRCQUFBO0lBQ0EsZ0JBQUE7SUFDQSwyQkFBQTtFQVROO0VBWU07SUFDRSxhQUFBO0lBQ0EsbUJBQUE7SUFDQSx1QkFBQTtJQUNBLHNCQUFBO0lBQ0EseUJBQUE7SUFDQSx3QkFBQTtJQUVBLCtCQUFBO0lBQ0EsWUFBQTtJQUNBLGVBQUE7RUFYUjtFQWFRO0lBQ0UsbUJBQUE7SUFDQSxpQkFBQTtJQUNBLFlBQUE7RUFYVjtFQWNRO0lBQ0Usa0JBQUE7SUFDQSxnQkFBQTtJQUNBLGFBQUE7SUFDQSxzQkFBQTtJQUNBLFdBQUE7SUFDQSxrQkFBQTtJQUNBLGVBQUE7RUFaVjtFQWdCTTtJQUNFLFlBQUE7SUFDQSxXQUFBO0lBQ0EsbUJBQUE7RUFkUjtFQWlCTTtJQUNFLGFBQUE7SUFDQSxtQkFBQTtJQUNBLHVCQUFBO0lBQ0Esc0JBQUE7SUFDQSx5QkFBQTtJQUNBLHdCQUFBO0lBRUEsK0JBQUE7SUFDQSxZQUFBO0lBQ0EsZUFBQTtJQUNBLGVBQUE7SUFFQSw0QkFBQTtFQWpCUjtFQW1CUTtJQUNFLCtCQUFBO0VBakJWO0FBQ0Y7QUF5QkE7RUFFRTtJQUNFLGVBQUE7SUFDQSxNQUFBO0lBQ0EsT0FBQTtJQUNBLFdBQUE7SUFDQSxZQUFBO0VBeEJGO0VBMEJFO0lBQ0UsWUFBQTtJQUNBLFdBQUE7SUFFQSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSxtQkFBQTtJQUNBLDZCQUFBO0VBekJKO0VBMkJJO0lBQ0UsWUFBQTtJQUNBLGVBQUE7SUFDQSxpQkFBQTtFQXpCTjtFQTRCSTtJQUNFLGNBQUE7SUFDQSxVQUFBO0lBQ0EsV0FBQTtJQUNBLFlBQUE7SUFDQSxzQkFBQTtFQTFCTjtFQTZCSTtJQUNFLGVBQUE7RUEzQk47RUE2Qk07SUFDRSxZQUFBO0lBQ0Esa0JBQUE7SUFFQSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSxtQkFBQTtJQUNBLHlCQUFBO0VBNUJSO0VBOEJRO0lBQ0UscUJBQUE7SUFDQSxZQUFBO0lBQ0EsY0FBQTtFQTVCVjs7RUFtQ0E7SUFDRSxnQkFBQTtFQWhDRjtFQWtDRTtJQUNFLFdBQUE7SUFFQSxhQUFBO0lBQ0Esc0JBQUE7RUFqQ0o7RUFtQ0k7SUFDRSx5QkFBQTtFQWpDTjtFQW9DSTtJQUNFLGtCQUFBO0lBQ0EsV0FBQTtJQUNBLGdCQUFBO0VBbENOO0VBb0NNO0lBQ0UsYUFBQTtJQUNBLG1CQUFBO0lBQ0EsdUJBQUE7SUFDQSxzQkFBQTtJQUNBLHlCQUFBO0lBQ0Esd0JBQUE7SUFFQSwrQkFBQTtJQUNBLFlBQUE7SUFDQSxlQUFBO0lBRUEsMkJBQUE7RUFwQ1I7RUFzQ1E7SUFDRSxtQkFBQTtJQUNBLGlCQUFBO0lBQ0EsWUFBQTtFQXBDVjtFQXVDUTtJQUNFLGtCQUFBO0lBQ0EsZ0JBQUE7SUFDQSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSxXQUFBO0lBQ0Esa0JBQUE7SUFDQSxlQUFBO0VBckNWO0VBeUNNO0lBQ0UsWUFBQTtJQUNBLFdBQUE7SUFDQSxtQkFBQTtFQXZDUjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvcHJvamVjdC9wcm9qZWN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA2MDBweCkge1xuICAgICAgXG4gIC5tYWluLXNlY3Rpb24tY29udGFpbmVyIHtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgd2lkdGg6IDQwdnc7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcblxuICAgIC5tYWluLXNlY3Rpb24td3JhcHBlciB7XG4gICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICAgIFxuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7XG5cbiAgICAgIC50aXRsZSB7XG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgICAgZm9udC1zaXplOiA1MHB4O1xuICAgICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICAgIH1cblxuICAgICAgLmN1c3RvbS1iciB7XG4gICAgICAgIGRpc3BsYXk6YmxvY2s7XG4gICAgICAgIHdpZHRoOiAyNSU7XG4gICAgICAgIGhlaWdodDogMnB4O1xuICAgICAgICBvcGFjaXR5OiAwLjM7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgICB9XG5cbiAgICAgIC5oZWFkZXIge1xuICAgICAgICBmb250LXNpemU6IDQwcHg7XG4gICAgICBcbiAgICAgICAgLm5hdmlnYXRpb24ge1xuICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICBtYXJnaW4tcmlnaHQ6IDIwcHg7XG4gICAgICBcbiAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xuICAgICAgXG4gICAgICAgICAgLmxpbmsge1xuICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgICAgICAgbWFyZ2luOiAyMHB4IDA7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG4gIFxuICAuaW1hZ2VzLWNvbnRhaW5lciB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIG1hcmdpbi1sZWZ0OiA0MHZ3O1xuICAgIFxuICAgIC5pbWFnZXMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgdG9wOiAwO1xuICAgICAgaGVpZ2h0OiAxMDAlO1xuXG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICAgIFxuICAgICAgLml0ZW0ge1xuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgIHdpZHRoOiA1MHZ3O1xuICAgICAgICBoZWlnaHQ6IDEwMHZoO1xuICAgICAgICBwYWRkaW5nOiAwIDEwcHg7XG4gICAgICAgIHRyYW5zaXRpb246IHdpZHRoIGVhc2UgNTAwbXM7XG4gICAgICAgIGxpc3Qtc3R5bGU6IG5vbmU7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMxMzE0MTRlYTtcblxuICAgICAgICBcbiAgICAgICAgLmRlc2NyaXB0aW9uIHtcbiAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDEwdncpO1xuICAgICAgICAgIHdpZHRoOiBjYWxjKDEwMCUgLSAxMHZ3KTtcbiAgICAgICAgICBcbiAgICAgICAgICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjYpO1xuICAgICAgICAgIHBhZGRpbmc6IDV2dztcbiAgICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgICAgXG4gICAgICAgICAgc3BhbiB7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogc3RhcnQ7XG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgICAgfVxuICAgICAgICAgIFxuICAgICAgICAgIC5tb2RlbC1idXR0b24ge1xuICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICAgICAgbWFyZ2luLXRvcDogNDBweDtcbiAgICAgICAgICAgIHBhZGRpbmc6IDIwcHg7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICAgICAgICAgICAgY29sb3I6ICMwMDA7XG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICAuaW1hZ2Uge1xuICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICBvYmplY3QtZml0OiBjb250YWluO1xuICAgICAgICB9XG5cbiAgICAgICAgLm5leHQtcHJvamVjdCB7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgaGVpZ2h0OiBjYWxjKDEwMCUgLSAxMHZ3KTtcbiAgICAgICAgICB3aWR0aDogY2FsYygxMDAlIC0gMTB2dyk7XG4gICAgICAgICAgXG4gICAgICAgICAgY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC42KTtcbiAgICAgICAgICBwYWRkaW5nOiA1dnc7XG4gICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcblxuICAgICAgICAgIHRyYW5zaXRpb246IGNvbG9yIDMwMG1zIGVhc2U7XG5cbiAgICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgIGNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuOSk7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG5cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xuICAgICAgXG4gIC5tYWluLXNlY3Rpb24tY29udGFpbmVyIHtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAwO1xuICAgIGxlZnQ6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiA1MHZoO1xuXG4gICAgLm1haW4tc2VjdGlvbi13cmFwcGVyIHtcbiAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgIHdpZHRoOiAxMDAlO1xuXG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcblxuICAgICAgLnRpdGxlIHtcbiAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgICBmb250LXNpemU6IDUwcHg7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgfVxuXG4gICAgICAuY3VzdG9tLWJyIHtcbiAgICAgICAgZGlzcGxheTpibG9jaztcbiAgICAgICAgd2lkdGg6IDI1JTtcbiAgICAgICAgaGVpZ2h0OiAycHg7XG4gICAgICAgIG9wYWNpdHk6IDAuMztcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgICAgIH1cblxuICAgICAgLmhlYWRlciB7XG4gICAgICAgIGZvbnQtc2l6ZTogNDBweDtcbiAgICAgIFxuICAgICAgICAubmF2aWdhdGlvbiB7XG4gICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgIG1hcmdpbi1yaWdodDogMjBweDtcbiAgICAgIFxuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gICAgICBcbiAgICAgICAgICAubGluayB7XG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgICAgICBtYXJnaW46IDIwcHggMDtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbiAgXG4gIC5pbWFnZXMtY29udGFpbmVyIHtcbiAgICBtYXJnaW4tdG9wOiA1MHZoO1xuICAgIFxuICAgIC5pbWFnZXMge1xuICAgICAgd2lkdGg6IDEwMCU7XG5cbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuXG4gICAgICAuaXRlbS1jb2xvdXIge1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTgxQTFCO1xuICAgICAgfVxuXG4gICAgICAuaXRlbSB7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIGxpc3Qtc3R5bGU6IG5vbmU7XG4gICAgICAgIFxuICAgICAgICAuZGVzY3JpcHRpb24ge1xuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgIGhlaWdodDogY2FsYygxMDAlIC0gMTB2dyk7XG4gICAgICAgICAgd2lkdGg6IGNhbGMoMTAwJSAtIDEwdncpO1xuXG4gICAgICAgICAgY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC42KTtcbiAgICAgICAgICBwYWRkaW5nOiA1dnc7XG4gICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuXG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzEzMTQxNGVhO1xuXG4gICAgICAgICAgc3BhbiB7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogc3RhcnQ7XG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLm1vZGVsLWJ1dHRvbiB7XG4gICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICBtYXJnaW4tdG9wOiA0MHB4O1xuICAgICAgICAgICAgcGFkZGluZzogMjBweDtcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgICAgICAgICBjb2xvcjogIzAwMDtcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICAuaW1hZ2Uge1xuICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICBvYmplY3QtZml0OiBjb250YWluO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ProjectComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -560,45 +568,172 @@ __webpack_require__.r(__webpack_exports__);
 const projects = [
     {
         title: "Black Hole",
-        model: true,
-        titleImage: "/assets/images/black_hole.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus quis dui ultrices iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sagittis dui a ligula accumsan scelerisque. Duis varius at dui quis gravida. Nullam iaculis, nisi vitae dictum tempor, lorem dolor accumsan sapien, id porta justo libero non tortor. Aenean luctus at quam nec elementum. Morbi ut orci sed felis placerat eleifend quis eget elit. Cras finibus venenatis metus eget lacinia. Duis vehicula placerat lorem, ut facilisis nisi tristique ac. Nullam in ante nulla. Morbi vel vehicula nunc. Nunc fermentum purus sed ex maximus pulvinar. Etiam dictum ante ac nisi dapibus tristique. Sed vel elit sit amet urna aliquam tristique. Cras enim nunc, imperdiet maximus urna sed, consectetur efficitur lacus. In in suscipit lacus. Vivamus efficitur ultrices libero vitae vulputate. Sed at mattis ligula. Ut tempor ultricies accumsan. Morbi ultricies magna nec tortor tincidunt fringilla. Donec convallis risus ac metus luctus cursus. Duis tempus purus odio, ac varius leo aliquam nec. Aliquam dapibus tincidunt lacus, quis elementum dui vehicula et. In non condimentum risus. Nunc vitae lacinia massa. Proin porttitor ultricies nisl, vel imperdiet eros pulvinar quis. Curabitur egestas, lorem vel vestibulum pharetra, sapien enim hendrerit nulla, in rutrum ligula eros a ipsum. Vestibulum in ligula sed metus commodo egestas."
-    },
-    {
-        title: "Bulb Table",
-        model: true,
-        titleImage: "/assets/images/bulb_table2.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus quis dui ultrices iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sagittis dui a ligula accumsan scelerisque. Duis varius at dui quis gravida. Nullam iaculis, nisi vitae dictum tempor, lorem dolor accumsan sapien, id porta justo libero non tortor. Aenean luctus at quam nec elementum. Morbi ut orci sed felis placerat eleifend quis eget elit. Cras finibus venenatis metus eget lacinia. Duis vehicula placerat lorem, ut facilisis nisi tristique ac. Nullam in ante nulla. Morbi vel vehicula nunc. Nunc fermentum purus sed ex maximus pulvinar. Etiam dictum ante ac nisi dapibus tristique. Sed vel elit sit amet urna aliquam tristique. Cras enim nunc, imperdiet maximus urna sed, consectetur efficitur lacus. In in suscipit lacus. Vivamus efficitur ultrices libero vitae vulputate. Sed at mattis ligula. Ut tempor ultricies accumsan. Morbi ultricies magna nec tortor tincidunt fringilla. Donec convallis risus ac metus luctus cursus. Duis tempus purus odio, ac varius leo aliquam nec. Aliquam dapibus tincidunt lacus, quis elementum dui vehicula et. In non condimentum risus. Nunc vitae lacinia massa. Proin porttitor ultricies nisl, vel imperdiet eros pulvinar quis. Curabitur egestas, lorem vel vestibulum pharetra, sapien enim hendrerit nulla, in rutrum ligula eros a ipsum. Vestibulum in ligula sed metus commodo egestas."
-    },
-    {
-        title: "Catwalk",
-        model: true,
-        titleImage: "/assets/images/catwalk.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus quis dui ultrices iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sagittis dui a ligula accumsan scelerisque. Duis varius at dui quis gravida. Nullam iaculis, nisi vitae dictum tempor, lorem dolor accumsan sapien, id porta justo libero non tortor. Aenean luctus at quam nec elementum. Morbi ut orci sed felis placerat eleifend quis eget elit. Cras finibus venenatis metus eget lacinia. Duis vehicula placerat lorem, ut facilisis nisi tristique ac. Nullam in ante nulla. Morbi vel vehicula nunc. Nunc fermentum purus sed ex maximus pulvinar. Etiam dictum ante ac nisi dapibus tristique. Sed vel elit sit amet urna aliquam tristique. Cras enim nunc, imperdiet maximus urna sed, consectetur efficitur lacus. In in suscipit lacus. Vivamus efficitur ultrices libero vitae vulputate. Sed at mattis ligula. Ut tempor ultricies accumsan. Morbi ultricies magna nec tortor tincidunt fringilla. Donec convallis risus ac metus luctus cursus. Duis tempus purus odio, ac varius leo aliquam nec. Aliquam dapibus tincidunt lacus, quis elementum dui vehicula et. In non condimentum risus. Nunc vitae lacinia massa. Proin porttitor ultricies nisl, vel imperdiet eros pulvinar quis. Curabitur egestas, lorem vel vestibulum pharetra, sapien enim hendrerit nulla, in rutrum ligula eros a ipsum. Vestibulum in ligula sed metus commodo egestas."
-    },
-    {
-        title: "Rapier Wand",
-        model: true,
-        titleImage: "/assets/images/rapier_wand.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus quis dui ultrices iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sagittis dui a ligula accumsan scelerisque. Duis varius at dui quis gravida. Nullam iaculis, nisi vitae dictum tempor, lorem dolor accumsan sapien, id porta justo libero non tortor. Aenean luctus at quam nec elementum. Morbi ut orci sed felis placerat eleifend quis eget elit. Cras finibus venenatis metus eget lacinia. Duis vehicula placerat lorem, ut facilisis nisi tristique ac. Nullam in ante nulla. Morbi vel vehicula nunc. Nunc fermentum purus sed ex maximus pulvinar. Etiam dictum ante ac nisi dapibus tristique. Sed vel elit sit amet urna aliquam tristique. Cras enim nunc, imperdiet maximus urna sed, consectetur efficitur lacus. In in suscipit lacus. Vivamus efficitur ultrices libero vitae vulputate. Sed at mattis ligula. Ut tempor ultricies accumsan. Morbi ultricies magna nec tortor tincidunt fringilla. Donec convallis risus ac metus luctus cursus. Duis tempus purus odio, ac varius leo aliquam nec. Aliquam dapibus tincidunt lacus, quis elementum dui vehicula et. In non condimentum risus. Nunc vitae lacinia massa. Proin porttitor ultricies nisl, vel imperdiet eros pulvinar quis. Curabitur egestas, lorem vel vestibulum pharetra, sapien enim hendrerit nulla, in rutrum ligula eros a ipsum. Vestibulum in ligula sed metus commodo egestas."
-    },
-    {
-        title: "Sofa",
-        model: true,
-        titleImage: "/assets/images/sofa_cloth_sim.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus quis dui ultrices iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sagittis dui a ligula accumsan scelerisque. Duis varius at dui quis gravida. Nullam iaculis, nisi vitae dictum tempor, lorem dolor accumsan sapien, id porta justo libero non tortor. Aenean luctus at quam nec elementum. Morbi ut orci sed felis placerat eleifend quis eget elit. Cras finibus venenatis metus eget lacinia. Duis vehicula placerat lorem, ut facilisis nisi tristique ac. Nullam in ante nulla. Morbi vel vehicula nunc. Nunc fermentum purus sed ex maximus pulvinar. Etiam dictum ante ac nisi dapibus tristique. Sed vel elit sit amet urna aliquam tristique. Cras enim nunc, imperdiet maximus urna sed, consectetur efficitur lacus. In in suscipit lacus. Vivamus efficitur ultrices libero vitae vulputate. Sed at mattis ligula. Ut tempor ultricies accumsan. Morbi ultricies magna nec tortor tincidunt fringilla. Donec convallis risus ac metus luctus cursus. Duis tempus purus odio, ac varius leo aliquam nec. Aliquam dapibus tincidunt lacus, quis elementum dui vehicula et. In non condimentum risus. Nunc vitae lacinia massa. Proin porttitor ultricies nisl, vel imperdiet eros pulvinar quis. Curabitur egestas, lorem vel vestibulum pharetra, sapien enim hendrerit nulla, in rutrum ligula eros a ipsum. Vestibulum in ligula sed metus commodo egestas."
-    },
-    {
-        title: "Sonic Screwdrivers",
-        model: true,
-        titleImage: "/assets/images/sonics.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus quis dui ultrices iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sagittis dui a ligula accumsan scelerisque. Duis varius at dui quis gravida. Nullam iaculis, nisi vitae dictum tempor, lorem dolor accumsan sapien, id porta justo libero non tortor. Aenean luctus at quam nec elementum. Morbi ut orci sed felis placerat eleifend quis eget elit. Cras finibus venenatis metus eget lacinia. Duis vehicula placerat lorem, ut facilisis nisi tristique ac. Nullam in ante nulla. Morbi vel vehicula nunc. Nunc fermentum purus sed ex maximus pulvinar. Etiam dictum ante ac nisi dapibus tristique. Sed vel elit sit amet urna aliquam tristique. Cras enim nunc, imperdiet maximus urna sed, consectetur efficitur lacus. In in suscipit lacus. Vivamus efficitur ultrices libero vitae vulputate. Sed at mattis ligula. Ut tempor ultricies accumsan. Morbi ultricies magna nec tortor tincidunt fringilla. Donec convallis risus ac metus luctus cursus. Duis tempus purus odio, ac varius leo aliquam nec. Aliquam dapibus tincidunt lacus, quis elementum dui vehicula et. In non condimentum risus. Nunc vitae lacinia massa. Proin porttitor ultricies nisl, vel imperdiet eros pulvinar quis. Curabitur egestas, lorem vel vestibulum pharetra, sapien enim hendrerit nulla, in rutrum ligula eros a ipsum. Vestibulum in ligula sed metus commodo egestas."
+        model: false,
+        titleImage: "/assets/black-hole/blackhole.png",
+        images: [
+            "/assets/black-hole/blackhole1.png",
+            "/assets/black-hole/blackhole2.png"
+        ],
+        description: "Inspired by Interstellar's Gargantua Spinning Black Hole"
     },
     {
         title: "Wands",
-        model: true,
-        titleImage: "/assets/images/wands.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus quis dui ultrices iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sagittis dui a ligula accumsan scelerisque. Duis varius at dui quis gravida. Nullam iaculis, nisi vitae dictum tempor, lorem dolor accumsan sapien, id porta justo libero non tortor. Aenean luctus at quam nec elementum. Morbi ut orci sed felis placerat eleifend quis eget elit. Cras finibus venenatis metus eget lacinia. Duis vehicula placerat lorem, ut facilisis nisi tristique ac. Nullam in ante nulla. Morbi vel vehicula nunc. Nunc fermentum purus sed ex maximus pulvinar. Etiam dictum ante ac nisi dapibus tristique. Sed vel elit sit amet urna aliquam tristique. Cras enim nunc, imperdiet maximus urna sed, consectetur efficitur lacus. In in suscipit lacus. Vivamus efficitur ultrices libero vitae vulputate. Sed at mattis ligula. Ut tempor ultricies accumsan. Morbi ultricies magna nec tortor tincidunt fringilla. Donec convallis risus ac metus luctus cursus. Duis tempus purus odio, ac varius leo aliquam nec. Aliquam dapibus tincidunt lacus, quis elementum dui vehicula et. In non condimentum risus. Nunc vitae lacinia massa. Proin porttitor ultricies nisl, vel imperdiet eros pulvinar quis. Curabitur egestas, lorem vel vestibulum pharetra, sapien enim hendrerit nulla, in rutrum ligula eros a ipsum. Vestibulum in ligula sed metus commodo egestas."
+        model: {
+            path: "/assets/wands/wands.glb",
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1
+            },
+            lightIntensity: 3,
+        },
+        titleImage: "/assets/wands/wands.png",
+        images: [
+            "/assets/wands/wands2.png",
+            "/assets/wands/wands3.png"
+        ],
+        description: "Custom designed and made Harry Potter inspired Wands"
+    },
+    {
+        title: "Sabers",
+        model: {
+            path: "/assets/sabers/sabers.glb",
+            cameraPosition: {
+                x: 1,
+                y: 5,
+                z: 1
+            },
+            lightIntensity: 1,
+        },
+        titleImage: "/assets/sabers/sabers.png",
+        images: [
+            "/assets/sabers/sabers1.png",
+            "/assets/sabers/sabers2.png",
+            "/assets/sabers/sabers3.png",
+            "/assets/sabers/sabers4.png"
+        ],
+        description: "Lightsabers from the movie Star Wars."
+    },
+    {
+        title: "Screw Drivers",
+        model: {
+            path: "/assets/screw-drivers/sonic.glb",
+            cameraPosition: {
+                x: 3,
+                y: 3,
+                z: 0
+            },
+            lightIntensity: 1,
+        },
+        titleImage: "/assets/screw-drivers/sonic.png",
+        images: [
+            "/assets/screw-drivers/sonic1.png",
+            "/assets/screw-drivers/sonic2.png",
+            "/assets/screw-drivers/sonic3.png",
+            "/assets/screw-drivers/sonic4.png",
+            "/assets/screw-drivers/sonic5.png",
+            "/assets/screw-drivers/sonic6.png",
+            "/assets/screw-drivers/sonic7.png",
+            "/assets/screw-drivers/sonic8.png",
+            "/assets/screw-drivers/sonic9.png",
+            "/assets/screw-drivers/sonic10.png",
+            "/assets/screw-drivers/sonic11.png"
+        ],
+        description: "Sonic screwdrivers from the show 'Doctor Who'"
+    },
+    {
+        title: "Catwalk",
+        model: {
+            path: "/assets/catwalk/catwalk.glb",
+            cameraPosition: {
+                x: 10,
+                y: 3,
+                z: 0
+            },
+            lightIntensity: 5,
+        },
+        titleImage: "/assets/catwalk/catwalk.png",
+        images: [
+            "/assets/catwalk/catwalk2.png",
+            "/assets/catwalk/catwalk3.png"
+        ],
+        description: "Inspired by Star Wars 'I am your father' scene in Episode V: The Empire Strikes Back. Smoke simulation was used to recreate this iconic environment"
+    },
+    {
+        title: "Sonic Gun",
+        model: {
+            path: "/assets/sonic-gun/sonicgun.glb",
+            cameraPosition: {
+                x: 2,
+                y: 3,
+                z: 2
+            },
+            lightIntensity: 50,
+        },
+        titleImage: "/assets/sonic-gun/sonicgun.png",
+        images: [
+            "/assets/sonic-gun/sonicgun1.png",
+            "/assets/sonic-gun/sonicgun2.png",
+            "/assets/sonic-gun/sonicgun3.png"
+        ],
+        description: "A combination of lightsaber, sonic screwdriver and sci-fi shit"
+    },
+    {
+        title: "Sofa",
+        model: false,
+        titleImage: "/assets/sofa/sofa.png",
+        images: [
+            "/assets/sofa/sofa1.png",
+            "/assets/sofa/sofa2.png"
+        ],
+        description: "Sofa model with cloth simulation and inflation algorithms"
+    },
+    {
+        title: "Bulb Table",
+        model: {
+            path: "/assets/bulb-table/bulbtable.glb",
+            cameraPosition: {
+                x: 2,
+                y: 2,
+                z: 2
+            },
+            lightIntensity: 1,
+        },
+        titleImage: "/assets/bulb-table/bulbtable.png",
+        images: [
+            "/assets/bulb-table/bulbtable1.png",
+            "/assets/bulb-table/bulbtable2.png",
+            "/assets/bulb-table/bulbtable3.png",
+            "/assets/bulb-table/bulbtable4.png"
+        ],
+        description: "Used in design ideas of A Level Design and Technology. Bulb table is a table made of reused bulbs"
+    },
+    {
+        title: "Bic Pen",
+        model: {
+            path: "/assets/bic-pen/bicpen.glb",
+            cameraPosition: {
+                x: 3,
+                y: 10,
+                z: 3
+            },
+            lightIntensity: 1,
+        },
+        titleImage: "/assets/bic-pen/bicpen.png",
+        images: [
+            "/assets/bic-pen/bicpen1.png",
+        ],
+        description: "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
+    },
+    {
+        title: "Bin",
+        model: false,
+        titleImage: "/assets/dt-bin/dtbin.png",
+        images: [
+            "/assets/dt-bin/dtbin1.png",
+            "/assets/dt-bin/dtbin2.png"
+        ],
+        description: "Used in design ideas of A Level Design and Technology. Modular bin with expandable and contractable compartments along with magnetic slider for separation of ferrous metals"
     },
 ];
 /* harmony default export */ __webpack_exports__["default"] = (projects);
