@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, animate, transition, style, query } from '@angular/animations';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -44,9 +44,9 @@ export class AppComponent implements OnInit {
 
   constructor(private router: Router) {
     router.events.subscribe((val) => {
-      this.currentTile = 0;
       if (window.innerWidth > 600) {
         setTimeout(() => {
+          this.currentScrollValue = 0;
           document.getElementById("main").scroll({
             top: 0,
             left: 0,
@@ -58,6 +58,7 @@ export class AppComponent implements OnInit {
         }, 250);
       }
       else {
+        this.currentScrollValue = 0;
         document.getElementById("main").scroll({
           top: 0,
           left: 0,
@@ -70,42 +71,45 @@ export class AppComponent implements OnInit {
     });
   }
 
-  currentTile: number = 0;
+  currentScrollValue: number = 0;
+  opacity: number = Math.min(this.currentScrollValue, window.innerWidth * 0.4) / window.innerWidth * 0.4;
 
   scrollHorizontally($event) {
 
     if (window.innerWidth > 600) {
 
-      console.log("scrilliong")
-      
-      const tiles = document.getElementsByClassName("item");
+      const main = document.getElementById("main");
   
       $event = window.event || $event;
       $event.preventDefault();
       
       var direction = Math.max(-1, Math.min(1, ($event.wheelDelta || -$event.detail)));
-      this.currentTile -= direction;
       
-      if (this.currentTile >= tiles.length) {
-        this.currentTile = tiles.length - 1;
+      var limit = Math.max( document.body.scrollWidth, document.body.offsetWidth, 
+        main.scrollWidth, main.offsetWidth );
+      var position = this.currentScrollValue - (direction * 50);
+
+      if (position < 0) {
+        position = 0;
       }
-      if (this.currentTile < 0) {
-        this.currentTile = 0;
+      if (position > limit) {
+        position = limit;
       }
-      
-      if (this.currentTile === 0) {
-        document.getElementById("main").scroll({
-          top: 0,
-          left: 0,
-          behavior: 'smooth',
-        });
-      }
-      else {
-        document.getElementsByClassName("item")[this.currentTile].scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
+
+      this.currentScrollValue = position;
+      this.opacity = Math.min(this.currentScrollValue, window.innerWidth * 0.4) / window.innerWidth * 0.4;
     }
+  }
+
+  scrollPage() {
+    const main = document.getElementById("main");
+    main.scroll({
+      top: 0,
+      left: this.currentScrollValue,
+    });
+    setTimeout(() => {
+      this.scrollPage();
+    }, 5);
   }
 
   ngOnInit() {
@@ -113,5 +117,7 @@ export class AppComponent implements OnInit {
     document.getElementById('main').addEventListener('mousewheel', ($event) => this.scrollHorizontally($event));
     // Firefox
     document.getElementById('main').addEventListener('DOMMouseScroll', ($event) => this.scrollHorizontally($event));
+
+    this.scrollPage();
   }
 }
