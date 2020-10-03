@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
 
   projects: any;
   currentImage: number = 0;
+  menuOpacity: number = 1;
+  menuScale: number = 1;
 
   constructor(private router: Router, private activatedroute: ActivatedRoute) {}
 
@@ -23,11 +25,24 @@ export class HomeComponent implements OnInit {
 
     this.router.navigateByUrl(url);
   }
+
+  updateScroll(event) {
+    const el = document.getElementById('main');
+    
+    const scrollRatio = el.scrollLeft / window.innerWidth;
+    this.menuOpacity = 1 - scrollRatio * 2;
+    this.menuScale = 1 - scrollRatio / 2; 
+  }
  
   ngOnInit() {
-
     this.activatedroute.data.subscribe(data => {
       this.projects = data.projects;
     })
+
+    setTimeout(() => {
+      document.getElementById("work-link").classList.add("current-page");
+    }, 700);
+
+    document.getElementById('main').addEventListener('scroll', ($event) => this.updateScroll($event));
   }
 }

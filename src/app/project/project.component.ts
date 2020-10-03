@@ -16,14 +16,27 @@ export class ProjectComponent implements OnInit {
 
   project: any;
   el: any;
+  menuOpacity: number = 1;
+  menuScale: number = 1;
 
   constructor(private activatedRoute:ActivatedRoute) {}
  
-  ngOnInit() {
+  updateScroll(event) {
+    const el = document.getElementById('main');
     
+    const scrollRatio = el.scrollLeft / window.innerWidth;
+    this.menuOpacity = 1 - scrollRatio * 2;
+    this.menuScale = 1 - scrollRatio / 2; 
+  }
+
+  ngOnInit() {
     this.activatedRoute.data.subscribe(data => {
       this.project = data.project;
     })
+    Array.from(document.getElementsByClassName("link")).forEach(element => {
+      element.classList.remove("current-page");
+    });
+    document.getElementById('main').addEventListener('scroll', ($event) => this.updateScroll($event));
   }
 
   initialiseModel() {

@@ -37,27 +37,12 @@ export class AppComponent implements OnInit {
 
 
   getRouterOutletState(outlet) {
-    if (window.innerWidth > 600) {
-      return outlet.isActivated ? outlet.activatedRoute : '';
-    }
+    return outlet.isActivated ? outlet.activatedRoute : '';
   }
 
   constructor(private router: Router) {
     router.events.subscribe((val) => {
-      if (window.innerWidth > 600) {
-        setTimeout(() => {
-          this.currentScrollValue = 0;
-          document.getElementById("main").scroll({
-            top: 0,
-            left: 0,
-          });
-          window.scroll({
-            top: 0,
-            left: 0,
-          });
-        }, 250);
-      }
-      else {
+      setTimeout(() => {
         this.currentScrollValue = 0;
         document.getElementById("main").scroll({
           top: 0,
@@ -67,49 +52,36 @@ export class AppComponent implements OnInit {
           top: 0,
           left: 0,
         });
-      }
+      }, 250);
     });
   }
 
   currentScrollValue: number = 0;
-  opacity: number = Math.min(this.currentScrollValue, window.innerWidth * 0.4) / window.innerWidth * 0.4;
 
   scrollHorizontally($event) {
-
-    if (window.innerWidth > 600) {
-
-      const main = document.getElementById("main");
-  
-      $event = window.event || $event;
-      $event.preventDefault();
-      
-      var direction = Math.max(-1, Math.min(1, ($event.wheelDelta || -$event.detail)));
-      
-      var limit = Math.max( document.body.scrollWidth, document.body.offsetWidth, 
-        main.scrollWidth, main.offsetWidth );
-      var position = this.currentScrollValue - (direction * 50);
-
-      if (position < 0) {
-        position = 0;
-      }
-      if (position > limit) {
-        position = limit;
-      }
-
-      this.currentScrollValue = position;
-      this.opacity = Math.min(this.currentScrollValue, window.innerWidth * 0.4) / window.innerWidth * 0.4;
-    }
-  }
-
-  scrollPage() {
     const main = document.getElementById("main");
+
+    $event = window.event || $event;
+    $event.preventDefault();
+    
+    var direction = Math.max(-1, Math.min(1, ($event.wheelDelta || -$event.detail)));
+    
+    var limit = Math.max( document.body.scrollWidth, document.body.offsetWidth, 
+      main.scrollWidth, main.offsetWidth );
+    var position = this.currentScrollValue - (direction * 50);
+
+    if (position < 0) {
+      position = 0;
+    }
+    if (position > limit) {
+      position = limit;
+    }
+
+    this.currentScrollValue = position;
     main.scroll({
       top: 0,
       left: this.currentScrollValue,
     });
-    setTimeout(() => {
-      this.scrollPage();
-    }, 5);
   }
 
   ngOnInit() {
@@ -118,6 +90,5 @@ export class AppComponent implements OnInit {
     // Firefox
     document.getElementById('main').addEventListener('DOMMouseScroll', ($event) => this.scrollHorizontally($event));
 
-    this.scrollPage();
   }
 }
