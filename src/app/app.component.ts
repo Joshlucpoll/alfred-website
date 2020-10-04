@@ -60,6 +60,7 @@ export class AppComponent implements OnInit {
 
   scrollHorizontally($event) {
     const main = document.getElementById("main");
+    this.currentScrollValue = main.scrollLeft;
 
     $event = window.event || $event;
     $event.preventDefault();

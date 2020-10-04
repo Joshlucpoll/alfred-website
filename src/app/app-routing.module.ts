@@ -22,7 +22,7 @@ projects.forEach((project) => {
   routes.unshift({
     path: urlify(project.title),
     component: ProjectComponent,
-    data: {project: project}
+    data: {project: project, projects: projects}
   })
 })
 

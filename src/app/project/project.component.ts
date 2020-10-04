@@ -15,24 +15,55 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 export class ProjectComponent implements OnInit {
 
   project: any;
-  el: any;
+  projects: any;
+  nextProject: any;
+  nextProjectURL: any;
+
   menuOpacity: number = 1;
   menuScale: number = 1;
 
+  el: any;
+  
   constructor(private activatedRoute:ActivatedRoute) {}
  
   updateScroll(event) {
-    const el = document.getElementById('main');
+    const main = document.getElementById('main');
     
-    const scrollRatio = el.scrollLeft / window.innerWidth;
-    this.menuOpacity = 1 - scrollRatio * 2;
-    this.menuScale = 1 - scrollRatio / 2; 
+    var limit = Math.max( document.body.scrollWidth, document.body.offsetWidth, 
+      main.scrollWidth, main.offsetWidth );
+
+    const startScrollRatio = main.scrollLeft / Math.max(window.innerWidth / 40, 400);
+
+    this.menuOpacity = 1 - startScrollRatio;
+    this.menuScale = 1 - startScrollRatio / 20; 
+
+    const endScrollRatio = (limit - main.scrollLeft) / (window.innerWidth / 2);
+    console.log(limit, main.scrollLeft)
+  }
+
+  backButton() {
+    document.getElementById('main').scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    })
   }
 
   ngOnInit() {
     this.activatedRoute.data.subscribe(data => {
       this.project = data.project;
+      this.projects = data.projects;
     })
+
+    const urlify = function(a){return a.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "-").replace(/^-+|-+$/g, '')};
+
+    const currentProjectIndex = this.projects.findIndex(project => project === this.project);
+    const nextIndex = (currentProjectIndex + 1) % this.projects.length;
+
+    this.nextProject = this.projects[nextIndex];
+    this.nextProjectURL = "/" + urlify(this.nextProject.title);
+
+
     Array.from(document.getElementsByClassName("link")).forEach(element => {
       element.classList.remove("current-page");
     });

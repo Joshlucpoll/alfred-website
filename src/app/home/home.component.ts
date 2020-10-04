@@ -26,12 +26,20 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl(url);
   }
 
+  backButton() {
+    document.getElementById('main').scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    })
+  }
+
   updateScroll(event) {
     const el = document.getElementById('main');
     
-    const scrollRatio = el.scrollLeft / window.innerWidth;
-    this.menuOpacity = 1 - scrollRatio * 2;
-    this.menuScale = 1 - scrollRatio / 2; 
+    const scrollRatio = el.scrollLeft / Math.max(window.innerWidth / 40, 400);
+    this.menuOpacity = 1 - scrollRatio;
+    this.menuScale = 1 - scrollRatio / 20; 
   }
  
   ngOnInit() {

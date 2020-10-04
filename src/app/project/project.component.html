@@ -32,5 +32,14 @@
     <li *ngFor="let image of project.images" class="item item-colour">
       <img src={{image}} class="image"/>
     </li>
+    <li class="next-back-buttons item">
+      <a class="project-buttons" routerLink={{nextProjectURL}} routerLinkActive="active">
+        <img src={{nextProject.titleImage}} class="next-image">
+        <span>Next Project ⟶</span>
+      </a>
+      <div (click)="backButton()" class="project-buttons">
+        ⟵ Back
+      </div>
+    </li>
   </div>
 </div>
