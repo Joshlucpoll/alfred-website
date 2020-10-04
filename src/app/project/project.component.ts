@@ -38,7 +38,6 @@ export class ProjectComponent implements OnInit {
     this.menuScale = 1 - startScrollRatio / 20; 
 
     const endScrollRatio = (limit - main.scrollLeft) / (window.innerWidth / 2);
-    console.log(limit, main.scrollLeft)
   }
 
   backButton() {

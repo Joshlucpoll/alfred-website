@@ -77,14 +77,15 @@
   .images {
     position: absolute;
     top: 0;
-    height: 100%;
+    height: 100vh;
 
     display: flex;
     flex-direction: row;
     
     .item {
       position: relative;
-      width: 50vw;
+      width: fit-content;
+      // max-width: 100vw;
       height: 100vh;
       padding: 0 10px;
       transition: width ease 500ms;
@@ -97,8 +98,9 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: calc(100% - 10vw);
-        width: calc(100% - 10vw);
+        height: calc(100vh - 10vw);
+        width: 40vw;
+        min-width: 400px;
         
         color: rgba(255, 255, 255, 0.6);
         padding: 5vw;
@@ -122,13 +124,15 @@
       }
       
       .image {
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        max-width: 100vw;
         object-fit: contain;
       }
     }
 
     .next-back-buttons {
+      width: 40vw;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
