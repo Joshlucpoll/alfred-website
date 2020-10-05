@@ -173,3 +173,25 @@
     margin-left: 400px;
   }
 }
+
+
+@media (hover: none) {
+  .projects-container {
+    .projects {
+      .item {
+        .project-info {
+          background-color: #181a1b9a;
+
+          .project-title {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          .view-button {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
