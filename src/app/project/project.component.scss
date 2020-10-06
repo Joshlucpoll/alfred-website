@@ -98,12 +98,14 @@
 
 .images-container {
   display: inline-block;
-  margin-left: 40vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 40vw;
+  pointer-events: none;
   
   .images {
-    position: absolute;
-    top: 0;
-    height: 100vh;
+    height: 100%;
 
     display: flex;
     flex-direction: row;
@@ -116,6 +118,7 @@
       transition: width ease 500ms;
       list-style: none;
       background-color: #131414ea;
+      pointer-events: all;
 
       
       .description {

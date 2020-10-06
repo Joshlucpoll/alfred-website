@@ -99,11 +99,13 @@
 
 .projects-container {
   display: inline-block;
-  margin-left: 40vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 40vw;
+  pointer-events: none;
   
   .projects {
-    position: absolute;
-    top: 0;
     height: 100%;
 
     display: flex;
@@ -115,8 +117,8 @@
       min-width: 400px;
       height: 100vh;
       list-style: none;
+      pointer-events: all;
       cursor: pointer;
-      
       
       .images {
         height: 100%;
@@ -196,7 +198,7 @@
   
 @media only screen and (max-width: 1000px) {
   .projects-container {
-    margin-left: 400px;
+    padding-left: 400px;
   }
 }
 
