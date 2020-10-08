@@ -55,13 +55,13 @@
           } 
           
           &:hover:before {
-            transform: translate(-2px, -2px);
+            transform: translate(-1px, -1px);
             opacity: 1;
           }
         }
         .current-page {
           &:before {
-            transform: translate(-2px, -2px);
+            transform: translate(-1px, -1px);
             opacity: 1;
           }
         }
@@ -103,6 +103,7 @@
   left: 0;
   padding-left: 40vw;
   pointer-events: none;
+  z-index: 1;
   
   .images {
     height: 100%;
@@ -206,6 +207,6 @@
 
 @media only screen and (max-width: 1000px) {
   .images-container {
-    margin-left: 400px;
+    padding-left: 400px;
   }
 }
