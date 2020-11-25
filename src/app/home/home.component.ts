@@ -18,14 +18,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private activatedroute: ActivatedRoute) {}
 
-  onClick(project) {
-    const urlify = function(a){return a.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "-").replace(/^-+|-+$/g, '')};
-    const url = '/' + urlify(project.title);
-    
-
-    this.router.navigateByUrl(url);
-  }
-
   backButton() {
     document.getElementById('main').scrollTo({
       top: 0,

@@ -17,13 +17,16 @@
     <li 
       class="item"
       *ngFor="let project of projects"
-      (click)="onClick(project)"
     >
-      <img src={{project.titleImage}} class="images"/>
-      <div class="project-info">
-        <div class="project-title">{{ project.title }}</div>
-        <div class="view-button">View</div>
-      </div>
+      <a routerLink={{project.path()}}>
+        <div class="image-container">
+          <img src={{project.titleImage}} class="images"/>
+        </div>
+        <div class="project-info">
+          <div class="project-title">{{ project.title }}</div>
+          <div class="view-button">View ⟶</div>
+        </div>
+    </a>
     </li>
     <li (click)="backButton()" class="item back-button">
       ⟵ Back
