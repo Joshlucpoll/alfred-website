@@ -1,6 +1,28 @@
-const projects = [
+const urlify = function(a){return a.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "-").replace(/^-+|-+$/g, '')};
+
+interface Project {
+  title: string,
+  path: () => string,
+  model: false | {
+    path: string,
+    cameraPosition: {
+      x: number,
+      y: number,
+      z: number
+    },
+    lightIntensity: number
+  },
+  titleImage: string,
+  images: Array<string>,
+  description: string
+}
+
+interface Projects extends Array<Project> {};
+
+const projects: Projects = [
   {
     title: "Black Hole",
+    path: function() {return "/" + urlify(this.title)},
     model: false,
     titleImage: "/assets/black-hole/blackhole.png",
     images: [
@@ -10,7 +32,56 @@ const projects = [
     description: "Inspired by Interstellar's Gargantua Spinning Black Hole"
   },
   {
+    title: "Vader",
+    path: function() {return "/" + urlify(this.title)},
+    model: {
+      path: "/assets/vader/vader.glb",
+      cameraPosition: {
+        x: 1,
+        y: 4,
+        z: 1
+      },
+      lightIntensity: 1
+    },
+    titleImage: "/assets/vader/vader.png",
+    images: [
+      "/assets/vader/vader2.png",
+      "/assets/vader/vader3.png"
+    ],
+    description: "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'"
+  },
+  {
+    title: "Mandalorian",
+    path: function() {return "/" + urlify(this.title)},
+    model: {
+      path: "/assets/mando/mando.glb",
+      cameraPosition: {
+        x: 1,
+        y: 4,
+        z: 1
+      },
+      lightIntensity: 1
+    },
+    titleImage: "/assets/mando/mando.png",
+    images: [
+      "/assets/mando/mando2.png",
+      "/assets/mando/mando3.png"
+    ],
+    description: "The Mandolorian's helmet from 'Star Wars: The Mandalorian'"
+  },
+  {
+    title: "Bergmann",
+    path: function() {return "/" + urlify(this.title)},
+    model: false,
+    titleImage: "/assets/bergman/bergman.jpg",
+    images: [
+      "/assets/bergman/bergman2.jpg",
+    ],
+    description: "The Bergmann was a 19th-century semi-automatic pistol developed by German designer Louis Schmeisser and sold by Theodor Bergmann's company."
+  },
+  {
     title: "Wands",
+    path: function() {return "/" + urlify(this.title)},
     model: {
       path: "/assets/wands/wands.glb",
       cameraPosition: {
@@ -29,6 +100,7 @@ const projects = [
   },
   {
     title: "Sabers",
+    path: function() {return "/" + urlify(this.title)},
     model: {
       path: "/assets/sabers/sabers.glb",
       cameraPosition: {
@@ -49,6 +121,7 @@ const projects = [
   },
   {
     title: "Screw Drivers",
+    path: function() {return "/" + urlify(this.title)},
     model: {
       path: "/assets/screw-drivers/sonic.glb",
       cameraPosition: {
@@ -76,6 +149,7 @@ const projects = [
   },
   {
     title: "Catwalk",
+    path: function() {return "/" + urlify(this.title)},
     model: {
       path: "/assets/catwalk/catwalk.glb",
       cameraPosition: {
@@ -94,6 +168,7 @@ const projects = [
   },
   {
     title: "Sonic Gun",
+    path: function() {return "/" + urlify(this.title)},
     model: {
       path: "/assets/sonic-gun/sonicgun.glb",
       cameraPosition: {
@@ -113,6 +188,7 @@ const projects = [
   },
   {
     title: "Sofa",
+    path: function() {return "/" + urlify(this.title)},
     model: false,
     titleImage: "/assets/sofa/sofa.png",
     images: [
@@ -123,6 +199,7 @@ const projects = [
   },
   {
     title: "Bulb Table",
+    path: function() {return "/" + urlify(this.title)},
     model: {
       path: "/assets/bulb-table/bulbtable.glb",
       cameraPosition: {
@@ -143,6 +220,7 @@ const projects = [
   },
   {
     title: "Bic Pen",
+    path: function() {return "/" + urlify(this.title)},
     model: {
       path: "/assets/bic-pen/bicpen.glb",
       cameraPosition: {
@@ -160,6 +238,7 @@ const projects = [
   },
   {
     title: "Bin",
+    path: function() {return "/" + urlify(this.title)},
     model: false,
     titleImage: "/assets/dt-bin/dtbin.png",
     images: [
@@ -169,5 +248,7 @@ const projects = [
     description: "Used in design ideas of A Level Design and Technology. Modular bin with expandable and contractable compartments along with magnetic slider for separation of ferrous metals"
   },
 ];
+
+// console.log(projects[0].path())
 
 export default projects;
