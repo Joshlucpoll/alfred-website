@@ -35,7 +35,9 @@
     </li>
     <li class="next-back-buttons item">
       <a class="project-buttons" routerLink={{nextProjectURL}} routerLinkActive="active">
-        <img src={{nextProject.titleImage}} class="next-image">
+        <div class="next-project-image-container">
+          <img src={{nextProject.titleImage}} class="next-image">
+        </div>
         <span>Next Project ⟶</span>
       </a>
       <div (click)="backButton()" class="project-buttons">

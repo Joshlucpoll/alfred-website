@@ -6,7 +6,6 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
@@ -86,17 +85,41 @@ export class ProjectComponent implements OnInit {
   
         document.getElementById("main").appendChild(this.el);
         this.el.appendChild(closeButton);
-  
-  
+
+        let scene = new THREE.Scene();
+
         let renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.outputEncoding = THREE.sRGBEncoding;
         renderer.setSize( this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80 );
         this.el.appendChild( renderer.domElement );
-        
-        let scene = new THREE.Scene();
-        
+
+        let pngBackground, pngCubeRenderTarget;
+
+
+        THREE.DefaultLoadingManager.onLoad = function ( ) {
+
+          pmremGenerator.dispose();
+
+        };
+
+        new THREE.TextureLoader().load( '/assets/envMap.png', function ( texture ) {
+
+          texture.encoding = THREE.sRGBEncoding;
+
+          pngCubeRenderTarget = pmremGenerator.fromEquirectangular( texture );
+
+          pngBackground = pngCubeRenderTarget.texture;
+
+          texture.dispose();
+
+        } );
+
+
+        const pmremGenerator = new THREE.PMREMGenerator( renderer );
+        pmremGenerator.compileEquirectangularShader();
 
         // scene.fog = new THREE.Fog(new THREE.Color(0xffffff), 0, 20)
-        scene.background = new THREE.Color(0xDCDCDC)
+        // scene.background = new THREE.Color(0xDCDCDC)
   
         let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.set(
@@ -112,6 +135,7 @@ export class ProjectComponent implements OnInit {
   
         loader.load(this.project.model.path, function ( gltf ) {
           
+          // const newScene = gltf.scene.mater
           scene.add( gltf.scene );
   
         }, undefined, function ( error ) {
@@ -121,25 +145,30 @@ export class ProjectComponent implements OnInit {
   
         });
   
-        var controls = new OrbitControls( camera, renderer.domElement );
-        controls.target = new THREE.Vector3(0, 0, 0);
-        controls.enableDamping = true;
-  
-  
         var pointLight = new THREE.PointLight( 0xffffff, this.project.lightIntensity, 100 );
         pointLight.position.set( 10, 10, 10 );
         scene.add( pointLight );
         var pointLight = new THREE.PointLight( 0xffffff, this.project.lightIntensity, 100 );
         pointLight.position.set( -10, 10, -10 );
         scene.add( pointLight );
+        const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+        light.intensity = 10
+        scene.add( light );
         
+
+        var controls = new OrbitControls( camera, renderer.domElement );
+        controls.target = new THREE.Vector3(0, 0, 0);
+        controls.enableDamping = true;
         controls.update()
+
+        
   
         var windowSize = this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height;
         
         const animate = () => {
           requestAnimationFrame( animate );
-  
+
+          
           if (this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height !== windowSize) {
             renderer.setSize( this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80 );
             
@@ -149,6 +178,7 @@ export class ProjectComponent implements OnInit {
           }
           
           renderer.render( scene, camera );
+          scene.background = pngBackground;
         }
         animate();
       }
