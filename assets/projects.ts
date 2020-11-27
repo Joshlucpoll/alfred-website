@@ -10,7 +10,6 @@ interface Project {
       y: number,
       z: number
     },
-    lightIntensity: number
   },
   titleImage: string,
   images: Array<string>,
@@ -41,7 +40,6 @@ const projects: Projects = [
         y: 4,
         z: 1
       },
-      lightIntensity: 1
     },
     titleImage: "/assets/vader/vader.png",
     images: [
@@ -60,7 +58,6 @@ const projects: Projects = [
         y: 4,
         z: 1
       },
-      lightIntensity: 1
     },
     titleImage: "/assets/mando/mando.png",
     images: [
@@ -89,7 +86,6 @@ const projects: Projects = [
         y: 4,
         z: 1
       },
-      lightIntensity: 3,
     },
     titleImage: "/assets/wands/wands.png",
     images: [
@@ -108,7 +104,6 @@ const projects: Projects = [
         y: 5,
         z: 1
       },
-      lightIntensity: 1,
     },
     titleImage: "/assets/sabers/sabers.png",
     images: [
@@ -129,7 +124,6 @@ const projects: Projects = [
         y: 3,
         z: 0
       },
-      lightIntensity: 1,
     },
     titleImage: "/assets/screw-drivers/sonic.png",
     images: [
@@ -157,7 +151,6 @@ const projects: Projects = [
         y: 3,
         z: 0
       },
-      lightIntensity: 5,
     },
     titleImage: "/assets/catwalk/catwalk.png",
     images: [
@@ -176,7 +169,6 @@ const projects: Projects = [
         y: 3,
         z: 2
       },
-      lightIntensity: 50,
     },
     titleImage: "/assets/sonic-gun/sonicgun.png",
     images: [
@@ -207,7 +199,6 @@ const projects: Projects = [
         y: 2,
         z: 2
       },
-      lightIntensity: 1,
     },
     titleImage: "/assets/bulb-table/bulbtable.png",
     images: [
@@ -228,7 +219,6 @@ const projects: Projects = [
         y: 10,
         z: 3
       },
-      lightIntensity: 1,
     },
     titleImage: "/assets/bic-pen/bicpen.png",
     images: [

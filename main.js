@@ -489,20 +489,18 @@ class ProjectComponent {
                 renderer.outputEncoding = three__WEBPACK_IMPORTED_MODULE_1__["sRGBEncoding"];
                 renderer.setSize(this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80);
                 this.el.appendChild(renderer.domElement);
-                let pngBackground, pngCubeRenderTarget;
                 three__WEBPACK_IMPORTED_MODULE_1__["DefaultLoadingManager"].onLoad = function () {
                     pmremGenerator.dispose();
                 };
                 new three__WEBPACK_IMPORTED_MODULE_1__["TextureLoader"]().load('/assets/envMap.png', function (texture) {
                     texture.encoding = three__WEBPACK_IMPORTED_MODULE_1__["sRGBEncoding"];
-                    pngCubeRenderTarget = pmremGenerator.fromEquirectangular(texture);
-                    pngBackground = pngCubeRenderTarget.texture;
+                    let pngBackground = pmremGenerator.fromEquirectangular(texture).texture;
+                    scene.environment = pngBackground;
                     texture.dispose();
                 });
                 const pmremGenerator = new three__WEBPACK_IMPORTED_MODULE_1__["PMREMGenerator"](renderer);
                 pmremGenerator.compileEquirectangularShader();
-                // scene.fog = new THREE.Fog(new THREE.Color(0xffffff), 0, 20)
-                // scene.background = new THREE.Color(0xDCDCDC)
+                scene.background = new three__WEBPACK_IMPORTED_MODULE_1__["Color"](0xDCDCDC);
                 let camera = new three__WEBPACK_IMPORTED_MODULE_1__["PerspectiveCamera"](75, window.innerWidth / window.innerHeight, 0.1, 1000);
                 camera.position.set(this.project.model.cameraPosition.x, this.project.model.cameraPosition.y, this.project.model.cameraPosition.z);
                 scene.add(camera);
@@ -514,14 +512,8 @@ class ProjectComponent {
                     console.error(error);
                     return null;
                 });
-                var pointLight = new three__WEBPACK_IMPORTED_MODULE_1__["PointLight"](0xffffff, this.project.lightIntensity, 100);
-                pointLight.position.set(10, 10, 10);
-                scene.add(pointLight);
-                var pointLight = new three__WEBPACK_IMPORTED_MODULE_1__["PointLight"](0xffffff, this.project.lightIntensity, 100);
-                pointLight.position.set(-10, 10, -10);
-                scene.add(pointLight);
                 const light = new three__WEBPACK_IMPORTED_MODULE_1__["AmbientLight"](0x404040); // soft white light
-                light.intensity = 10;
+                // light.intensity = 10
                 scene.add(light);
                 var controls = new three_examples_jsm_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_3__["OrbitControls"](camera, renderer.domElement);
                 controls.target = new three__WEBPACK_IMPORTED_MODULE_1__["Vector3"](0, 0, 0);
@@ -537,7 +529,6 @@ class ProjectComponent {
                         controls.update();
                     }
                     renderer.render(scene, camera);
-                    scene.background = pngBackground;
                 };
                 animate();
             }
@@ -664,7 +655,6 @@ const projects = [
                 y: 4,
                 z: 1
             },
-            lightIntensity: 1
         },
         titleImage: "/assets/vader/vader.png",
         images: [
@@ -683,7 +673,6 @@ const projects = [
                 y: 4,
                 z: 1
             },
-            lightIntensity: 1
         },
         titleImage: "/assets/mando/mando.png",
         images: [
@@ -712,7 +701,6 @@ const projects = [
                 y: 4,
                 z: 1
             },
-            lightIntensity: 3,
         },
         titleImage: "/assets/wands/wands.png",
         images: [
@@ -731,7 +719,6 @@ const projects = [
                 y: 5,
                 z: 1
             },
-            lightIntensity: 1,
         },
         titleImage: "/assets/sabers/sabers.png",
         images: [
@@ -752,7 +739,6 @@ const projects = [
                 y: 3,
                 z: 0
             },
-            lightIntensity: 1,
         },
         titleImage: "/assets/screw-drivers/sonic.png",
         images: [
@@ -780,7 +766,6 @@ const projects = [
                 y: 3,
                 z: 0
             },
-            lightIntensity: 5,
         },
         titleImage: "/assets/catwalk/catwalk.png",
         images: [
@@ -799,7 +784,6 @@ const projects = [
                 y: 3,
                 z: 2
             },
-            lightIntensity: 50,
         },
         titleImage: "/assets/sonic-gun/sonicgun.png",
         images: [
@@ -830,7 +814,6 @@ const projects = [
                 y: 2,
                 z: 2
             },
-            lightIntensity: 1,
         },
         titleImage: "/assets/bulb-table/bulbtable.png",
         images: [
@@ -851,7 +834,6 @@ const projects = [
                 y: 10,
                 z: 3
             },
-            lightIntensity: 1,
         },
         titleImage: "/assets/bic-pen/bicpen.png",
         images: [
