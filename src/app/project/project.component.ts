@@ -93,33 +93,26 @@ export class ProjectComponent implements OnInit {
         renderer.setSize( this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80 );
         this.el.appendChild( renderer.domElement );
 
-        let pngBackground, pngCubeRenderTarget;
-
 
         THREE.DefaultLoadingManager.onLoad = function ( ) {
-
           pmremGenerator.dispose();
-
         };
-
         new THREE.TextureLoader().load( '/assets/envMap.png', function ( texture ) {
 
           texture.encoding = THREE.sRGBEncoding;
 
-          pngCubeRenderTarget = pmremGenerator.fromEquirectangular( texture );
+          let pngBackground = pmremGenerator.fromEquirectangular( texture ).texture;
 
-          pngBackground = pngCubeRenderTarget.texture;
+          scene.environment = pngBackground
 
           texture.dispose();
 
         } );
-
-
         const pmremGenerator = new THREE.PMREMGenerator( renderer );
         pmremGenerator.compileEquirectangularShader();
 
-        // scene.fog = new THREE.Fog(new THREE.Color(0xffffff), 0, 20)
-        // scene.background = new THREE.Color(0xDCDCDC)
+
+        scene.background = new THREE.Color(0xDCDCDC)
   
         let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.set(
@@ -144,15 +137,10 @@ export class ProjectComponent implements OnInit {
           return null;
   
         });
-  
-        var pointLight = new THREE.PointLight( 0xffffff, this.project.lightIntensity, 100 );
-        pointLight.position.set( 10, 10, 10 );
-        scene.add( pointLight );
-        var pointLight = new THREE.PointLight( 0xffffff, this.project.lightIntensity, 100 );
-        pointLight.position.set( -10, 10, -10 );
-        scene.add( pointLight );
+
+
         const light = new THREE.AmbientLight( 0x404040 ); // soft white light
-        light.intensity = 10
+        // light.intensity = 10
         scene.add( light );
         
 
@@ -161,14 +149,12 @@ export class ProjectComponent implements OnInit {
         controls.enableDamping = true;
         controls.update()
 
-        
-  
+
         var windowSize = this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height;
         
         const animate = () => {
           requestAnimationFrame( animate );
 
-          
           if (this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height !== windowSize) {
             renderer.setSize( this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80 );
             
@@ -176,9 +162,8 @@ export class ProjectComponent implements OnInit {
             camera.updateProjectionMatrix();
             controls.update()
           }
-          
+
           renderer.render( scene, camera );
-          scene.background = pngBackground;
         }
         animate();
       }
