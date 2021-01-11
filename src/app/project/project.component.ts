@@ -147,6 +147,7 @@ export class ProjectComponent implements OnInit {
         var controls = new OrbitControls( camera, renderer.domElement );
         controls.target = new THREE.Vector3(0, 0, 0);
         controls.enableDamping = true;
+        controls.dampingFactor = 0.07;
         controls.update()
 
 
@@ -160,9 +161,8 @@ export class ProjectComponent implements OnInit {
             
             camera.aspect = (this.el.getBoundingClientRect().width - 20) / (this.el.getBoundingClientRect().height - 80);
             camera.updateProjectionMatrix();
-            controls.update()
           }
-
+          controls.update() 
           renderer.render( scene, camera );
         }
         animate();
