@@ -12,7 +12,8 @@ interface Project {
     },
   },
   titleImage: string,
-  images: Array<string>,
+  images: false | Array<string>,
+  videos: false | Array<string>,
   description: string
 }
 
@@ -28,6 +29,7 @@ const projects: Projects = [
       "/assets/black-hole/blackhole1.png",
       "/assets/black-hole/blackhole2.png"
     ],
+    videos: false,
     description: "Inspired by Interstellar's Gargantua Spinning Black Hole"
   },
   {
@@ -47,6 +49,7 @@ const projects: Projects = [
       "/assets/tie-fighter/tie-fighter3.png",
       "/assets/tie-fighter/tie-fighter4.png"
     ],
+    videos: false,
     description: "The TIE (Twin Ion Engine) fighter is the backbone of the Empire, where it lack in shields, it makes up in speed and maneuverability"
   },
   {
@@ -65,7 +68,17 @@ const projects: Projects = [
       "/assets/vader/vader2.png",
       "/assets/vader/vader3.png"
     ],
+    videos: false,
     description: "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'"
+  },
+  {
+    title: "Corridor",
+    path: function() {return "/" + urlify(this.title)},
+    model: false,
+    titleImage: "/assets/corridor/corridor.png",
+    images: false,
+    videos: ["/assets/corridor/corridor.mp4"],
+    description: "Infinite corridor animation"
   },
   {
     title: "Phasmophobia Lobby",
@@ -78,6 +91,7 @@ const projects: Projects = [
       "/assets/phasmo/phasmo4.png",
       "/assets/phasmo/phasmo5.png"
     ],
+    videos: false,
     description: "From the Phasmophobia game, this is the operations hub of your ghost hunting business, where you detect paranormal activity"
   },
   {
@@ -96,6 +110,7 @@ const projects: Projects = [
       "/assets/mando/mando2.png",
       "/assets/mando/mando3.png"
     ],
+    videos: false,
     description: "The Mandolorian's helmet from 'Star Wars: The Mandalorian'"
   },
   {
@@ -106,6 +121,7 @@ const projects: Projects = [
     images: [
       "/assets/bergman/bergman2.jpg",
     ],
+    videos: false,
     description: "The Bergmann was a 19th-century semi-automatic pistol developed by German designer Louis Schmeisser and sold by Theodor Bergmann's company."
   },
   {
@@ -124,6 +140,7 @@ const projects: Projects = [
       "/assets/wands/wands2.png",
       "/assets/wands/wands3.png"
     ],
+    videos: false,
     description: "Custom designed and made Harry Potter inspired Wands"
   },
   {
@@ -144,6 +161,7 @@ const projects: Projects = [
       "/assets/sabers/sabers3.png",
       "/assets/sabers/sabers4.png"
     ],
+    videos: false,
     description: "Lightsabers from the movie Star Wars."
   },
   {
@@ -171,6 +189,7 @@ const projects: Projects = [
       "/assets/screw-drivers/sonic10.png",
       "/assets/screw-drivers/sonic11.png"
     ],
+    videos: false,
     description: "Sonic screwdrivers from the show 'Doctor Who'"
   },
   {
@@ -189,6 +208,7 @@ const projects: Projects = [
       "/assets/catwalk/catwalk2.png",
       "/assets/catwalk/catwalk3.png"
     ],
+    videos: false,
     description: "Inspired by Star Wars 'I am your father' scene in Episode V: The Empire Strikes Back. Smoke simulation was used to recreate this iconic environment"
   },
   {
@@ -208,6 +228,7 @@ const projects: Projects = [
       "/assets/sonic-gun/sonicgun2.png",
       "/assets/sonic-gun/sonicgun3.png"
     ],
+    videos: false,
     description: "A combination of lightsaber, sonic screwdriver and sci-fi shit"
   },
   {
@@ -219,6 +240,7 @@ const projects: Projects = [
       "/assets/sofa/sofa1.png",
       "/assets/sofa/sofa2.png"
     ],
+    videos: false,
     description: "Sofa model with cloth simulation and inflation algorithms"
   },
   {
@@ -239,6 +261,7 @@ const projects: Projects = [
       "/assets/bulb-table/bulbtable3.png",
       "/assets/bulb-table/bulbtable4.png"
     ],
+    videos: false,
     description: "Used in design ideas of A Level Design and Technology. Bulb table is a table made of reused bulbs"
   },
   {
@@ -256,6 +279,7 @@ const projects: Projects = [
     images: [
       "/assets/bic-pen/bicpen1.png",
     ],
+    videos: false,
     description: "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
   },
   {
@@ -267,6 +291,7 @@ const projects: Projects = [
       "/assets/dt-bin/dtbin1.png",
       "/assets/dt-bin/dtbin2.png"
     ],
+    videos: false,
     description: "Used in design ideas of A Level Design and Technology. Modular bin with expandable and contractable compartments along with magnetic slider for separation of ferrous metals"
   },
 ];
