@@ -518,6 +518,7 @@ class ProjectComponent {
                 var controls = new three_examples_jsm_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_3__["OrbitControls"](camera, renderer.domElement);
                 controls.target = new three__WEBPACK_IMPORTED_MODULE_1__["Vector3"](0, 0, 0);
                 controls.enableDamping = true;
+                controls.dampingFactor = 0.07;
                 controls.update();
                 var windowSize = this.el.getBoundingClientRect().width * this.el.getBoundingClientRect().height;
                 const animate = () => {
@@ -526,8 +527,8 @@ class ProjectComponent {
                         renderer.setSize(this.el.getBoundingClientRect().width - 20, this.el.getBoundingClientRect().height - 80);
                         camera.aspect = (this.el.getBoundingClientRect().width - 20) / (this.el.getBoundingClientRect().height - 80);
                         camera.updateProjectionMatrix();
-                        controls.update();
                     }
+                    controls.update();
                     renderer.render(scene, camera);
                 };
                 animate();
@@ -646,6 +647,25 @@ const projects = [
         description: "Inspired by Interstellar's Gargantua Spinning Black Hole"
     },
     {
+        title: "TIE Fighter",
+        path: function () { return "/" + urlify(this.title); },
+        model: {
+            path: "/assets/tie-fighter/tie-fighter.glb",
+            cameraPosition: {
+                x: 3,
+                y: 3,
+                z: 10
+            },
+        },
+        titleImage: "/assets/tie-fighter/tie-fighter.png",
+        images: [
+            "/assets/tie-fighter/tie-fighter2.png",
+            "/assets/tie-fighter/tie-fighter3.png",
+            "/assets/tie-fighter/tie-fighter4.png"
+        ],
+        description: "The TIE (Twin Ion Engine) fighter is the backbone of the Empire, where it lack in shields, it makes up in speed and maneuverability"
+    },
+    {
         title: "Vader",
         path: function () { return "/" + urlify(this.title); },
         model: {
@@ -662,6 +682,19 @@ const projects = [
             "/assets/vader/vader3.png"
         ],
         description: "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'"
+    },
+    {
+        title: "Phasmophobia Lobby",
+        path: function () { return "/" + urlify(this.title); },
+        model: false,
+        titleImage: "/assets/phasmo/phasmo.png",
+        images: [
+            "/assets/phasmo/phasmo2.png",
+            "/assets/phasmo/phasmo3.png",
+            "/assets/phasmo/phasmo4.png",
+            "/assets/phasmo/phasmo5.png"
+        ],
+        description: "From the Phasmophobia game, this is the operations hub of your ghost hunting business, where you detect paranormal activity"
     },
     {
         title: "Mandalorian",
