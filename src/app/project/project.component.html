@@ -30,18 +30,14 @@
     <li class="item item-colour">
       <img src={{project.titleImage}} class="image"/>
     </li>
-    <div *ngIf="project.images != false">
-      <li *ngFor="let image of project.images" class="item item-colour">
-        <img src={{image}} class="image"/>
-      </li>
-    </div>
-    <div *ngIf="project.videos != false">
-      <li *ngFor="let video of project.videos" class="item item-colour">
-        <video autoplay loop class="image">
-          <source src={{video}} type="video/mp4"/>
-        </video>
-      </li>
-    </div>
+    <li *ngFor="let image of project.images" class="item item-colour">
+      <img src={{image}} class="image"/>
+    </li>
+    <li *ngFor="let video of project.videos" class="item item-colour">
+      <video autoplay loop class="image">
+        <source src={{video}} type="video/mp4"/>
+      </video>
+    </li>
     <li class="next-back-buttons item">
       <a class="project-buttons" routerLink={{nextProjectURL}} routerLinkActive="active">
         <div class="next-project-image-container">
