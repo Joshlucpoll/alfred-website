@@ -424,43 +424,25 @@ function ProjectComponent_div_22_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "View in 3D");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function ProjectComponent_div_25_li_1_Template(rf, ctx) { if (rf & 1) {
+function ProjectComponent_li_25_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const image_r6 = ctx.$implicit;
+    const image_r5 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", image_r6, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", image_r5, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 } }
-function ProjectComponent_div_25_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ProjectComponent_div_25_li_1_Template, 2, 1, "li", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r1.project.images);
-} }
-function ProjectComponent_div_26_li_1_Template(rf, ctx) { if (rf & 1) {
+function ProjectComponent_li_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "video", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "source", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "video", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "source", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const video_r8 = ctx.$implicit;
+    const video_r6 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", video_r8, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-} }
-function ProjectComponent_div_26_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ProjectComponent_div_26_li_1_Template, 3, 1, "li", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r2.project.videos);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", video_r6, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 } }
 const _c0 = function (a0, a1) { return { "opacity": a0, "transform": a1 }; };
 class ProjectComponent {
@@ -566,7 +548,7 @@ class ProjectComponent {
     }
 }
 ProjectComponent.ɵfac = function ProjectComponent_Factory(t) { return new (t || ProjectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"])); };
-ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProjectComponent, selectors: [["app-project"]], decls: 35, vars: 12, consts: [["id", "main-section-container", 1, "main-section-container"], [1, "main-section-wrapper", 3, "ngStyle"], [1, "title"], [1, "custom-br"], [1, "header"], [1, "navigation"], ["routerLink", "/", "routerLinkActive", "active", "id", "work-link", "alt", "work", 1, "link"], ["routerLink", "/about", "routerLinkActive", "active", "id", "about-link", "alt", "about", 1, "link"], ["routerLink", "/contact", "routerLinkActive", "active", "id", "contact-link", "alt", "contact", 1, "link"], [1, "arrow"], [1, "images-container"], ["id", "container", 1, "images"], [1, "item"], [1, "description"], ["class", "model-button", 3, "click", 4, "ngIf"], [1, "item", "item-colour"], [1, "image", 3, "src"], [4, "ngIf"], [1, "next-back-buttons", "item"], ["routerLinkActive", "active", 1, "project-buttons", 3, "routerLink"], [1, "next-project-image-container"], [1, "next-image", 3, "src"], [1, "project-buttons", 3, "click"], [1, "model-button", 3, "click"], ["class", "item item-colour", 4, "ngFor", "ngForOf"], ["autoplay", "", "loop", "", 1, "image"], ["type", "video/mp4", 3, "src"]], template: function ProjectComponent_Template(rf, ctx) { if (rf & 1) {
+ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProjectComponent, selectors: [["app-project"]], decls: 35, vars: 12, consts: [["id", "main-section-container", 1, "main-section-container"], [1, "main-section-wrapper", 3, "ngStyle"], [1, "title"], [1, "custom-br"], [1, "header"], [1, "navigation"], ["routerLink", "/", "routerLinkActive", "active", "id", "work-link", "alt", "work", 1, "link"], ["routerLink", "/about", "routerLinkActive", "active", "id", "about-link", "alt", "about", 1, "link"], ["routerLink", "/contact", "routerLinkActive", "active", "id", "contact-link", "alt", "contact", 1, "link"], [1, "arrow"], [1, "images-container"], ["id", "container", 1, "images"], [1, "item"], [1, "description"], ["class", "model-button", 3, "click", 4, "ngIf"], [1, "item", "item-colour"], [1, "image", 3, "src"], ["class", "item item-colour", 4, "ngFor", "ngForOf"], [1, "next-back-buttons", "item"], ["routerLinkActive", "active", 1, "project-buttons", 3, "routerLink"], [1, "next-project-image-container"], [1, "next-image", 3, "src"], [1, "project-buttons", 3, "click"], [1, "model-button", 3, "click"], ["autoplay", "", "loop", "", 1, "image"], ["type", "video/mp4", 3, "src"]], template: function ProjectComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -605,8 +587,8 @@ ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "li", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "img", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, ProjectComponent_div_25_Template, 2, 1, "div", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, ProjectComponent_div_26_Template, 2, 1, "div", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, ProjectComponent_li_25_Template, 2, 1, "li", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, ProjectComponent_li_26_Template, 3, 1, "li", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "li", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "a", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 20);
@@ -635,9 +617,9 @@ ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", ctx.project.titleImage, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.project.images != false);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.project.images);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.project.videos != false);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.project.videos);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("routerLink", ctx.nextProjectURL);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
@@ -676,7 +658,7 @@ const projects = [
             "/assets/black-hole/blackhole1.png",
             "/assets/black-hole/blackhole2.png"
         ],
-        videos: false,
+        videos: [],
         description: "Inspired by Interstellar's Gargantua Spinning Black Hole"
     },
     {
@@ -696,7 +678,7 @@ const projects = [
             "/assets/tie-fighter/tie-fighter3.png",
             "/assets/tie-fighter/tie-fighter4.png"
         ],
-        videos: false,
+        videos: [],
         description: "The TIE (Twin Ion Engine) fighter is the backbone of the Empire, where it lack in shields, it makes up in speed and maneuverability"
     },
     {
@@ -715,7 +697,7 @@ const projects = [
             "/assets/vader/vader2.png",
             "/assets/vader/vader3.png"
         ],
-        videos: false,
+        videos: [],
         description: "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'"
     },
     {
@@ -723,7 +705,7 @@ const projects = [
         path: function () { return "/" + urlify(this.title); },
         model: false,
         titleImage: "/assets/corridor/corridor.png",
-        images: false,
+        images: [],
         videos: ["/assets/corridor/corridor.mp4"],
         description: "Infinite corridor animation"
     },
@@ -738,7 +720,7 @@ const projects = [
             "/assets/phasmo/phasmo4.png",
             "/assets/phasmo/phasmo5.png"
         ],
-        videos: false,
+        videos: [],
         description: "From the Phasmophobia game, this is the operations hub of your ghost hunting business, where you detect paranormal activity"
     },
     {
@@ -757,7 +739,7 @@ const projects = [
             "/assets/mando/mando2.png",
             "/assets/mando/mando3.png"
         ],
-        videos: false,
+        videos: [],
         description: "The Mandolorian's helmet from 'Star Wars: The Mandalorian'"
     },
     {
@@ -768,7 +750,7 @@ const projects = [
         images: [
             "/assets/bergman/bergman2.jpg",
         ],
-        videos: false,
+        videos: [],
         description: "The Bergmann was a 19th-century semi-automatic pistol developed by German designer Louis Schmeisser and sold by Theodor Bergmann's company."
     },
     {
@@ -787,7 +769,7 @@ const projects = [
             "/assets/wands/wands2.png",
             "/assets/wands/wands3.png"
         ],
-        videos: false,
+        videos: [],
         description: "Custom designed and made Harry Potter inspired Wands"
     },
     {
@@ -808,7 +790,7 @@ const projects = [
             "/assets/sabers/sabers3.png",
             "/assets/sabers/sabers4.png"
         ],
-        videos: false,
+        videos: [],
         description: "Lightsabers from the movie Star Wars."
     },
     {
@@ -836,7 +818,7 @@ const projects = [
             "/assets/screw-drivers/sonic10.png",
             "/assets/screw-drivers/sonic11.png"
         ],
-        videos: false,
+        videos: [],
         description: "Sonic screwdrivers from the show 'Doctor Who'"
     },
     {
@@ -855,7 +837,7 @@ const projects = [
             "/assets/catwalk/catwalk2.png",
             "/assets/catwalk/catwalk3.png"
         ],
-        videos: false,
+        videos: [],
         description: "Inspired by Star Wars 'I am your father' scene in Episode V: The Empire Strikes Back. Smoke simulation was used to recreate this iconic environment"
     },
     {
@@ -875,7 +857,7 @@ const projects = [
             "/assets/sonic-gun/sonicgun2.png",
             "/assets/sonic-gun/sonicgun3.png"
         ],
-        videos: false,
+        videos: [],
         description: "A combination of lightsaber, sonic screwdriver and sci-fi shit"
     },
     {
@@ -887,7 +869,7 @@ const projects = [
             "/assets/sofa/sofa1.png",
             "/assets/sofa/sofa2.png"
         ],
-        videos: false,
+        videos: [],
         description: "Sofa model with cloth simulation and inflation algorithms"
     },
     {
@@ -908,7 +890,7 @@ const projects = [
             "/assets/bulb-table/bulbtable3.png",
             "/assets/bulb-table/bulbtable4.png"
         ],
-        videos: false,
+        videos: [],
         description: "Used in design ideas of A Level Design and Technology. Bulb table is a table made of reused bulbs"
     },
     {
@@ -926,7 +908,7 @@ const projects = [
         images: [
             "/assets/bic-pen/bicpen1.png",
         ],
-        videos: false,
+        videos: [],
         description: "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
     },
     {
@@ -938,11 +920,10 @@ const projects = [
             "/assets/dt-bin/dtbin1.png",
             "/assets/dt-bin/dtbin2.png"
         ],
-        videos: false,
+        videos: [],
         description: "Used in design ideas of A Level Design and Technology. Modular bin with expandable and contractable compartments along with magnetic slider for separation of ferrous metals"
     },
 ];
-// console.log(projects[0].path())
 /* harmony default export */ __webpack_exports__["default"] = (projects);
 
 
