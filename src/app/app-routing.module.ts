@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import projects from '../assets/projects';
+import { EditComponent } from './edit/edit.component';
 
 const urlify = function(a){return a.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "-").replace(/^-+|-+$/g, '')};
 
@@ -11,6 +12,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     data: {projects: projects}
+  },
+  {
+    path: 'edit',
+    component: EditComponent
   },
   {
     path: '**',
@@ -27,7 +32,7 @@ projects.forEach((project) => {
 })
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes, {useHash: false})],
   exports: [RouterModule],
   declarations: [],
 })
