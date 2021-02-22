@@ -38,6 +38,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _assets_projects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/projects */ "./src/assets/projects.ts");
+/* harmony import */ var _edit_edit_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./edit/edit.component */ "./src/app/edit/edit.component.ts");
+
 
 
 
@@ -51,6 +53,10 @@ const routes = [
         path: '',
         component: _home_home_component__WEBPACK_IMPORTED_MODULE_1__["HomeComponent"],
         data: { projects: _assets_projects__WEBPACK_IMPORTED_MODULE_4__["default"] }
+    },
+    {
+        path: 'edit',
+        component: _edit_edit_component__WEBPACK_IMPORTED_MODULE_5__["EditComponent"]
     },
     {
         path: '**',
@@ -67,12 +73,12 @@ _assets_projects__WEBPACK_IMPORTED_MODULE_4__["default"].forEach((project) => {
 class AppRoutingModule {
 }
 AppRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); }, imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes, { useHash: true })], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]] });
+AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); }, imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes, { useHash: false })], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵsetClassMetadata"](AppRoutingModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"],
         args: [{
-                imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes, { useHash: true })],
+                imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes, { useHash: false })],
                 exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]],
                 declarations: [],
             }]
@@ -120,6 +126,11 @@ class AppComponent {
         return outlet.isActivated ? outlet.activatedRoute : '';
     }
     scrollHorizontally($event) {
+        if (window.location.pathname == "/edit") {
+            document.getElementById("main").style.overflowY = "scroll";
+            return;
+        }
+        document.getElementById("main").style.overflowY = "hidden";
         const main = document.getElementById("main");
         this.currentScrollValue = main.scrollLeft;
         $event = window.event || $event;
@@ -159,7 +170,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("@fadeAnimation", ctx.getRouterOutletState(_r0));
-    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"]], styles: [".main[_ngcontent-%COMP%] {\n  display: block;\n  position: fixed;\n  overflow-x: scroll;\n  overflow-y: hidden;\n  height: 100vh;\n  width: 100vw;\n  scrollbar-width: none;\n}\n.main[_ngcontent-%COMP%]   .content[_ngcontent-%COMP%] {\n  height: 100vh;\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtBQUNGO0FBRUU7RUFDRSxhQUFBO0VBQ0EsV0FBQTtBQUFKIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW4ge1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IGZpeGVkO1xuICBvdmVyZmxvdy14OiBzY3JvbGw7XG4gIG92ZXJmbG93LXk6IGhpZGRlbjtcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBzY3JvbGxiYXItd2lkdGg6IG5vbmU7XG4gIC8vIHNjcm9sbC1iZWhhdmlvcjogc21vb3RoO1xuICBcbiAgLmNvbnRlbnQge1xuICAgIGhlaWdodDogMTAwdmg7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbn0iXX0= */"], data: { animation: [
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"]], styles: [".main[_ngcontent-%COMP%] {\n  display: block;\n  position: fixed;\n  overflow-x: scroll;\n  height: 100vh;\n  width: 100vw;\n  scrollbar-width: none;\n}\n.main[_ngcontent-%COMP%]   .content[_ngcontent-%COMP%] {\n  height: 100vh;\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtFQUVBLGFBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7QUFBRjtBQUdFO0VBQ0UsYUFBQTtFQUNBLFdBQUE7QUFESiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgb3ZlcmZsb3cteDogc2Nyb2xsO1xuICAvLyBvdmVyZmxvdy15OiBoaWRkZW47XG4gIGhlaWdodDogMTAwdmg7XG4gIHdpZHRoOiAxMDB2dztcbiAgc2Nyb2xsYmFyLXdpZHRoOiBub25lO1xuICAvLyBzY3JvbGwtYmVoYXZpb3I6IHNtb290aDtcbiAgXG4gIC5jb250ZW50IHtcbiAgICBoZWlnaHQ6IDEwMHZoO1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59Il19 */"], data: { animation: [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('fadeAnimation', [
                 Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('* => *', [
                     Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["query"])(':enter', [
@@ -219,9 +230,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _project_project_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./project/project.component */ "./src/app/project/project.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _project_project_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./project/project.component */ "./src/app/project/project.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _edit_edit_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./edit/edit.component */ "./src/app/edit/edit.component.ts");
+
+
 
 
 
@@ -232,34 +247,359 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppModule {
 }
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]] });
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"]
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"]
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-        _project_project_component__WEBPACK_IMPORTED_MODULE_5__["ProjectComponent"],
-        _home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+        _project_project_component__WEBPACK_IMPORTED_MODULE_6__["ProjectComponent"],
+        _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
+        _edit_edit_component__WEBPACK_IMPORTED_MODULE_8__["EditComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"]] }); })();
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
                 declarations: [
-                    _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                    _project_project_component__WEBPACK_IMPORTED_MODULE_5__["ProjectComponent"],
-                    _home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
+                    _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+                    _project_project_component__WEBPACK_IMPORTED_MODULE_6__["ProjectComponent"],
+                    _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
+                    _edit_edit_component__WEBPACK_IMPORTED_MODULE_8__["EditComponent"],
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                     _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-                    _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"]
+                    _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"]
                 ],
                 providers: [],
-                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
             }]
     }], null, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/edit/edit.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/edit/edit.component.ts ***!
+  \****************************************/
+/*! exports provided: EditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditComponent", function() { return EditComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
+
+
+
+
+
+
+
+function EditComponent_div_1_div_8_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Token is required");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} }
+function EditComponent_div_1_div_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, EditComponent_div_1_div_8_div_1_Template, 2, 0, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r2.f.username.errors.required);
+} }
+function EditComponent_div_1_span_11_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "span", 14);
+} }
+const _c0 = function (a0) { return { "is-invalid": a0 }; };
+function EditComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "h2");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Github Login");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "form", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function EditComponent_div_1_Template_form_ngSubmit_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r6); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r5.onSubmit(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "label", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Github Personal Access Token");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](7, "input", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, EditComponent_div_1_div_8_Template, 2, 1, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "button", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](11, EditComponent_div_1_span_11_Template, 1, 0, "span", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, " Login ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx_r0.loginForm);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction1"](6, _c0, ctx_r0.submitted && ctx_r0.f.username.errors));
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r0.submitted && ctx_r0.f.username.errors);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("disabled", ctx_r0.loading);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r0.loading);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r0.errorMessage);
+} }
+function EditComponent_div_2_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
+    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "img", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "h5", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "p", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "a", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function EditComponent_div_2_div_1_div_1_Template_a_click_7_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r12); const project_r10 = ctx.$implicit; const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3); return ctx_r11.editProject(project_r10); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Edit");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const project_r10 = ctx.$implicit;
+    const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("src", ctx_r9.images[project_r10.titleImage], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](project_r10.title);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](project_r10.description);
+} }
+function EditComponent_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, EditComponent_div_2_div_1_div_1_Template, 9, 3, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r7.projectsConfigState);
+} }
+function EditComponent_div_2_div_2_Template(rf, ctx) { if (rf & 1) {
+    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "button", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function EditComponent_div_2_div_2_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r14); const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2); return ctx_r13.backButton(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Back");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "h1");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "h6");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Title Image");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](9, "img", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r8.currentProject.title);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r8.currentProject.description);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("src", ctx_r8.images[ctx_r8.currentProject.titleImage], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
+} }
+function EditComponent_div_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, EditComponent_div_2_div_1_Template, 2, 1, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, EditComponent_div_2_div_2_Template, 10, 3, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r1.currentProject == false);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r1.currentProject != false);
+} }
+class EditComponent {
+    constructor(formBuilder, route, router) {
+        this.formBuilder = formBuilder;
+        this.route = route;
+        this.router = router;
+        this.loading = false;
+        this.submitted = false;
+        this.loggedIn = false;
+        this.currentProject = false;
+        this.projectsConfigState = [];
+        this.images = {};
+        this.URL = 'https://api.github.com';
+        this.axios = axios__WEBPACK_IMPORTED_MODULE_3___default.a;
+    }
+    ngOnInit() {
+        this.errorMessage = '';
+        this.loginForm = this.formBuilder.group({
+            username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+        });
+    }
+    getProjectsConfig() {
+        this.axios
+            .get(this.URL +
+            '/repos/Joshlucpoll/alfred-website/contents/src/assets/projects.ts', this.APIConfig)
+            .then((response) => {
+            const content = atob(response.data.content);
+            let configString = content
+                .split('const projects: Projects = ')
+                .pop()
+                .split(';')[0]
+                .trim();
+            const lines = configString.split('\n');
+            const filteredLines = lines.filter((line) => !line.includes('function()'));
+            configString = filteredLines.join('\n');
+            const config = JSON.parse(configString);
+            this.projectsConfigState = config;
+            this.getImages();
+        })
+            .catch((err) => {
+            this.errorMessage = err;
+        });
+    }
+    getImages() {
+        console.log(this.projectsConfigState);
+        for (let project of this.projectsConfigState) {
+            this.images[project.titleImage] = "https://raw.githubusercontent.com/Joshlucpoll/alfred-website/master/src" + project.titleImage;
+        }
+        console.log(this.images);
+    }
+    getImageURL(path) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return yield this.axios
+                .get(this.URL + '/repos/Joshlucpoll/alfred-website/contents/src' + path, this.APIConfig)
+                .then((response) => response.data.download_url)
+                .catch((err) => {
+                console.log(err);
+                this.errorMessage = err;
+            });
+        });
+    }
+    editProject(project) {
+        this.currentProject = project;
+    }
+    backButton() {
+        this.currentProject = false;
+    }
+    initEditing() {
+        this.getProjectsConfig();
+        // this.axios
+        //   .get(
+        //     this.URL +
+        //       '/repos/Joshlucpoll/alfred-website/contents/src/assets/corridor/corridor.mp4',
+        //     this.APIConfig
+        //   )
+        //   .then((response) => console.log(response));
+    }
+    // convenience getter for easy access to form fields
+    get f() {
+        return this.loginForm.controls;
+    }
+    onSubmit() {
+        this.errorMessage = '';
+        this.submitted = true;
+        // stop here if form is invalid
+        if (this.loginForm.invalid) {
+            return;
+        }
+        // login here
+        this.loading = true;
+        this.axios
+            .get(this.URL + '/user', {
+            headers: {
+                Authorization: 'token ' + this.f.username.value,
+                Accept: 'application/vnd.github.v3+json',
+            },
+        })
+            .then((response) => {
+            const userId = response.data.id;
+            this.axios
+                .get(this.URL + '/repos/Joshlucpoll/alfred-website/contributors', {
+                headers: {
+                    Authorization: 'token ' + this.f.username.value,
+                    Accept: 'application/vnd.github.v3+json',
+                },
+            })
+                .then((response) => {
+                const contributors = response.data;
+                console.log(contributors);
+                for (let contributor of contributors) {
+                    if (userId == contributor.id) {
+                        const token = this.f.username.value;
+                        this.APIConfig = {
+                            headers: {
+                                Authorization: 'token ' + token,
+                                Accept: 'application/vnd.github.v3+json',
+                            },
+                        };
+                        this.loggedIn = true;
+                        this.initEditing();
+                        break;
+                    }
+                }
+                if (!this.loggedIn)
+                    this.errorMessage = 'You are not authorised to access this page';
+            })
+                .catch((err) => {
+                this.errorMessage = err;
+            });
+        })
+            .catch((err) => {
+            this.errorMessage = err;
+        });
+        this.loading = false;
+    }
+}
+EditComponent.ɵfac = function EditComponent_Factory(t) { return new (t || EditComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"])); };
+EditComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: EditComponent, selectors: [["ng-component"]], decls: 3, vars: 2, consts: [[1, "background"], ["class", "login-form", 4, "ngIf"], ["class", "editScreen", 4, "ngIf"], [1, "login-form"], [3, "formGroup", "ngSubmit"], [1, "form-group"], ["for", "username"], ["type", "text", "formControlName", "username", 1, "form-control", 3, "ngClass"], ["class", "invalid-feedback", 4, "ngIf"], [1, "btn", "btn-primary", 3, "disabled"], ["class", "spinner-border spinner-border-sm mr-1", 4, "ngIf"], [1, "error-message", "text-danger"], [1, "invalid-feedback"], [4, "ngIf"], [1, "spinner-border", "spinner-border-sm", "mr-1"], [1, "editScreen"], ["class", "card", "style", "width: 18rem", 4, "ngFor", "ngForOf"], [1, "card", 2, "width", "18rem"], ["alt", "Card image cap", 1, "card-img-top", 3, "src"], [1, "card-body"], [1, "card-title"], [1, "card-text"], [1, "btn", "btn-primary", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "hBack", 3, "click"], ["alt", "Responsive image", 1, "img-fluid", 3, "src"]], template: function EditComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, EditComponent_div_1_Template, 15, 8, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, EditComponent_div_2_Template, 3, 2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx.loggedIn);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.loggedIn);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgClass"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"]], styles: [".background[_ngcontent-%COMP%] {\n  background-color: white !important;\n  height: 100%;\n  width: 100%;\n  min-width: 100vw;\n  min-height: 100vh;\n  padding: 50px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0NBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxhQUFBO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9lZGl0L2VkaXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmFja2dyb3VuZCB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIG1pbi13aWR0aDogMTAwdnc7XG4gIG1pbi1oZWlnaHQ6IDEwMHZoO1xuICBwYWRkaW5nOiA1MHB4O1xufSJdfQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](EditComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+        args: [{
+                templateUrl: 'edit.component.html',
+                styleUrls: ['./edit.component.scss'],
+            }]
+    }], function () { return [{ type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }]; }, null); })();
 
 
 /***/ }),
@@ -650,162 +990,162 @@ const urlify = function (a) { return a.toLowerCase().replace(/[^a-z0-9]+/g, "-")
 ;
 const projects = [
     {
-        title: "Black Hole",
-        path: function () { return "/" + urlify(this.title); },
-        model: false,
-        titleImage: "/assets/black-hole/blackhole.png",
-        images: [
+        "title": "Black Hole",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": false,
+        "titleImage": "/assets/black-hole/blackhole.png",
+        "images": [
             "/assets/black-hole/blackhole1.png",
             "/assets/black-hole/blackhole2.png"
         ],
-        videos: [],
-        description: "Inspired by Interstellar's Gargantua Spinning Black Hole"
+        "videos": [],
+        "description": "Inspired by Interstellar's Gargantua Spinning Black Hole"
     },
     {
-        title: "TIE Fighter",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/tie-fighter/tie-fighter.glb",
-            cameraPosition: {
-                x: 3,
-                y: 3,
-                z: 10
-            },
+        "title": "TIE Fighter",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/tie-fighter/tie-fighter.glb",
+            "cameraPosition": {
+                "x": 3,
+                "y": 3,
+                "z": 10
+            }
         },
-        titleImage: "/assets/tie-fighter/tie-fighter.png",
-        images: [
+        "titleImage": "/assets/tie-fighter/tie-fighter.png",
+        "images": [
             "/assets/tie-fighter/tie-fighter2.png",
             "/assets/tie-fighter/tie-fighter3.png",
             "/assets/tie-fighter/tie-fighter4.png"
         ],
-        videos: [],
-        description: "The TIE (Twin Ion Engine) fighter is the backbone of the Empire, where it lack in shields, it makes up in speed and maneuverability"
+        "videos": [],
+        "description": "The TIE (Twin Ion Engine) fighter is the backbone of the Empire, where it lack in shields, it makes up in speed and maneuverability"
     },
     {
-        title: "Vader",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/vader/vader.glb",
-            cameraPosition: {
-                x: 1,
-                y: 4,
-                z: 1
-            },
+        "title": "Vader",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/vader/vader.glb",
+            "cameraPosition": {
+                "x": 1,
+                "y": 4,
+                "z": 1
+            }
         },
-        titleImage: "/assets/vader/vader.png",
-        images: [
+        "titleImage": "/assets/vader/vader.png",
+        "images": [
             "/assets/vader/vader2.png",
             "/assets/vader/vader3.png"
         ],
-        videos: [],
-        description: "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'"
+        "videos": [],
+        "description": "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'"
     },
     {
-        title: "Corridor",
-        path: function () { return "/" + urlify(this.title); },
-        model: false,
-        titleImage: "/assets/corridor/corridor.png",
-        images: [],
-        videos: ["/assets/corridor/corridor.mp4"],
-        description: "Infinite corridor animation"
+        "title": "Corridor",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": false,
+        "titleImage": "/assets/corridor/corridor.png",
+        "images": [],
+        "videos": ["/assets/corridor/corridor.mp4"],
+        "description": "Infinite corridor animation"
     },
     {
-        title: "Phasmophobia Lobby",
-        path: function () { return "/" + urlify(this.title); },
-        model: false,
-        titleImage: "/assets/phasmo/phasmo.png",
-        images: [
+        "title": "Phasmophobia Lobby",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": false,
+        "titleImage": "/assets/phasmo/phasmo.png",
+        "images": [
             "/assets/phasmo/phasmo2.png",
             "/assets/phasmo/phasmo3.png",
             "/assets/phasmo/phasmo4.png",
             "/assets/phasmo/phasmo5.png"
         ],
-        videos: [],
-        description: "From the Phasmophobia game, this is the operations hub of your ghost hunting business, where you detect paranormal activity"
+        "videos": [],
+        "description": "From the Phasmophobia game, this is the operations hub of your ghost hunting business, where you detect paranormal activity"
     },
     {
-        title: "Mandalorian",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/mando/mando.glb",
-            cameraPosition: {
-                x: 1,
-                y: 4,
-                z: 1
-            },
+        "title": "Mandalorian",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/mando/mando.glb",
+            "cameraPosition": {
+                "x": 1,
+                "y": 4,
+                "z": 1
+            }
         },
-        titleImage: "/assets/mando/mando.png",
-        images: [
+        "titleImage": "/assets/mando/mando.png",
+        "images": [
             "/assets/mando/mando2.png",
             "/assets/mando/mando3.png"
         ],
-        videos: [],
-        description: "The Mandolorian's helmet from 'Star Wars: The Mandalorian'"
+        "videos": [],
+        "description": "The Mandolorian's helmet from 'Star Wars: The Mandalorian'"
     },
     {
-        title: "Bergmann",
-        path: function () { return "/" + urlify(this.title); },
-        model: false,
-        titleImage: "/assets/bergman/bergman.jpg",
-        images: [
-            "/assets/bergman/bergman2.jpg",
+        "title": "Bergmann",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": false,
+        "titleImage": "/assets/bergman/bergman.jpg",
+        "images": [
+            "/assets/bergman/bergman2.jpg"
         ],
-        videos: [],
-        description: "The Bergmann was a 19th-century semi-automatic pistol developed by German designer Louis Schmeisser and sold by Theodor Bergmann's company."
+        "videos": [],
+        "description": "The Bergmann was a 19th-century semi-automatic pistol developed by German designer Louis Schmeisser and sold by Theodor Bergmann's company."
     },
     {
-        title: "Wands",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/wands/wands.glb",
-            cameraPosition: {
-                x: 1,
-                y: 4,
-                z: 1
-            },
+        "title": "Wands",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/wands/wands.glb",
+            "cameraPosition": {
+                "x": 1,
+                "y": 4,
+                "z": 1
+            }
         },
-        titleImage: "/assets/wands/wands.png",
-        images: [
+        "titleImage": "/assets/wands/wands.png",
+        "images": [
             "/assets/wands/wands2.png",
             "/assets/wands/wands3.png"
         ],
-        videos: [],
-        description: "Custom designed and made Harry Potter inspired Wands"
+        "videos": [],
+        "description": "Custom designed and made Harry Potter inspired Wands"
     },
     {
-        title: "Sabers",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/sabers/sabers.glb",
-            cameraPosition: {
-                x: 1,
-                y: 5,
-                z: 1
-            },
+        "title": "Sabers",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/sabers/sabers.glb",
+            "cameraPosition": {
+                "x": 1,
+                "y": 5,
+                "z": 1
+            }
         },
-        titleImage: "/assets/sabers/sabers.png",
-        images: [
+        "titleImage": "/assets/sabers/sabers.png",
+        "images": [
             "/assets/sabers/sabers1.png",
             "/assets/sabers/sabers2.png",
             "/assets/sabers/sabers3.png",
             "/assets/sabers/sabers4.png"
         ],
-        videos: [],
-        description: "Lightsabers from the movie Star Wars."
+        "videos": [],
+        "description": "Lightsabers from the movie Star Wars."
     },
     {
-        title: "Screw Drivers",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/screw-drivers/sonic.glb",
-            cameraPosition: {
-                x: 3,
-                y: 3,
-                z: 0
-            },
+        "title": "Screw Drivers",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/screw-drivers/sonic.glb",
+            "cameraPosition": {
+                "x": 3,
+                "y": 3,
+                "z": 0
+            }
         },
-        titleImage: "/assets/screw-drivers/sonic.png",
-        images: [
+        "titleImage": "/assets/screw-drivers/sonic.png",
+        "images": [
             "/assets/screw-drivers/sonic1.png",
             "/assets/screw-drivers/sonic2.png",
             "/assets/screw-drivers/sonic3.png",
@@ -818,111 +1158,111 @@ const projects = [
             "/assets/screw-drivers/sonic10.png",
             "/assets/screw-drivers/sonic11.png"
         ],
-        videos: [],
-        description: "Sonic screwdrivers from the show 'Doctor Who'"
+        "videos": [],
+        "description": "Sonic screwdrivers from the show 'Doctor Who'"
     },
     {
-        title: "Catwalk",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/catwalk/catwalk.glb",
-            cameraPosition: {
-                x: 10,
-                y: 3,
-                z: 0
-            },
+        "title": "Catwalk",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/catwalk/catwalk.glb",
+            "cameraPosition": {
+                "x": 10,
+                "y": 3,
+                "z": 0
+            }
         },
-        titleImage: "/assets/catwalk/catwalk.png",
-        images: [
+        "titleImage": "/assets/catwalk/catwalk.png",
+        "images": [
             "/assets/catwalk/catwalk2.png",
             "/assets/catwalk/catwalk3.png"
         ],
-        videos: [],
-        description: "Inspired by Star Wars 'I am your father' scene in Episode V: The Empire Strikes Back. Smoke simulation was used to recreate this iconic environment"
+        "videos": [],
+        "description": "Inspired by Star Wars 'I am your father' scene in Episode V: The Empire Strikes Back. Smoke simulation was used to recreate this iconic environment"
     },
     {
-        title: "Sonic Gun",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/sonic-gun/sonicgun.glb",
-            cameraPosition: {
-                x: 2,
-                y: 3,
-                z: 2
-            },
+        "title": "Sonic Gun",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/sonic-gun/sonicgun.glb",
+            "cameraPosition": {
+                "x": 2,
+                "y": 3,
+                "z": 2
+            }
         },
-        titleImage: "/assets/sonic-gun/sonicgun.png",
-        images: [
+        "titleImage": "/assets/sonic-gun/sonicgun.png",
+        "images": [
             "/assets/sonic-gun/sonicgun1.png",
             "/assets/sonic-gun/sonicgun2.png",
             "/assets/sonic-gun/sonicgun3.png"
         ],
-        videos: [],
-        description: "A combination of lightsaber, sonic screwdriver and sci-fi shit"
+        "videos": [],
+        "description": "A combination of lightsaber, sonic screwdriver and sci-fi shit"
     },
     {
-        title: "Sofa",
-        path: function () { return "/" + urlify(this.title); },
-        model: false,
-        titleImage: "/assets/sofa/sofa.png",
-        images: [
+        "title": "Sofa",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": false,
+        "titleImage": "/assets/sofa/sofa.png",
+        "images": [
             "/assets/sofa/sofa1.png",
             "/assets/sofa/sofa2.png"
         ],
-        videos: [],
-        description: "Sofa model with cloth simulation and inflation algorithms"
+        "videos": [],
+        "description": "Sofa model with cloth simulation and inflation algorithms"
     },
     {
-        title: "Bulb Table",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/bulb-table/bulbtable.glb",
-            cameraPosition: {
-                x: 2,
-                y: 2,
-                z: 2
-            },
+        "title": "Bulb Table",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/bulb-table/bulbtable.glb",
+            "cameraPosition": {
+                "x": 2,
+                "y": 2,
+                "z": 2
+            }
         },
-        titleImage: "/assets/bulb-table/bulbtable.png",
-        images: [
+        "titleImage": "/assets/bulb-table/bulbtable.png",
+        "images": [
             "/assets/bulb-table/bulbtable1.png",
             "/assets/bulb-table/bulbtable2.png",
             "/assets/bulb-table/bulbtable3.png",
             "/assets/bulb-table/bulbtable4.png"
         ],
-        videos: [],
-        description: "Used in design ideas of A Level Design and Technology. Bulb table is a table made of reused bulbs"
+        "videos": [],
+        "description": "Used in design ideas of A Level Design and Technology. Bulb table is a table made of reused bulbs"
     },
     {
-        title: "Bic Pen",
-        path: function () { return "/" + urlify(this.title); },
-        model: {
-            path: "/assets/bic-pen/bicpen.glb",
-            cameraPosition: {
-                x: 3,
-                y: 10,
-                z: 3
-            },
+        "title": "Bic Pen",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": {
+            "path": "/assets/bic-pen/bicpen.glb",
+            "cameraPosition": {
+                "x": 3,
+                "y": 10,
+                "z": 3
+            }
         },
-        titleImage: "/assets/bic-pen/bicpen.png",
-        images: [
-            "/assets/bic-pen/bicpen1.png",
+        "titleImage": "/assets/bic-pen/bicpen.png",
+        "images": [
+            "/assets/bic-pen/bicpen1.png"
         ],
-        videos: [],
-        description: "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
+        "videos": [],
+        "description": "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
     },
     {
-        title: "Bin",
-        path: function () { return "/" + urlify(this.title); },
-        model: false,
-        titleImage: "/assets/dt-bin/dtbin.png",
-        images: [
+        "title": "Bin",
+        "path": function () { return "/" + urlify(this.title); },
+        "model": false,
+        "titleImage": "/assets/dt-bin/dtbin.png",
+        "images": [
             "/assets/dt-bin/dtbin1.png",
             "/assets/dt-bin/dtbin2.png"
         ],
-        videos: [],
-        description: "Used in design ideas of A Level Design and Technology. Modular bin with expandable and contractable compartments along with magnetic slider for separation of ferrous metals"
-    },
+        "videos": [],
+        "description": "Used in design ideas of A Level Design and Technology. Modular bin with expandable and contractable compartments along with magnetic slider for separation of ferrous metals"
+    }
 ];
 /* harmony default export */ __webpack_exports__["default"] = (projects);
 
