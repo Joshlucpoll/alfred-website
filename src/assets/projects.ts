@@ -41,7 +41,7 @@ const projects: Projects = [
         "x": 3,
         "y": 3,
         "z": 10
-      },
+      }
     },
     "titleImage": "/assets/tie-fighter/tie-fighter.png",
     "images": [
@@ -61,7 +61,7 @@ const projects: Projects = [
         "x": 1,
         "y": 4,
         "z": 1
-      },
+      }
     },
     "titleImage": "/assets/vader/vader.png",
     "images": [
@@ -103,7 +103,7 @@ const projects: Projects = [
         "x": 1,
         "y": 4,
         "z": 1
-      },
+      }
     },
     "titleImage": "/assets/mando/mando.png",
     "images": [
@@ -133,7 +133,7 @@ const projects: Projects = [
         "x": 1,
         "y": 4,
         "z": 1
-      },
+      }
     },
     "titleImage": "/assets/wands/wands.png",
     "images": [
@@ -152,7 +152,7 @@ const projects: Projects = [
         "x": 1,
         "y": 5,
         "z": 1
-      },
+      }
     },
     "titleImage": "/assets/sabers/sabers.png",
     "images": [
@@ -173,7 +173,7 @@ const projects: Projects = [
         "x": 3,
         "y": 3,
         "z": 0
-      },
+      }
     },
     "titleImage": "/assets/screw-drivers/sonic.png",
     "images": [
@@ -201,7 +201,7 @@ const projects: Projects = [
         "x": 10,
         "y": 3,
         "z": 0
-      },
+      }
     },
     "titleImage": "/assets/catwalk/catwalk.png",
     "images": [
@@ -220,7 +220,7 @@ const projects: Projects = [
         "x": 2,
         "y": 3,
         "z": 2
-      },
+      }
     },
     "titleImage": "/assets/sonic-gun/sonicgun.png",
     "images": [
@@ -252,7 +252,7 @@ const projects: Projects = [
         "x": 2,
         "y": 2,
         "z": 2
-      },
+      }
     },
     "titleImage": "/assets/bulb-table/bulbtable.png",
     "images": [
@@ -273,7 +273,7 @@ const projects: Projects = [
         "x": 3,
         "y": 10,
         "z": 3
-      },
+      }
     },
     "titleImage": "/assets/bic-pen/bicpen.png",
     "images": [
