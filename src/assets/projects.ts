@@ -37,10 +37,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/tie-fighter/tie-fighter.glb",
-      cameraPosition: {
-        x: 3,
-        y: 3,
-        z: 10
+      "cameraPosition": {
+        "x": 3,
+        "y": 3,
+        "z": 10
       },
     },
     "titleImage": "/assets/tie-fighter/tie-fighter.png",
@@ -57,10 +57,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/vader/vader.glb",
-      cameraPosition: {
-        x: 1,
-        y: 4,
-        z: 1
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
       },
     },
     "titleImage": "/assets/vader/vader.png",
@@ -99,10 +99,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/mando/mando.glb",
-      cameraPosition: {
-        x: 1,
-        y: 4,
-        z: 1
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
       },
     },
     "titleImage": "/assets/mando/mando.png",
@@ -129,10 +129,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/wands/wands.glb",
-      cameraPosition: {
-        x: 1,
-        y: 4,
-        z: 1
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
       },
     },
     "titleImage": "/assets/wands/wands.png",
@@ -148,10 +148,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/sabers/sabers.glb",
-      cameraPosition: {
-        x: 1,
-        y: 5,
-        z: 1
+      "cameraPosition": {
+        "x": 1,
+        "y": 5,
+        "z": 1
       },
     },
     "titleImage": "/assets/sabers/sabers.png",
@@ -169,10 +169,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/screw-drivers/sonic.glb",
-      cameraPosition: {
-        x: 3,
-        y: 3,
-        z: 0
+      "cameraPosition": {
+        "x": 3,
+        "y": 3,
+        "z": 0
       },
     },
     "titleImage": "/assets/screw-drivers/sonic.png",
@@ -197,10 +197,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/catwalk/catwalk.glb",
-      cameraPosition: {
-        x: 10,
-        y: 3,
-        z: 0
+      "cameraPosition": {
+        "x": 10,
+        "y": 3,
+        "z": 0
       },
     },
     "titleImage": "/assets/catwalk/catwalk.png",
@@ -216,10 +216,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/sonic-gun/sonicgun.glb",
-      cameraPosition: {
-        x: 2,
-        y: 3,
-        z: 2
+      "cameraPosition": {
+        "x": 2,
+        "y": 3,
+        "z": 2
       },
     },
     "titleImage": "/assets/sonic-gun/sonicgun.png",
@@ -248,10 +248,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/bulb-table/bulbtable.glb",
-      cameraPosition: {
-        x: 2,
-        y: 2,
-        z: 2
+      "cameraPosition": {
+        "x": 2,
+        "y": 2,
+        "z": 2
       },
     },
     "titleImage": "/assets/bulb-table/bulbtable.png",
@@ -269,10 +269,10 @@ const projects: Projects = [
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/bic-pen/bicpen.glb",
-      cameraPosition: {
-        x: 3,
-        y: 10,
-        z: 3
+      "cameraPosition": {
+        "x": 3,
+        "y": 10,
+        "z": 3
       },
     },
     "titleImage": "/assets/bic-pen/bicpen.png",
