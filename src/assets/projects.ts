@@ -119,7 +119,7 @@ const projects: Projects = [
     "model": false,
     "titleImage": "/assets/bergman/bergman.jpg",
     "images": [
-      "/assets/bergman/bergman2.jpg",
+      "/assets/bergman/bergman2.jpg"
     ],
     "videos": [],
     "description": "The Bergmann was a 19th-century semi-automatic pistol developed by German designer Louis Schmeisser and sold by Theodor Bergmann's company."
