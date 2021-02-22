@@ -59,6 +59,11 @@ export class AppComponent implements OnInit {
   currentScrollValue: number = 0;
 
   scrollHorizontally($event) {
+    if (window.location.pathname == "/edit") {
+      document.getElementById("main").style.overflowY = "scroll";
+      return;
+    }
+    document.getElementById("main").style.overflowY = "hidden";
     const main = document.getElementById("main");
     this.currentScrollValue = main.scrollLeft;
 

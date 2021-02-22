@@ -1,28 +1,56 @@
 <div class="background">
-    <div *ngIf="!loggedIn" class="login-form">
-        <h2>Github Login</h2>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                    <div *ngIf="f.username.errors.required">Username is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                    <div *ngIf="f.password.errors.required">Password is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <button [disabled]="loading" class="btn btn-primary">
-                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                    Login
-                </button>
-            </div>
-        </form>
+  <div *ngIf="!loggedIn" class="login-form">
+    <h2>Github Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Github Personal Access Token</label>
+        <input
+          type="text"
+          formControlName="username"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+        />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Token is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm mr-1"
+          ></span>
+          Login
+        </button>
+      </div>
+    </form>
+    <div class="error-message text-danger">{{ errorMessage }}</div>
+  </div>
+  <div *ngIf="loggedIn" class="editScreen">
+    <div *ngIf="currentProject == false">
+      <div
+        *ngFor="let project of projectsConfigState"
+        class="card"
+        style="width: 18rem"
+      >
+        <img
+          class="card-img-top"
+          src="{{ images[project.titleImage] }}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ project.title }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+          <a (click)="editProject(project)" class="btn btn-primary">Edit</a>
+        </div>
+      </div>
     </div>
-    <div *ngIf="loggedIn" class="editScreen"></div>
+    <div *ngIf="currentProject != false">
+        <button (click)="backButton()" class="btn btn-primary hBack" type="button">Back</button>
+        <h1>{{ currentProject.title }}</h1>
+        <p>{{ currentProject.description }}</p>
+        <h6>Title Image</h6>
+        <img src="{{ images[currentProject.titleImage] }}" class="img-fluid" alt="Responsive image">
+    </div>
+  </div>
 </div>
