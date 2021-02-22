@@ -277,7 +277,7 @@ const projects: Projects = [
     },
     "titleImage": "/assets/bic-pen/bicpen.png",
     "images": [
-      "/assets/bic-pen/bicpen1.png",
+      "/assets/bic-pen/bicpen1.png"
     ],
     "videos": [],
     "description": "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
@@ -293,7 +293,7 @@ const projects: Projects = [
     ],
     "videos": [],
     "description": "Used in design ideas of A Level Design and Technology. Modular bin with expandable and contractable compartments along with magnetic slider for separation of ferrous metals"
-  },
+  }
 ];
 
 export default projects;
