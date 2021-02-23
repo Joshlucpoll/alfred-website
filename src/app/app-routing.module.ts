@@ -32,7 +32,7 @@ projects.forEach((project) => {
 })
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: false})],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule],
   declarations: [],
 })
