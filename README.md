@@ -78,6 +78,7 @@ Make sure all the file paths correspond with actual files
 
 7. Save all the files and close VS Code
 8. Go back to Github Desktop - you should see pending changes; select all of them
-9. Press commit to master
-10. Wait a couple minutes for the build to complete - you can see the progress of the build [here](https://github.com/Joshlucpoll/alfred-website/actions)
-11. Done!
+9. Add a summary message and press commit to master
+10. Press push to origin on the top bar
+11. Wait a couple minutes for the build to complete - you can see the progress of the build [here](https://github.com/Joshlucpoll/alfred-website/actions)
+12. Done!
