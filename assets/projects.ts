@@ -23,6 +23,25 @@ interface Projects extends Array<Project> {};
 
 const projects: Projects = [
   {
+    "title": "Everus Harbor",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/everus-harbor/everus harbor.glb",
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      }
+    },
+    "titleImage": "/assets/everus-harbor/everus_harbor1.png",
+    "images": [
+      "/assets/everus-harbor/everus_harbor2.png",
+      "/assets/everus-harbor/everus_harbor3.png"
+    ],
+    "videos": [],
+    "description": "<description>"
+  },
+  {
     "title": "Black Hole",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
