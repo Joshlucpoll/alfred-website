@@ -35,7 +35,7 @@ Portfolio website for Alfie Hilton. Displays multiple projects made by him, incl
   "videos": [
     "/assets/<project-folder-name>/<image-1-file>"
   ],
-  "description": "Inspired by Interstellar's Gargantua Spinning Black Hole"
+  "description": "<description>"
 },
 ```
 
@@ -62,7 +62,7 @@ You may need to play around with camera position
   "videos": [
     "/assets/<project-folder-name>/<image-1-file>"
   ],
-  "description": "Inspired by Interstellar's Gargantua Spinning Black Hole"
+  "description": "<description>"
 },
 ```
 
