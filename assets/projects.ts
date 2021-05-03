@@ -35,6 +35,22 @@ const projects: Projects = [
     "description": "Inspired by Interstellar's Gargantua Spinning Black Hole"
   },
   {
+    "title": "Man O' War",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/man-o'-war/Man o' war.glb",
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      }
+    },
+    "titleImage": "/assets/man-o'-war/man-o'-war1.png",
+    "images": [],
+    "videos": [],
+    "description": "Inspired by Interstellar's Gargantua Spinning Black Hole"
+  },
+  {
     "title": "TIE Fighter",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
