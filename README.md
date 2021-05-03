@@ -13,8 +13,8 @@ Portfolio website for Alfie Hilton. Displays multiple projects made by him, incl
 
 ### Add a Project
 
-1. Open Github Desktop and click 'Open in Visual Studio Code' button
-2. **IMPORTANT** Click 'Fetch Origin' on the top row to update local repo with Github changes
+1. **IMPORTANT** Click 'Fetch Origin' on the top row to update local repo with Github changes
+2. Open Github Desktop and click 'Open in Visual Studio Code' button
 3. In VS Code on the left panel navigate to `src/assets` folder
 4. Create a new folder inside the `assets` folder for new project
 5. Copy images/glb file into project folder
