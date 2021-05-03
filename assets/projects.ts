@@ -109,6 +109,24 @@ const projects: Projects = [
     "description": "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'"
   },
   {
+    "title": "Ocean in a Box",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/ocean-diorama/oceandiorama.glb",
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      }
+    },
+    "titleImage": "/assets/ocean-diorama/oceandiorama1.png",
+    "images": [
+      "/assets/ocean-diorama/oceandiorama2.png"
+    ],
+    "videos": [],
+    "description": "<description>"
+  },
+  {
     "title": "Corridor",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
