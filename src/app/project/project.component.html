@@ -34,7 +34,7 @@
       <img src={{image}} class="image"/>
     </li>
     <li *ngFor="let video of project.videos" class="item item-colour">
-      <video autoplay loop class="image">
+      <video autoplay loop [muted]="true" class="image">
         <source src={{video}} type="video/mp4"/>
       </video>
     </li>
