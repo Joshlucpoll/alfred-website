@@ -67,7 +67,7 @@ const projects: Projects = [
     "titleImage": "/assets/man-o'-war/man-o'-war1.png",
     "images": [],
     "videos": [],
-    "description": "Inspired by Interstellar's Gargantua Spinning Black Hole"
+    "description": "A depiction of the Portuguese Man-O-War Siphonophore. Sculpted and Textured in blender"
   },
   {
     "title": "TIE Fighter",
