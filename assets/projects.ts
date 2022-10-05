@@ -119,7 +119,7 @@ const projects: Projects = [
         "z": 1
       }
     },
-    "titleImage": "/assets/Custom_mask_design/Jegrah_Fough_helmet2.png",
+    "titleImage": "/assets/Custom_mask_design/Jegrah_fough_helmet2.png",
     "images": [
     ],
     "videos": [
@@ -148,7 +148,7 @@ const projects: Projects = [
     "title": "The World is on the Corner",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
-    "titleImage": "/assets/ricochet/Ricochet2.png",
+    "titleImage": "/assets/ricochet/Ricochet2.jpg",
     "images": [
     ],
     "videos": [
