@@ -119,15 +119,12 @@ const projects: Projects = [
         "z": 1
       }
     },
-    "titleImage": "/Custom_mask_design/Jegrah_Fough_helmet2.png",
+    "titleImage": "/assets/Custom_mask_design/Jegrah_Fough_helmet2.png",
     "images": [
-      "/assets/<project-folder-name>/<image-1-file>",
-      "/assets/<project-folder-name>/<image-2-file>"
     ],
     "videos": [
-      "/assets/<project-folder-name>/<image-1-file>"
     ],
-    "description": "<description>"
+    "description": "Custom Designed Sci-fi helmet. Mostly using edge modelling methods"
   },
   {
     "title": "Ocean in a Box",
