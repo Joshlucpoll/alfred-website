@@ -39,7 +39,7 @@ const projects: Projects = [
       "/assets/everus-harbor/everus_harbor3.png"
     ],
     "videos": ["/assets/everus-harbor/everus_vid1.mp4"],
-    "description": "Inspired by Everus Harbor spacestation from the Star Citizen MMO Videogame"
+    "description": "Inspired by Everus Harbor spacestation from the Star Citizen MMO Videogame. The design utilizes a streamlined workflow, by using generated textures with alpha maps, to create the illusion of layered 3D modelling. This reduced the modelling time and poly count significantly"
   },
   {
     "title": "Black Hole",
