@@ -51,7 +51,7 @@ const projects: Projects = [
       "/assets/black-hole/blackhole2.png"
     ],
     "videos": [],
-    "description": "Inspired by Interstellar's Gargantua Spinning Black Hole"
+    "description": "Inspired by Interstellar's Gargantua Spinning Black Hole. Uses volumetrics and some camera normals effects."
   },
   {
     "title": "Man O' War",
@@ -87,7 +87,7 @@ const projects: Projects = [
       "/assets/tie-fighter/tie-fighter4.png"
     ],
     "videos": [],
-    "description": "The TIE (Twin Ion Engine) fighter is the backbone of the Empire, where it lack in shields, it makes up in speed and maneuverability"
+    "description": "A 3D model of a TIE Fighter from the Star Wars franchise. Modelled and textured to a very high degree of acuracy in blender. Uses colour ramp nodes in conjuction with edge detection to create the metal edgware effect"
   },
   {
     "title": "Vader",
@@ -106,7 +106,28 @@ const projects: Projects = [
       "/assets/vader/vader3.png"
     ],
     "videos": [],
-    "description": "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'"
+    "description": "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'. Modelled using primitive, box and edge modelling techniques, in blender"
+  },
+  {
+    "title": "Sci-fi Mask Design",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/Custom_mask_design/Jegrah Fough helmet.glb",
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      }
+    },
+    "titleImage": "/Custom_mask_design/Jegrah_Fough_helmet2.png",
+    "images": [
+      "/assets/<project-folder-name>/<image-1-file>",
+      "/assets/<project-folder-name>/<image-2-file>"
+    ],
+    "videos": [
+      "/assets/<project-folder-name>/<image-1-file>"
+    ],
+    "description": "<description>"
   },
   {
     "title": "Ocean in a Box",
@@ -124,7 +145,7 @@ const projects: Projects = [
       "/assets/ocean-diorama/oceandiorama2.png"
     ],
     "videos": [],
-    "description": "<description>"
+    "description": "A diorama of a raft lost at sea. The water effect was created with the ocean modifier; this was used in conjuction with caustic effects to show the refraction of light without increasing render time. Modelled. textured and lit in blender. "
   },
   {
     "title": "Corridor",
@@ -147,7 +168,7 @@ const projects: Projects = [
       "/assets/phasmo/phasmo5.png"
     ],
     "videos": [],
-    "description": "From the Phasmophobia game, this is the operations hub of your ghost hunting business, where you detect paranormal activity"
+    "description": "A redesign of the lobby from the game Phasmophobia. As a fan of the game, I created a design of higher aesthetic fidelity, utilizing my level design skills. This was to see if I could make a more coherent design, enabling a chilling atmosphere."
   },
   {
     "title": "Mandalorian",
@@ -177,7 +198,7 @@ const projects: Projects = [
       "/assets/bergman/bergman2.jpg"
     ],
     "videos": [],
-    "description": "The Bergmann was a 19th-century semi-automatic pistol developed by German designer Louis Schmeisser and sold by Theodor Bergmann's company."
+    "description": "A digital replica of a Bergman pistol on a beach. Mostly using primitive and edge modelling techniques to achieve the iconic form  of the weapon. hair particle effects were used to make a realistic distribution for the grass."
   },
   {
     "title": "Wands",
@@ -196,7 +217,7 @@ const projects: Projects = [
       "/assets/wands/wands3.png"
     ],
     "videos": [],
-    "description": "Custom designed and made Harry Potter inspired Wands"
+    "description": "Custom designed and made Harry Potter inspired Wands. Modelled and textured in blender"
   },
   {
     "title": "Sabers",
@@ -217,10 +238,10 @@ const projects: Projects = [
       "/assets/sabers/sabers4.png"
     ],
     "videos": [],
-    "description": "Lightsabers from the movie Star Wars."
+    "description": "Original designs based of the weapons from Star Wars. Modelled and textured in blender"
   },
   {
-    "title": "Screw Drivers",
+    "title": "Sonic Screwdrivers",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/screw-drivers/sonic.glb",
@@ -245,7 +266,7 @@ const projects: Projects = [
       "/assets/screw-drivers/sonic11.png"
     ],
     "videos": [],
-    "description": "Sonic screwdrivers from the show 'Doctor Who'"
+    "description": "Original Designs of Sonic screwdrivers from the show 'Doctor Who. Modelled and textured in blender'"
   },
   {
     "title": "Catwalk",
@@ -264,10 +285,10 @@ const projects: Projects = [
       "/assets/catwalk/catwalk3.png"
     ],
     "videos": [],
-    "description": "Inspired by Star Wars 'I am your father' scene in Episode V: The Empire Strikes Back. Smoke simulation was used to recreate this iconic environment"
+    "description": "Inspired by Star Wars 'I am your father' scene in Episode V: The Empire Strikes Back. Smoke simulations were used to recreate this iconic environment"
   },
   {
-    "title": "Sonic Gun",
+    "title": "Sci-fi Gun",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/sonic-gun/sonicgun.glb",
@@ -284,7 +305,7 @@ const projects: Projects = [
       "/assets/sonic-gun/sonicgun3.png"
     ],
     "videos": [],
-    "description": "A combination of lightsaber, sonic screwdriver and sci-fi shit"
+    "description": "A Sci-fi gun designed in blender using primitive modelling methods."
   },
   {
     "title": "Sofa",
@@ -296,7 +317,7 @@ const projects: Projects = [
       "/assets/sofa/sofa2.png"
     ],
     "videos": [],
-    "description": "Sofa model with cloth simulation and inflation algorithms"
+    "description": "High poly sofa model with cloth simulation and the inflate modifier to create organic looking cloth."
   },
   {
     "title": "Bulb Table",
@@ -317,7 +338,7 @@ const projects: Projects = [
       "/assets/bulb-table/bulbtable4.png"
     ],
     "videos": [],
-    "description": "Used in design ideas of A Level Design and Technology. Bulb table is a table made of reused bulbs"
+    "description": "Used in design ideas of A Level Design and Technology. Bulb table is a table made of reused bulbs. Utilizes transparent materials to create refreactive light effects."
   },
   {
     "title": "Bic Pen",
