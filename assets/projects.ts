@@ -38,10 +38,8 @@ const projects: Projects = [
       "/assets/everus-harbor/everus_harbor2.png",
       "/assets/everus-harbor/everus_harbor3.png"
     ],
-    "videos": [
-       "/assets/everus-harbor/everus_vid1.mp4"
-  ],
-    "description": "<description>"
+    "videos": ["/assets/everus-harbor/everus_vid1.mp4"],
+    "description": "Inspired by Everus Harbor spacestation from the Star Citizen MMO Videogame"
   },
   {
     "title": "Black Hole",
