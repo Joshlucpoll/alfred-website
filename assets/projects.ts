@@ -145,6 +145,17 @@ const projects: Projects = [
     "description": "A diorama of a raft lost at sea. The water effect was created with the ocean modifier; this was used in conjuction with caustic effects to show the refraction of light without increasing render time. Modelled. textured and lit in blender. "
   },
   {
+    "title": "The World is on the Corner",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/ricochet/Ricochet2.png",
+    "images": [
+    ],
+    "videos": [
+    ],
+    "description": "Art render, depicting a Line from Ricochet-David Bowie. Uses volumetric raytracing and shot compositional techniques."
+  },
+  {
     "title": "Corridor",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
