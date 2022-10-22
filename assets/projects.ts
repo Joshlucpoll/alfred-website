@@ -38,6 +38,22 @@ const projects: Projects = [
     "description": "R5 Astromech droid modelled in blender and textured in Substance Painter. This was my first time using the Blender -> Substance pipeline."
   },
   {
+    "title": "Orcs",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/Orcs/Orcs7.png",
+    "images": [
+      "/assets/Orcs/Shagflak.png",
+      "/assets/Orcs/Flarg.png",
+      "/assets/Orcs/Targul.png",
+      "/assets/Orcs/Regrodz.png",
+      "/assets/Orcs/Gorlog.png",
+      "/assets/Orcs/Bolg.png"
+    ],
+    "videos": [],
+    "description": "A group of orcs inspired by the Lord of the Rings trilogy and games. Sculpted and textured in Z-brush. Rendered and retopologized in blender. Bolg is inspired by the character of the same name in the Hobbit trilogy."
+  },
+  {
     "title": "Everus Harbor",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
@@ -94,7 +110,7 @@ const projects: Projects = [
       "/assets/Cabin/BlackCabinBlunder.png"
     ],
     "videos": [],
-    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in blender. Humanoid character creations were created with MetaHuman and rigged in blender. Postprocessing and colour grading were done in Photoshop.  "
+    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in blender. Notable use of particle hair simulations for the trees. Humanoid character creations were created with MetaHuman and rigged in blender. Postprocessing and colour grading were done in Photoshop.  "
   },
   {
     "title": "Spartan Helmet",
@@ -113,7 +129,7 @@ const projects: Projects = [
       "/assets/Spartan/Spartan Vader.png2"
     ],
     "videos": [],
-    "description": "Original design inspired by the Spartan helmet. Modelled in blender and textured in Substance painter"
+    "description": "Original design inspired by the Spartan helmet. Modelled in blender and textured in Substance painter. particle hair simulation done in blender."
   },
   {
     "title": "Man O' War",
