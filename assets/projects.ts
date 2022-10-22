@@ -66,10 +66,10 @@ const projects: Projects = [
       "/assets/Fishing_Diorama/FishingFiasco5.png",
       "/assets/Fishing_Diorama/FishingFiasco4.png",
       "/assets/Fishing_Diorama/FishingFiasco1.png",
-      "/assets/Fishing_Diorama/FishingFiasco2.png"
+      "/assets/Fishing_Diorama/DNDelephant2.png"
     ],
     "videos": [],
-    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in blender. The environment was created with some imported assets from Megascans. Humanoid character creations were created with MetaHuman and rigged in blender. Postprocessing and colour grading werre done in Photoshop. "
+    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in blender. The environment was created with some imported assets from Megascans. Humanoid character creations were created with MetaHuman and rigged in blender. Postprocessing and colour grading were done in Photoshop. "
   },
   {
     "title": "Black Hole",
@@ -84,7 +84,20 @@ const projects: Projects = [
     "description": "Inspired by Interstellar's Gargantua Spinning Black Hole. Uses volumetrics and some camera normals effects."
   },
   {
-    "title": "Everus Harbor",
+    "title": "Black Cabin Blunder",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/Cabin/BlackCabinBlunder8.png",
+    "images": [
+      "/assets/Cabin/BlackCabinBlunder5.png",
+      "/assets/Cabin/BlackCabinBlunder4.png",
+      "/assets/Cabin/BlackCabinBlunder.png"
+    ],
+    "videos": [],
+    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in blender. Humanoid character creations were created with MetaHuman and rigged in blender. Postprocessing and colour grading were done in Photoshop.  "
+  },
+  {
+    "title": "Spartan Helmet",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
       "path": "/assets/Spartan/Spartan Vader.glb",
@@ -96,8 +109,8 @@ const projects: Projects = [
     },
     "titleImage": "/assets/Spartan/Spartan Vader.png",
     "images": [
-      "/assets/Spartan/Spartan Vader.png",
-      "/assets/Spartan/Spartan Vader.png"
+      "/assets/Spartan/Spartan Vader.png1",
+      "/assets/Spartan/Spartan Vader.png2"
     ],
     "videos": [],
     "description": "Original design inspired by the Spartan helmet. Modelled in blender and textured in Substance painter"
