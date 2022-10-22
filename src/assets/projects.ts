@@ -23,6 +23,21 @@ interface Projects extends Array<Project> {};
 
 const projects: Projects = [
   {
+    "title": "R5 Astromech Droid",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/R5/R5_9.png",
+    "images": [
+      "/assets/R5/R5_10.png",
+      "/assets/R5/R5_13.png",
+      "/assets/R5/R5_12.png",
+      "/assets/R5/R5_4.png",
+      "/assets/R5/R5.png"
+    ],
+    "videos": [],
+    "description": "R5 Astromech droid modelled in blender and textured in Substance Painter. This was my first time using the Blender -> Substance pipeline."
+  },
+  {
     "title": "Everus Harbor",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
