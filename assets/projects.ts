@@ -168,6 +168,18 @@ const projects: Projects = [
     "description": "A 3D model of a TIE Fighter from the Star Wars franchise. Modelled and textured to a very high degree of acuracy in blender. Uses colour ramp nodes in conjuction with edge detection to create the metal edgware effect"
   },
   {
+    "title": "Rings of Power",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/Rings/Rings of power7.png",
+    "images": [
+      "/assets/Rings/Rings of power6.png",
+      "/assets/Rings/Rings of power.png"
+    ],
+    "videos": [],
+    "description": " Rings inspired by the Lord of the Rings trilogy. Modelled and textured in blender. Some testing with LOD creation with a high to low poly work flow."
+  },
+  {
     "title": "Vader",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
