@@ -69,6 +69,25 @@ const projects: Projects = [
     "description": "Inspired by Interstellar's Gargantua Spinning Black Hole. Uses volumetrics and some camera normals effects."
   },
   {
+    "title": "Everus Harbor",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/Spartan/Spartan Vader.glb",
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      }
+    },
+    "titleImage": "/assets/Spartan/Spartan Vader.png",
+    "images": [
+      "/assets/Spartan/Spartan Vader.png",
+      "/assets/Spartan/Spartan Vader.png"
+    ],
+    "videos": [],
+    "description": "Original design inspired by the Spartan helmet. Modelled in blender and textured in Substance painter"
+  },
+  {
     "title": "Man O' War",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
