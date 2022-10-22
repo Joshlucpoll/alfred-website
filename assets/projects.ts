@@ -41,7 +41,7 @@ const projects: Projects = [
     "title": "Orcs",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
-    "titleImage": "/assets/Orcs/Orcs7.png",
+    "titleImage": "/assets/Orcs/orcs7.png",
     "images": [
       "/assets/Orcs/Shagflak.png",
       "/assets/Orcs/Flarg.png",
