@@ -57,6 +57,21 @@ const projects: Projects = [
     "description": "Inspired by Everus Harbor spacestation from the Star Citizen MMO Videogame. The design utilizes a streamlined workflow, by using generated textures with alpha maps, to create the illusion of layered 3D modelling. This reduced the modelling time and poly count significantly"
   },
   {
+    "title": "Fishing Fiasco",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/Fishing_Diorama/FishingFiasco10.png",
+    "images": [
+      "/assets/Fishing_Diorama/FishingFiasco7.png",
+      "/assets/Fishing_Diorama/FishingFiasco5.png",
+      "/assets/Fishing_Diorama/FishingFiasco4.png",
+      "/assets/Fishing_Diorama/FishingFiasco1.png",
+      "/assets/Fishing_Diorama/FishingFiasco2.png"
+    ],
+    "videos": [],
+    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in blender. The environment was created with some imported assets from Megascans. Humanoid character creations were created with MetaHuman and rigged in blender. Postprocessing and colour grading werre done in Photoshop. "
+  },
+  {
     "title": "Black Hole",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
