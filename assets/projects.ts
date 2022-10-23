@@ -35,7 +35,7 @@ const projects: Projects = [
       "/assets/R5/R5.png"
     ],
     "videos": [],
-    "description": "R5 Astromech droid modelled in blender and textured in Substance Painter. This was my first time using the Blender -> Substance pipeline."
+    "description": "R5 Astromech droid modelled in Blender and textured in Substance Painter. This was my first time using the Blender -> Substance pipeline."
   },
   {
     "title": "Orcs",
@@ -51,7 +51,7 @@ const projects: Projects = [
       "/assets/Orcs/Bolg.png"
     ],
     "videos": [],
-    "description": "A group of orcs inspired by the Lord of the Rings trilogy and games. Sculpted and textured in Z-brush. Rendered and retopologized in blender. Bolg is inspired by the character of the same name in the Hobbit trilogy."
+    "description": "A group of orcs inspired by the Lord of the Rings trilogy and games. Sculpted and textured in Z-brush. Rendered and retopologized in Blender. Bolg is inspired by the character of the same name in the Hobbit trilogy."
   },
   {
     "title": "Everus Harbor",
@@ -99,7 +99,26 @@ const projects: Projects = [
       "/assets/Fishing_Diorama/DNDelephant2.png"
     ],
     "videos": [],
-    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in blender. The environment was created with some imported assets from Megascans. Humanoid character creations were created with MetaHuman and rigged in blender. Postprocessing and colour grading were done in Photoshop. "
+    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in Blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in Blender. The environment was created with some imported assets from Megascans. Humanoid character creations were created with MetaHuman and rigged in Blender. Postprocessing and colour grading were done in Photoshop. "
+  },
+  {
+    "title": "Lancia Stratos",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/Lancia/Lancia Stratos.glb",
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      }
+    },
+    "titleImage": "/assets/Lancia/Lancia.png",
+    "images": [
+      "/assets/Lancia/Lancia2.png",
+      "/assets/Lancia/Lancia3.png"
+    ],
+    "videos": [],
+    "description": "Replica of a Lancia Stratos, made for the Lighting and Texturing module. Given a First. A low poly 15k poly, that was created using a low to high poly workflow. Optimized for games Modelled in Maya and textured in Sunstance painter using the Unreal engine -> substance bridge. Rendered in Blender."
   },
   {
     "title": "Black Hole",
@@ -124,7 +143,7 @@ const projects: Projects = [
       "/assets/Cabin/BlackCabinBlunder.png"
     ],
     "videos": [],
-    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in blender. Notable use of particle hair simulations for the trees. Humanoid character creations were created with MetaHuman and rigged in blender. Postprocessing and colour grading were done in Photoshop.  "
+    "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in Blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in Blender. Notable use of particle hair simulations for the trees. Humanoid character creations were created with MetaHuman and rigged in Blender. Postprocessing and colour grading were done in Photoshop.  "
   },
   {
     "title": "Bog Fisher (Bournemouth Modelling Competition Winner)",
@@ -143,7 +162,7 @@ const projects: Projects = [
       "/assets/BogFisher/Bog Fisher1.png"
     ],
     "videos": [],
-    "description": "Winning design for Bournemouth University first year game modelling competition. Descibed as:'An inpired design using great low poly modelling techniques'. The competition was to model a new mode of transport. I decided on a distopian stilt walker design that uses wind power to move. Modelled in Maya, with scene composition, texturing and rendering done in blender"
+    "description": "Winning design for Bournemouth University first year game modelling competition. Descibed as:'An inpired design using great low poly modelling techniques'. The competition was to model a new mode of transport. I decided on a distopian stilt walker design that uses wind power to move. Modelled in Maya, with scene composition, texturing and rendering done in Blender"
   },
   {
     "title": "Spartan Helmet",
@@ -162,7 +181,7 @@ const projects: Projects = [
       "/assets/Spartan/Spartan Vader2.png"
     ],
     "videos": [],
-    "description": "Original design inspired by the Spartan helmet. Modelled in blender and textured in Substance painter. particle hair simulation done in blender."
+    "description": "Original design inspired by the Spartan helmet. Modelled in Blender and textured in Substance painter. particle hair simulation done in Blender."
   },
   {
     "title": "Man O' War",
@@ -178,7 +197,7 @@ const projects: Projects = [
     "titleImage": "/assets/man-o'-war/man-o'-war1.png",
     "images": [],
     "videos": [],
-    "description": "A depiction of the Portuguese Man-O-War Siphonophore. Sculpted and Textured in blender"
+    "description": "A depiction of the Portuguese Man-O-War Siphonophore. Sculpted and Textured in Blender"
   },
   {
     "title": "TIE Fighter",
@@ -198,7 +217,7 @@ const projects: Projects = [
       "/assets/tie-fighter/tie-fighter4.png"
     ],
     "videos": [],
-    "description": "A 3D model of a TIE Fighter from the Star Wars franchise. Modelled and textured to a very high degree of acuracy in blender. Uses colour ramp nodes in conjuction with edge detection to create the metal edgware effect"
+    "description": "A 3D model of a TIE Fighter from the Star Wars franchise. Modelled and textured to a very high degree of acuracy in Blender. Uses colour ramp nodes in conjuction with edge detection to create the metal edgware effect"
   },
   {
     "title": "Seismic Charge",
@@ -217,7 +236,7 @@ const projects: Projects = [
       "/assets/Seismic/seismic charge.png"
     ],
     "videos": [],
-    "description": "Replica of the siemic charge from Star Wars: Attack of The Clones. Modelled and textured in blender"
+    "description": "Replica of the siemic charge from Star Wars: Attack of The Clones. Modelled and textured in Blender"
   },
   {
     "title": "Tardis Console",
@@ -231,7 +250,7 @@ const projects: Projects = [
       "/assets/Tardis/tardis3.png"
     ],
     "videos": [],
-    "description": " Renewed design of the original 1963 Tardis console from Dr who. Modelled and textured in blender. Post processing and colour grading were done in Photoshop."
+    "description": " Renewed design of the original 1963 Tardis console from Dr who. Modelled and textured in Blender. Post processing and colour grading were done in Photoshop."
   },
   {
     "title": "Rings of Power",
@@ -243,7 +262,7 @@ const projects: Projects = [
       "/assets/Rings/Rings of power.png"
     ],
     "videos": [],
-    "description": " Rings inspired by the Lord of the Rings trilogy. Modelled and textured in blender. Some testing with LOD creation with a high to low poly work flow."
+    "description": " Rings inspired by the Lord of the Rings trilogy. Modelled and textured in Blender. Some testing with LOD creation with a high to low poly work flow."
   },
   {
     "title": "Vader",
@@ -262,7 +281,7 @@ const projects: Projects = [
       "/assets/vader/vader3.png"
     ],
     "videos": [],
-    "description": "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'. Modelled using primitive, box and edge modelling techniques, in blender"
+    "description": "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'. Modelled using primitive, box and edge modelling techniques, in Blender"
   },
   {
     "title": "Starkiller Base",
@@ -273,7 +292,7 @@ const projects: Projects = [
       "/assets/StarKiller/starkiller base2-4.png"
     ],
     "videos": ["/assets/StarKiller/0000-02805.mp4"],
-    "description": "Origninal design inspired by Starkiller base from Starwars The Force Awakens. Modelled in blender using alpha maps to produce low poly complicated designs to replicate complex extrusions. The postprocessing and colour grading were done in Photoshop.  "
+    "description": "Origninal design inspired by Starkiller base from Starwars The Force Awakens. Modelled in Blender using alpha maps to produce low poly complicated designs to replicate complex extrusions. The postprocessing and colour grading were done in Photoshop.  "
   },
   {
     "title": "Sci-fi Mask Design",
@@ -309,7 +328,7 @@ const projects: Projects = [
       "/assets/ocean-diorama/oceandiorama2.png"
     ],
     "videos": [],
-    "description": "A diorama of a raft lost at sea. The water effect was created with the ocean modifier; this was used in conjuction with caustic effects to show the refraction of light without increasing render time. Modelled. textured and lit in blender. "
+    "description": "A diorama of a raft lost at sea. The water effect was created with the ocean modifier; this was used in conjuction with caustic effects to show the refraction of light without increasing render time. Modelled. textured and lit in Blender. "
   },
   {
     "title": "The World is on the Corner",
@@ -329,7 +348,7 @@ const projects: Projects = [
     "titleImage": "/assets/corridor/corridor.png",
     "images": [],
     "videos": ["/assets/corridor/corridor.mp4"],
-    "description": "Infinite corridor animation made and rendered in blender."
+    "description": "Infinite corridor animation made and rendered in Blender."
   },
   {
     "title": "Phasmophobia Lobby",
@@ -392,7 +411,7 @@ const projects: Projects = [
       "/assets/wands/wands3.png"
     ],
     "videos": [],
-    "description": "Custom designed and made Harry Potter inspired Wands. Modelled and textured in blender"
+    "description": "Custom designed and made Harry Potter inspired Wands. Modelled and textured in Blender"
   },
   {
     "title": "Sabers",
@@ -413,7 +432,7 @@ const projects: Projects = [
       "/assets/sabers/sabers4.png"
     ],
     "videos": [],
-    "description": "Original designs based of the weapons from Star Wars. Modelled and textured in blender"
+    "description": "Original designs based of the weapons from Star Wars. Modelled and textured in Blender"
   },
   {
     "title": "Sonic Screwdrivers",
@@ -441,7 +460,7 @@ const projects: Projects = [
       "/assets/screw-drivers/sonic11.png"
     ],
     "videos": [],
-    "description": "Original Designs of Sonic screwdrivers from the show 'Doctor Who. Modelled and textured in blender'"
+    "description": "Original Designs of Sonic screwdrivers from the show 'Doctor Who. Modelled and textured in Blender'"
   },
   {
     "title": "Catwalk",
@@ -480,7 +499,7 @@ const projects: Projects = [
       "/assets/sonic-gun/sonicgun3.png"
     ],
     "videos": [],
-    "description": "A Sci-fi gun designed in blender using primitive modelling methods."
+    "description": "A Sci-fi gun designed in Blender using primitive modelling methods."
   },
   {
     "title": "Sofa",
