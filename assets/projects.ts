@@ -206,6 +206,20 @@ const projects: Projects = [
     "description": "Replica of the siemic charge from Star Wars: Attack of The Clones. Modelled and textured in blender"
   },
   {
+    "title": "Tardis Console",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/Tardis/tardis42.png",
+    "images": [
+      "/assets/Tardis/lara's sonic.png",
+      "/assets/Tardis/tardis.png",
+      "/assets/Tardis/tardis2.png",
+      "/assets/Tardis/tardis3.png"
+    ],
+    "videos": [],
+    "description": " Renewed design of the original 1963 Tardis console from Dr who. Modelled and textured in blender. Post processing and colour grading were done in Photoshop."
+  },
+  {
     "title": "Rings of Power",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
@@ -242,10 +256,9 @@ const projects: Projects = [
     "model": false,
     "titleImage": "/assets/StarKiller/starkiller_base3.png",
     "images": [
-      "/assets/StarKiller/starkiller base2-4.png",
-      "/assets/StarKiller/starkiller base2.png"
+      "/assets/StarKiller/starkiller base2-4.png"
     ],
-    "videos": ["/assets/corridor/0000-02805.mp4"],
+    "videos": ["/assets/StarKiller/0000-02805.mp4"],
     "description": "Origninal design inspired by Starkiller base from Starwars The Force Awakens. Modelled in blender using alpha maps to produce low poly complicated designs to replicate complex extrusions. The postprocessing and colour grading were done in Photoshop.  "
   },
   {
@@ -302,7 +315,7 @@ const projects: Projects = [
     "titleImage": "/assets/corridor/corridor.png",
     "images": [],
     "videos": ["/assets/corridor/corridor.mp4"],
-    "description": "Infinite corridor animation"
+    "description": "Infinite corridor animation made and rendered in blender."
   },
   {
     "title": "Phasmophobia Lobby",
