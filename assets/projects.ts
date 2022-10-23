@@ -113,6 +113,25 @@ const projects: Projects = [
     "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in blender. Notable use of particle hair simulations for the trees. Humanoid character creations were created with MetaHuman and rigged in blender. Postprocessing and colour grading were done in Photoshop.  "
   },
   {
+    "title": "Bog Fisher (Bournemouth Modelling Competition Winner)",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/BogFisher/BogFisher.glb",
+      "cameraPosition": {
+        "x": 0,
+        "y": 6,
+        "z": 0
+      }
+    },
+    "titleImage": "/assets/BogFisher/BogFisher3.png",
+    "images": [
+      "/assets/BogFisher/BogFisher5.png",
+      "/assets/BogFisher/BogFisher1.png"
+    ],
+    "videos": [],
+    "description": "Winning design for first year game modelling competition. Descibed as:'An inpired design using great low poly modelling techniques'. The competition was to model a new mode of transport. I decided on a distopian stilt walker design that uses wind power to move. Modelled in Maya, with scene composition, texturing and rendering done in blender"
+  },
+  {
     "title": "Spartan Helmet",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
