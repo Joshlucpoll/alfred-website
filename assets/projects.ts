@@ -187,6 +187,25 @@ const projects: Projects = [
     "description": "A 3D model of a TIE Fighter from the Star Wars franchise. Modelled and textured to a very high degree of acuracy in blender. Uses colour ramp nodes in conjuction with edge detection to create the metal edgware effect"
   },
   {
+    "title": "Seismic Charge",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/Seismic/charge.glb",
+      "cameraPosition": {
+        "x": 0,
+        "y": 4,
+        "z": 0
+      }
+    },
+    "titleImage": "/assets/Seismic/seismic charge4.png",
+    "images": [
+      "/assets/Seismic/seismic charge8.png",
+      "/assets/Seismic/seismic charge.png"
+    ],
+    "videos": [],
+    "description": "Replica of the siemic charge from Star Wars: Attack of The Clones. Modelled and textured in blender"
+  },
+  {
     "title": "Rings of Power",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
