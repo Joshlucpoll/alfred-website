@@ -144,8 +144,8 @@ const projects: Projects = [
     },
     "titleImage": "/assets/Spartan/Spartan Vader.png",
     "images": [
-      "/assets/Spartan/Spartan Vader.png1",
-      "/assets/Spartan/Spartan Vader.png2"
+      "/assets/Spartan/Spartan Vader1.png",
+      "/assets/Spartan/Spartan Vader2.png"
     ],
     "videos": [],
     "description": "Original design inspired by the Spartan helmet. Modelled in blender and textured in Substance painter. particle hair simulation done in blender."
