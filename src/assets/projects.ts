@@ -73,6 +73,20 @@ const projects: Projects = [
     "description": "Inspired by Everus Harbor spacestation from the Star Citizen MMO Videogame. The design utilizes a streamlined workflow, by using generated textures with alpha maps, to create the illusion of layered 3D modelling. This reduced the modelling time and poly count significantly"
   },
   {
+    "title": "Battle of the Zomme",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/Zombies/zomme4.png",
+    "images": [
+      "/assets/Zombies/zomme1.png",
+      "/assets/Zombies/zomme2.png",
+      "/assets/Zombies/zomme3.png",
+      "/assets/Zombies/zomme5.png"
+    ],
+    "videos": ["/assets/Zombies/Zombies.mp4"],
+    "description": " This level was presented for Level Design Fundametals module, which scored a mark of 84%. The level is based around COD zombies and inspired by the Somme battlefield. Software used: Asset modelling - Maya, Blender ; Asset texturing - Sunstance Painter, Substance Designer ; Scene composition - Unreal Engine 4 ; Programming and blueprints - Unreal Engine 4 ; Cinematics - Unreal Engine 4."
+  },
+  {
     "title": "Fishing Fiasco",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
