@@ -123,13 +123,13 @@ const projects: Projects = [
         "z": 0
       }
     },
-    "titleImage": "/assets/BogFisher/BogFisher3.png",
+    "titleImage": "/assets/BogFisher/Bog Fisher3.png",
     "images": [
-      "/assets/BogFisher/BogFisher5.png",
-      "/assets/BogFisher/BogFisher1.png"
+      "/assets/BogFisher/Bog Fisher5.png",
+      "/assets/BogFisher/Bog Fisher1.png"
     ],
     "videos": [],
-    "description": "Winning design for first year game modelling competition. Descibed as:'An inpired design using great low poly modelling techniques'. The competition was to model a new mode of transport. I decided on a distopian stilt walker design that uses wind power to move. Modelled in Maya, with scene composition, texturing and rendering done in blender"
+    "description": "Winning design for Bournemouth University first year game modelling competition. Descibed as:'An inpired design using great low poly modelling techniques'. The competition was to model a new mode of transport. I decided on a distopian stilt walker design that uses wind power to move. Modelled in Maya, with scene composition, texturing and rendering done in blender"
   },
   {
     "title": "Spartan Helmet",
@@ -216,6 +216,18 @@ const projects: Projects = [
     ],
     "videos": [],
     "description": "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'. Modelled using primitive, box and edge modelling techniques, in blender"
+  },
+  {
+    "title": "Starkiller Base",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/StarKiller/starkiller_base3.png",
+    "images": [
+      "/assets/StarKiller/starkiller base2-4.png",
+      "/assets/StarKiller/starkiller base2.png"
+    ],
+    "videos": ["/assets/corridor/0000-02805.mp4"],
+    "description": "Origninal design inspired by Starkiller base from Starwars The Force Awakens. Modelled in blender using alpha maps to produce low poly complicated designs to replicate complex extrusions. The postprocessing and colour grading were done in Photoshop.  "
   },
   {
     "title": "Sci-fi Mask Design",
