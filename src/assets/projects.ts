@@ -184,20 +184,23 @@ const projects: Projects = [
     "description": "Original design inspired by the Spartan helmet. Modelled in Blender and textured in Substance painter. particle hair simulation done in Blender."
   },
   {
-    "title": "Man O' War",
+    "title": "DeLorean",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
-      "path": "/assets/man-o'-war/Man o' war.glb",
+      "path": "/assets/DMC/DMC.glb",
       "cameraPosition": {
         "x": 1,
         "y": 4,
         "z": 1
       }
     },
-    "titleImage": "/assets/man-o'-war/man-o'-war1.png",
-    "images": [],
+    "titleImage": "/assets/DMC/DMC3.png",
+    "images": [
+      "/assets/DMC/DMC2.png",
+      "/assets/DMC/DMC.png"
+    ],
     "videos": [],
-    "description": "A depiction of the Portuguese Man-O-War Siphonophore. Sculpted and Textured in Blender"
+    "description": "Model of the DMC DeLorean, designed for the Game Modelling Fundamentals module. Received a First. Under 10k poly for game optimisation. Created using a low to high poly workflow with a high poly bake to the low poly. Modelled in Maya, textured in Substance Painter and rendered in Blender."
   },
   {
     "title": "TIE Fighter",
@@ -263,6 +266,22 @@ const projects: Projects = [
     ],
     "videos": [],
     "description": " Rings inspired by the Lord of the Rings trilogy. Modelled and textured in Blender. Some testing with LOD creation with a high to low poly work flow."
+  },
+  {
+    "title": "Man O' War",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/man-o'-war/Man o' war.glb",
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      }
+    },
+    "titleImage": "/assets/man-o'-war/man-o'-war1.png",
+    "images": [],
+    "videos": [],
+    "description": "A depiction of the Portuguese Man-O-War Siphonophore. Sculpted and Textured in Blender"
   },
   {
     "title": "Vader",
