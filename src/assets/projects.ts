@@ -25,7 +25,14 @@ const projects: Projects = [
   {
     "title": "R5 Astromech Droid",
     "path": function() {return "/" + urlify(this.title)},
-    "model": false,
+    "model": {
+      "path": "/assets/R5/R5 Astro.glb",
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      }
+    },
     "titleImage": "/assets/R5/R5_9.png",
     "images": [
       "/assets/R5/R5_10.png",
@@ -35,7 +42,7 @@ const projects: Projects = [
       "/assets/R5/R5.png"
     ],
     "videos": [],
-    "description": "R5 Astromech droid modelled in Blender and textured in Substance Painter. This was my first time using the Blender -> Substance pipeline."
+    "description": "R5 Astromech droid modelled in Blender and textured in Substance Painter. This was my first time using the Blender -> Substance pipeline. Notable uses of normal maps to create detail without additional poligons, with a high to low poly bake. Scenes were created and rendered in Blender. "
   },
   {
     "title": "Orcs",
