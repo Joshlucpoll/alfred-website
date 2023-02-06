@@ -45,6 +45,27 @@ const projects: Projects = [
     "description": "R5 Astromech droid modelled in Blender and textured in Substance Painter. This was my first time using the Blender -> Substance pipeline. Notable uses of normal maps to create detail without additional poligons, with a high to low poly bake. Scenes were created and rendered in Blender. "
   },
   {
+    "title": "Dalek",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/Dalek/Dalek.glb",
+      "cameraPosition": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      }
+    },
+    "titleImage": "/assets/Dalek/Dalek 4.png",
+    "images": [
+      "/assets/Dalek/Dalek 5.png",
+      "/assets/Dalek/Dalek 3.png",
+      "/assets/Dalek/Dalek 1.png",
+      "/assets/Dalek/Dalek 2.png"
+    ],
+    "videos": [],
+    "description": "The infamous antagonists of the Doctor Who franchise. Made using a Blender -> Substance -> Unreal 5 pipeline. Low and high poly models designed in blender, then exported to substance painter. Baked the high poly mesh to the low poly, to generate normals. Exported the textures to Unreal 5.1 and composed a scene using Quixel assets."
+  },
+  {
     "title": "Orcs",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
@@ -127,18 +148,7 @@ const projects: Projects = [
     "videos": [],
     "description": "Replica of a Lancia Stratos, made for the Lighting and Texturing module. Given a First. A low poly 15k poly, that was created using a low to high poly workflow. Optimized for games Modelled in Maya and textured in Sunstance painter using the Unreal engine -> substance bridge. Rendered in Blender."
   },
-  {
-    "title": "Black Hole",
-    "path": function() {return "/" + urlify(this.title)},
-    "model": false,
-    "titleImage": "/assets/black-hole/blackhole.png",
-    "images": [
-      "/assets/black-hole/blackhole1.png",
-      "/assets/black-hole/blackhole2.png"
-    ],
-    "videos": [],
-    "description": "Inspired by Interstellar's Gargantua Spinning Black Hole. Uses volumetrics and some camera normals effects."
-  },
+
   {
     "title": "Black Cabin Blunder",
     "path": function() {return "/" + urlify(this.title)},
@@ -151,6 +161,26 @@ const projects: Projects = [
     ],
     "videos": [],
     "description": "A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in Blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in Blender. Notable use of particle hair simulations for the trees. Humanoid character creations were created with MetaHuman and rigged in Blender. Postprocessing and colour grading were done in Photoshop.  "
+  },
+  {
+    "title": "TIE Fighter",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": {
+      "path": "/assets/tie-fighter/tie-fighter.glb",
+      "cameraPosition": {
+        "x": 3,
+        "y": 3,
+        "z": 10
+      }
+    },
+    "titleImage": "/assets/tie-fighter/tie-fighter.png",
+    "images": [
+      "/assets/tie-fighter/tie-fighter2.png",
+      "/assets/tie-fighter/tie-fighter3.png",
+      "/assets/tie-fighter/tie-fighter4.png"
+    ],
+    "videos": [],
+    "description": "A 3D model of a TIE Fighter from the Star Wars franchise. Modelled and textured to a very high degree of acuracy in Blender. Uses colour ramp nodes in conjuction with edge detection to create the metal edgware effect"
   },
   {
     "title": "Bog Fisher (Bournemouth Modelling Competition Winner)",
@@ -191,6 +221,18 @@ const projects: Projects = [
     "description": "Original design inspired by the Spartan helmet. Modelled in Blender and textured in Substance painter. particle hair simulation done in Blender."
   },
   {
+    "title": "Black Hole",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/black-hole/blackhole.png",
+    "images": [
+      "/assets/black-hole/blackhole1.png",
+      "/assets/black-hole/blackhole2.png"
+    ],
+    "videos": [],
+    "description": "Inspired by Interstellar's Gargantua Spinning Black Hole. Uses volumetrics and some camera normals effects."
+  },
+  {
     "title": "DeLorean",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
@@ -209,26 +251,7 @@ const projects: Projects = [
     "videos": [],
     "description": "Model of the DMC DeLorean, designed for the Game Modelling Fundamentals module. Received a First. Under 10k poly for game optimisation. Created using a low to high poly workflow with a high poly bake to the low poly. Modelled in Maya, textured in Substance Painter and rendered in Blender."
   },
-  {
-    "title": "TIE Fighter",
-    "path": function() {return "/" + urlify(this.title)},
-    "model": {
-      "path": "/assets/tie-fighter/tie-fighter.glb",
-      "cameraPosition": {
-        "x": 3,
-        "y": 3,
-        "z": 10
-      }
-    },
-    "titleImage": "/assets/tie-fighter/tie-fighter.png",
-    "images": [
-      "/assets/tie-fighter/tie-fighter2.png",
-      "/assets/tie-fighter/tie-fighter3.png",
-      "/assets/tie-fighter/tie-fighter4.png"
-    ],
-    "videos": [],
-    "description": "A 3D model of a TIE Fighter from the Star Wars franchise. Modelled and textured to a very high degree of acuracy in Blender. Uses colour ramp nodes in conjuction with edge detection to create the metal edgware effect"
-  },
+
   {
     "title": "Seismic Charge",
     "path": function() {return "/" + urlify(this.title)},
