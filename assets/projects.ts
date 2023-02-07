@@ -23,6 +23,24 @@ interface Projects extends Array<Project> {};
 
 const projects: Projects = [
   {
+    "title": "Single Cover for Charlie Hilton's 'CEREBRAL'",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/Cerebral/Cerebral1.png",
+    "images": [
+      "/assets/Cerebral/Cerebral3.png",
+      "/assets/Cerebral/Cerebral4.png",
+      "/assets/Cerebral/Cerebral5.png",
+      "/assets/Cerebral/Cerebral9.png",
+      "/assets/Cerebral/Cerebral6.png",
+      "/assets/Cerebral/Cerebral7.png",
+      "/assets/Cerebral/Cerebral8.png",
+      "/assets/Cerebral/Cerebral10.png"
+    ],
+    "videos": [],
+    "description": "A cover commisioned for Charlie Hilton for his single 'Cerebral'. Created using a Z-brush -> Blender -> Substance Painter -> Unreal 5 pipeline. I began by using a laser scanner to map Hilton's face. Using Z-brush, I sculpted the rest of his head, due to only having the face scan. I then baked the captured textures onto the model and matched the rest of his skin, creating pores. Once exported to Blender, I used the hair particle editor to create his hair. When exported to Unreal 5.1, I used the groom tools to make the hair look realistic. The environment was created with composited quixel assets. Bespoke models were designed in Blender and exported to Unreal, such as the conveyor flaps, that utilised cloth simulations. I used Nanite and Lumen, to create a realtime photorealistic style. I finalised the Scene with Niagra particle systems (sparks and dust) and volumetic fog. The final design was colour graded in Photoshop."
+  },
+  {
     "title": "R5 Astromech Droid",
     "path": function() {return "/" + urlify(this.title)},
     "model": {
@@ -57,7 +75,7 @@ const projects: Projects = [
     },
     "titleImage": "/assets/Dalek/Dalek 4.png",
     "images": [
-      "/assets/Dalek/Dalek 5.png",
+      "/assets/Dalek/Dalek5.png",
       "/assets/Dalek/Dalek 3.png",
       "/assets/Dalek/Dalek 1.png",
       "/assets/Dalek/Dalek 2.png"
@@ -220,7 +238,7 @@ const projects: Projects = [
     "videos": [],
     "description": "Original design inspired by the Spartan helmet. Modelled in Blender and textured in Substance painter. particle hair simulation done in Blender."
   },
-  {
+    {
     "title": "Black Hole",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
@@ -600,18 +618,6 @@ const projects: Projects = [
     ],
     "videos": [],
     "description": "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
-  },
-  {
-    "title": "Bin",
-    "path": function() {return "/" + urlify(this.title)},
-    "model": false,
-    "titleImage": "/assets/dt-bin/dtbin.png",
-    "images": [
-      "/assets/dt-bin/dtbin1.png",
-      "/assets/dt-bin/dtbin2.png"
-    ],
-    "videos": [],
-    "description": "Used in design ideas of A Level Design and Technology. Modular bin with expandable and contractable compartments along with magnetic slider for separation of ferrous metals"
   }
 ];
 
