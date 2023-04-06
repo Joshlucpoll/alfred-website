@@ -648,7 +648,7 @@ const projects: Projects = [
       "/assets/SandN UI/Player Hansel.png"
     ],
     "videos": [],
-    "description": ""
+    "description": "."
   }
 ];
 
