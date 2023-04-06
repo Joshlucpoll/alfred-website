@@ -620,7 +620,7 @@ const projects: Projects = [
     "description": "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
   },
   {
-    "title": "SandN UI Elements",
+    "title": "S and N UI Elements",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
     "titleImage": "/assets/SandN UI/SandN_Template.png",
