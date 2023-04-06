@@ -26,7 +26,7 @@ const projects: Projects = [
     "title": "Single Cover for Charlie Hilton's 'CEREBRAL'",
     "path": function() {return "/" + urlify(this.title)},
     "model": false,
-    "titleImage": "/assets/Cerebral/Cerebral1.png",
+    "titleImage": "/assets/Cerebral/Cerebral11.png",
     "images": [
       "/assets/Cerebral/Cerebral3.png",
       "/assets/Cerebral/Cerebral4.png",
@@ -618,6 +618,37 @@ const projects: Projects = [
     ],
     "videos": [],
     "description": "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
+  },
+  {
+    "title": "SandN UI Elements",
+    "path": function() {return "/" + urlify(this.title)},
+    "model": false,
+    "titleImage": "/assets/SandN UI/SandN_Template.png",
+    "images": [
+      "/assets/SandN UI/Background 1 Intro.png",
+      "/assets/SandN UI/Background 2 precinct.png",
+      "/assets/SandN UI/Background 3 the Hub.png",
+      "/assets/SandN UI/Background 4 Vicars' flashback.png",
+      "/assets/SandN UI/Background 5 Car Chase.png",
+      "/assets/SandN UI/Background 6 Casino.png",
+      "/assets/SandN UI/Background 7 Ginger Factory.png",
+      "/assets/SandN UI/Background 8 Gingerbread House.png",
+      "/assets/SandN UI/Background 9 Gingerbread interior.png",
+      "/assets/SandN UI/Boarder.png",
+      "/assets/SandN UI/Character info 1 Vicars.png",
+      "/assets/SandN UI/Character info 2 Witch.png",
+      "/assets/SandN UI/Character info 3 Guy.png",
+      "/assets/SandN UI/Character info 4 Nero.png",
+      "/assets/SandN UI/Character info 5 Hunt.png",
+      "/assets/SandN UI/Character info 6 Byrd.png",
+      "/assets/SandN UI/Character info Deceased.png",
+      "/assets/SandN UI/Character info Deceased2.png",
+      "/assets/SandN UI/Character info Deceased3.png",
+      "/assets/SandN UI/Player Gretel.png",
+      "/assets/SandN UI/Player Hansel.png"
+    ],
+    "videos": [],
+    "description": ""
   }
 ];
 
