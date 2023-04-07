@@ -1647,6 +1647,7 @@ const projects = [
             '/assets/SandN UI/Background 8 Gingerbread House.png',
             '/assets/SandN UI/Background 9 Gingerbread interior.png',
             '/assets/SandN UI/Boarder.png',
+            '/assets/SandN UI/Character info Empty.png',
             '/assets/SandN UI/Character info 1 Vicars.png',
             '/assets/SandN UI/Character info 2 Witch.png',
             '/assets/SandN UI/Character info 3 Guy.png',
