@@ -781,7 +781,9 @@ function ProjectComponent_li_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const video_r6 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("muted", true);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", video_r6, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 } }
 const _c0 = function (a0, a1) { return { "opacity": a0, "transform": a1 }; };
@@ -888,7 +890,7 @@ class ProjectComponent {
     }
 }
 ProjectComponent.ɵfac = function ProjectComponent_Factory(t) { return new (t || ProjectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"])); };
-ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProjectComponent, selectors: [["app-project"]], decls: 35, vars: 12, consts: [["id", "main-section-container", 1, "main-section-container"], [1, "main-section-wrapper", 3, "ngStyle"], [1, "title"], [1, "custom-br"], [1, "header"], [1, "navigation"], ["routerLink", "/", "routerLinkActive", "active", "id", "work-link", "alt", "work", 1, "link"], ["routerLink", "/about", "routerLinkActive", "active", "id", "about-link", "alt", "about", 1, "link"], ["routerLink", "/contact", "routerLinkActive", "active", "id", "contact-link", "alt", "contact", 1, "link"], [1, "arrow"], [1, "images-container"], ["id", "container", 1, "images"], [1, "item"], [1, "description"], ["class", "model-button", 3, "click", 4, "ngIf"], [1, "item", "item-colour"], [1, "image", 3, "src"], ["class", "item item-colour", 4, "ngFor", "ngForOf"], [1, "next-back-buttons", "item"], ["routerLinkActive", "active", 1, "project-buttons", 3, "routerLink"], [1, "next-project-image-container"], [1, "next-image", 3, "src"], [1, "project-buttons", 3, "click"], [1, "model-button", 3, "click"], ["autoplay", "", "loop", "", 1, "image"], ["type", "video/mp4", 3, "src"]], template: function ProjectComponent_Template(rf, ctx) { if (rf & 1) {
+ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProjectComponent, selectors: [["app-project"]], decls: 35, vars: 12, consts: [["id", "main-section-container", 1, "main-section-container"], [1, "main-section-wrapper", 3, "ngStyle"], [1, "title"], [1, "custom-br"], [1, "header"], [1, "navigation"], ["routerLink", "/", "routerLinkActive", "active", "id", "work-link", "alt", "work", 1, "link"], ["routerLink", "/about", "routerLinkActive", "active", "id", "about-link", "alt", "about", 1, "link"], ["routerLink", "/contact", "routerLinkActive", "active", "id", "contact-link", "alt", "contact", 1, "link"], [1, "arrow"], [1, "images-container"], ["id", "container", 1, "images"], [1, "item"], [1, "description"], ["class", "model-button", 3, "click", 4, "ngIf"], [1, "item", "item-colour"], [1, "image", 3, "src"], ["class", "item item-colour", 4, "ngFor", "ngForOf"], [1, "next-back-buttons", "item"], ["routerLinkActive", "active", 1, "project-buttons", 3, "routerLink"], [1, "next-project-image-container"], [1, "next-image", 3, "src"], [1, "project-buttons", 3, "click"], [1, "model-button", 3, "click"], ["autoplay", "", "loop", "", 1, "image", 3, "muted"], ["type", "video/mp4", 3, "src"]], template: function ProjectComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -928,7 +930,7 @@ ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "img", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, ProjectComponent_li_25_Template, 2, 1, "li", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, ProjectComponent_li_26_Template, 3, 1, "li", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, ProjectComponent_li_26_Template, 3, 2, "li", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "li", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "a", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 20);
@@ -964,7 +966,7 @@ ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("routerLink", ctx.nextProjectURL);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", ctx.nextProject.titleImage, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgStyle"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkActive"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"]], styles: [".main-section-container[_ngcontent-%COMP%] {\n  position: fixed;\n  width: 40vw;\n  min-width: 400px;\n  height: 100%;\n  display: inline-block;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%] {\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-evenly;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%] {\n  color: white;\n  font-size: 50px;\n  font-weight: bold;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .custom-br[_ngcontent-%COMP%] {\n  display: block;\n  width: 25%;\n  height: 2px;\n  opacity: 0.3;\n  background-color: #fff;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] {\n  font-size: 40px;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%] {\n  height: 100%;\n  margin-right: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-end;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%] {\n  text-decoration: none;\n  color: #ffffff88;\n  margin: 20px 0;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%]:before {\n  position: absolute;\n  opacity: 0;\n  content: attr(alt);\n  overflow: hidden;\n  color: #FFF;\n  transition: transform 500ms ease, opacity 500ms ease;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%]:hover:before {\n  transform: translate(-1px, -1px);\n  opacity: 1;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .current-page[_ngcontent-%COMP%]:before {\n  transform: translate(-1px, -1px);\n  opacity: 1;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .arrow[_ngcontent-%COMP%] {\n  color: white;\n  font-size: 40px;\n  animation: arrow 2s ease infinite;\n}\n@keyframes arrow {\n  0% {\n    transform: translateX(0);\n  }\n  12.5% {\n    transform: translateX(50%);\n  }\n  25% {\n    transform: translateX(25%);\n  }\n  37.5% {\n    transform: translateX(50%);\n  }\n  50% {\n    transform: translateX(0);\n  }\n  100% {\n    transform: translateX(0);\n  }\n}\n.images-container[_ngcontent-%COMP%] {\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  padding-left: 40vw;\n  pointer-events: none;\n  z-index: 1;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%] {\n  position: relative;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: 100vh;\n  padding: 0 10px;\n  transition: width ease 500ms;\n  list-style: none;\n  background-color: #131414ea;\n  pointer-events: all;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  height: calc(100vh - 10vw);\n  width: 40vw;\n  min-width: 400px;\n  color: rgba(255, 255, 255, 0.6);\n  padding: 5vw;\n  font-size: 16px;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n  text-align: start;\n  color: white;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   .model-button[_ngcontent-%COMP%] {\n  position: relative;\n  margin-top: 40px;\n  padding: 20px;\n  background-color: #fff;\n  color: #000;\n  border-radius: 5px;\n  cursor: pointer;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .image[_ngcontent-%COMP%] {\n  height: 100vh;\n  max-width: 100vw;\n  object-fit: contain;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%] {\n  width: 40vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-evenly;\n  padding: 0;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-evenly;\n  opacity: 0.4;\n  color: white;\n  background-color: #000000;\n  transition: all 500ms ease;\n  cursor: pointer;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]:hover {\n  opacity: 1;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]   .next-project-image-container[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 50%;\n  overflow: hidden;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]   .next-project-image-container[_ngcontent-%COMP%]   .next-image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  transition: transform 1s cubic-bezier(0.62, 0.09, 0.19, 1.06);\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]   .next-project-image-container[_ngcontent-%COMP%]   .next-image[_ngcontent-%COMP%]:hover {\n  transform: scale(1.2);\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  z-index: 1;\n  background-color: #000000;\n  padding: 5px;\n}\n@media only screen and (max-width: 1000px) {\n  .images-container[_ngcontent-%COMP%] {\n    padding-left: 400px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvamVjdC9wcm9qZWN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtBQUNGO0FBQ0U7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUVBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7QUFBSjtBQUVJO0VBQ0UsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQUFOO0FBR0k7RUFDRSxjQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0Esc0JBQUE7QUFETjtBQUlJO0VBQ0UsZUFBQTtBQUZOO0FBSU07RUFDRSxZQUFBO0VBQ0Esa0JBQUE7RUFFQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0FBSFI7QUFLUTtFQUNFLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FBSFY7QUFLVTtFQUNFLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0VBQ0Esb0RBQUE7QUFIWjtBQU1VO0VBQ0UsZ0NBQUE7RUFDQSxVQUFBO0FBSlo7QUFRVTtFQUNFLGdDQUFBO0VBQ0EsVUFBQTtBQU5aO0FBV0k7RUFDRSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGlDQUFBO0FBVE47QUFjQTtFQUNFO0lBQ0Usd0JBQUE7RUFYRjtFQWFBO0lBQ0UsMEJBQUE7RUFYRjtFQWFBO0lBQ0UsMEJBQUE7RUFYRjtFQWFBO0lBQ0UsMEJBQUE7RUFYRjtFQWFBO0lBQ0Usd0JBQUE7RUFYRjtFQWFBO0lBQ0Usd0JBQUE7RUFYRjtBQUNGO0FBY0E7RUFDRSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsTUFBQTtFQUNBLE9BQUE7RUFDQSxrQkFBQTtFQUNBLG9CQUFBO0VBQ0EsVUFBQTtBQVpGO0FBY0U7RUFDRSxZQUFBO0VBRUEsYUFBQTtFQUNBLG1CQUFBO0FBYko7QUFlSTtFQUNFLGtCQUFBO0VBQ0EsMEJBQUE7RUFBQSx1QkFBQTtFQUFBLGtCQUFBO0VBQ0EsYUFBQTtFQUNBLGVBQUE7RUFDQSw0QkFBQTtFQUNBLGdCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQkFBQTtBQWJOO0FBZ0JNO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxzQkFBQTtFQUNBLDBCQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBRUEsK0JBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtBQWZSO0FBaUJRO0VBQ0UsbUJBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7QUFmVjtBQWtCUTtFQUNFLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0FBaEJWO0FBb0JNO0VBQ0UsYUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUFsQlI7QUFzQkk7RUFDRSxXQUFBO0VBQ0EsYUFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7RUFDQSxVQUFBO0FBcEJOO0FBc0JNO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQkFBQTtFQUNBLDZCQUFBO0VBRUEsWUFBQTtFQUNBLFlBQUE7RUFDQSx5QkFBQTtFQUNBLDBCQUFBO0VBQ0EsZUFBQTtBQXJCUjtBQXVCUTtFQUNFLFVBQUE7QUFyQlY7QUF3QlE7RUFDRSxrQkFBQTtFQUNBLE1BQUE7RUFDQSxPQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtBQXRCVjtBQXdCVTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSw2REFBQTtBQXRCWjtBQXdCWTtFQUNFLHFCQUFBO0FBdEJkO0FBMEJRO0VBQ0UsVUFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtBQXhCVjtBQWdDQTtFQUNFO0lBQ0UsbUJBQUE7RUE3QkY7QUFDRiIsImZpbGUiOiJzcmMvYXBwL3Byb2plY3QvcHJvamVjdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluLXNlY3Rpb24tY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB3aWR0aDogNDB2dztcbiAgbWluLXdpZHRoOiA0MDBweDtcbiAgaGVpZ2h0OiAxMDAlO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cbiAgLm1haW4tc2VjdGlvbi13cmFwcGVyIHtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgXG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7XG5cbiAgICAudGl0bGUge1xuICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgZm9udC1zaXplOiA1MHB4O1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuXG4gICAgLmN1c3RvbS1iciB7XG4gICAgICBkaXNwbGF5OmJsb2NrO1xuICAgICAgd2lkdGg6IDI1JTtcbiAgICAgIGhlaWdodDogMnB4O1xuICAgICAgb3BhY2l0eTogMC4zO1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgICB9XG5cbiAgICAuaGVhZGVyIHtcbiAgICAgIGZvbnQtc2l6ZTogNDBweDtcbiAgICBcbiAgICAgIC5uYXZpZ2F0aW9uIHtcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICBtYXJnaW4tcmlnaHQ6IDIwcHg7XG4gICAgXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gICAgXG4gICAgICAgIC5saW5rIHtcbiAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgICAgY29sb3I6ICNmZmZmZmY4ODtcbiAgICAgICAgICBtYXJnaW46IDIwcHggMDtcbiAgICAgICAgICBcbiAgICAgICAgICAmOmJlZm9yZSB7XG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgICAgY29udGVudDogYXR0cihhbHQpO1xuICAgICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgICAgIGNvbG9yOiAjRkZGO1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDUwMG1zIGVhc2UsIG9wYWNpdHkgNTAwbXMgZWFzZTtcbiAgICAgICAgICB9IFxuICAgICAgICAgIFxuICAgICAgICAgICY6aG92ZXI6YmVmb3JlIHtcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC0xcHgsIC0xcHgpO1xuICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgLmN1cnJlbnQtcGFnZSB7XG4gICAgICAgICAgJjpiZWZvcmUge1xuICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTFweCwgLTFweCk7XG4gICAgICAgICAgICBvcGFjaXR5OiAxO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgICAuYXJyb3cge1xuICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgZm9udC1zaXplOiA0MHB4O1xuICAgICAgYW5pbWF0aW9uOiBhcnJvdyAycyBlYXNlIGluZmluaXRlO1xuICAgIH1cbiAgfVxufVxuICBcbkBrZXlmcmFtZXMgYXJyb3cge1xuICAwJSB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDApO1xuICB9XG4gIDEyLjUlIHtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoNTAlKTtcbiAgfVxuICAyNSUge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgyNSUpO1xuICB9XG4gIDM3LjUlIHtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoNTAlKTtcbiAgfVxuICA1MCUge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcbiAgfVxuICAxMDAlIHtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCk7XG4gIH1cbn1cblxuLmltYWdlcy1jb250YWluZXIge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICBwYWRkaW5nLWxlZnQ6IDQwdnc7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICB6LWluZGV4OiAxO1xuICBcbiAgLmltYWdlcyB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuXG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgIFxuICAgIC5pdGVtIHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHdpZHRoOiBmaXQtY29udGVudDtcbiAgICAgIGhlaWdodDogMTAwdmg7XG4gICAgICBwYWRkaW5nOiAwIDEwcHg7XG4gICAgICB0cmFuc2l0aW9uOiB3aWR0aCBlYXNlIDUwMG1zO1xuICAgICAgbGlzdC1zdHlsZTogbm9uZTtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICMxMzE0MTRlYTtcbiAgICAgIHBvaW50ZXItZXZlbnRzOiBhbGw7XG5cbiAgICAgIFxuICAgICAgLmRlc2NyaXB0aW9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgIGhlaWdodDogY2FsYygxMDB2aCAtIDEwdncpO1xuICAgICAgICB3aWR0aDogNDB2dztcbiAgICAgICAgbWluLXdpZHRoOiA0MDBweDtcbiAgICAgICAgXG4gICAgICAgIGNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNik7XG4gICAgICAgIHBhZGRpbmc6IDV2dztcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBcbiAgICAgICAgc3BhbiB7XG4gICAgICAgICAgbWFyZ2luLWJvdHRvbTogMjBweDtcbiAgICAgICAgICB0ZXh0LWFsaWduOiBzdGFydDtcbiAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgIH1cbiAgICAgICAgXG4gICAgICAgIC5tb2RlbC1idXR0b24ge1xuICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICBtYXJnaW4tdG9wOiA0MHB4O1xuICAgICAgICAgIHBhZGRpbmc6IDIwcHg7XG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgICAgICAgICBjb2xvcjogIzAwMDtcbiAgICAgICAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgICBcbiAgICAgIC5pbWFnZSB7XG4gICAgICAgIGhlaWdodDogMTAwdmg7XG4gICAgICAgIG1heC13aWR0aDogMTAwdnc7XG4gICAgICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG4gICAgICB9XG4gICAgfVxuXG4gICAgLm5leHQtYmFjay1idXR0b25zIHtcbiAgICAgIHdpZHRoOiA0MHZ3O1xuICAgICAgaGVpZ2h0OiAxMDB2aDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xuICAgICAgcGFkZGluZzogMDtcbiAgICAgIFxuICAgICAgLnByb2plY3QtYnV0dG9ucyB7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xuXG4gICAgICAgIG9wYWNpdHk6IDAuNDtcbiAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgNTAwbXMgZWFzZTtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICBcbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgfVxuXG4gICAgICAgIC5uZXh0LXByb2plY3QtaW1hZ2UtY29udGFpbmVyIHtcbiAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgICAgdG9wOiAwO1xuICAgICAgICAgIGxlZnQ6IDA7XG4gICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgaGVpZ2h0OiA1MCU7XG4gICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICAgICAgIC5uZXh0LWltYWdlIHtcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgb2JqZWN0LWZpdDogY292ZXI7XG4gICAgICAgICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMXMgY3ViaWMtYmV6aWVyKC42MiwuMDksLjE5LDEuMDYpO1xuICAgICAgICAgICAgXG4gICAgICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgICAgdHJhbnNmb3JtOiBzY2FsZSgxLjIpO1xuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBzcGFuIHtcbiAgICAgICAgICB6LWluZGV4OiAxO1xuICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDAwMDA7XG4gICAgICAgICAgcGFkZGluZzogNXB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuXG4gIH1cbn1cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDAwcHgpIHtcbiAgLmltYWdlcy1jb250YWluZXIge1xuICAgIHBhZGRpbmctbGVmdDogNDAwcHg7XG4gIH1cbn0iXX0= */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgStyle"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkActive"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"]], styles: [".main-section-container[_ngcontent-%COMP%] {\n  position: fixed;\n  width: 40vw;\n  min-width: 400px;\n  height: 100%;\n  display: inline-block;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%] {\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-evenly;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%] {\n  color: white;\n  font-size: 50px;\n  font-weight: bold;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .custom-br[_ngcontent-%COMP%] {\n  display: block;\n  width: 25%;\n  height: 2px;\n  opacity: 0.3;\n  background-color: #fff;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] {\n  font-size: 40px;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%] {\n  height: 100%;\n  margin-right: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-end;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%] {\n  text-decoration: none;\n  color: #ffffff88;\n  margin: 20px 0;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%]:before {\n  position: absolute;\n  opacity: 0;\n  content: attr(alt);\n  overflow: hidden;\n  color: #FFF;\n  transition: transform 500ms ease, opacity 500ms ease;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%]:hover:before {\n  transform: translate(-1px, -1px);\n  opacity: 1;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]   .navigation[_ngcontent-%COMP%]   .current-page[_ngcontent-%COMP%]:before {\n  transform: translate(-1px, -1px);\n  opacity: 1;\n}\n.main-section-container[_ngcontent-%COMP%]   .main-section-wrapper[_ngcontent-%COMP%]   .arrow[_ngcontent-%COMP%] {\n  color: white;\n  font-size: 40px;\n  animation: arrow 2s ease infinite;\n}\n@keyframes arrow {\n  0% {\n    transform: translateX(0);\n  }\n  12.5% {\n    transform: translateX(50%);\n  }\n  25% {\n    transform: translateX(25%);\n  }\n  37.5% {\n    transform: translateX(50%);\n  }\n  50% {\n    transform: translateX(0);\n  }\n  100% {\n    transform: translateX(0);\n  }\n}\n.images-container[_ngcontent-%COMP%] {\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  padding-left: 40vw;\n  pointer-events: none;\n  z-index: 1;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%] {\n  position: relative;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: 100vh;\n  padding: 0 10px;\n  transition: width ease 500ms;\n  list-style: none;\n  background-color: #131414ea;\n  pointer-events: all;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  height: calc(100vh - 10vw);\n  width: 40vw;\n  min-width: 400px;\n  color: rgba(255, 255, 255, 0.6);\n  padding: 5vw;\n  font-size: 16px;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n  text-align: start;\n  color: white;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .description[_ngcontent-%COMP%]   .model-button[_ngcontent-%COMP%] {\n  position: relative;\n  margin-top: 40px;\n  padding: 20px;\n  background-color: #fff;\n  color: #000;\n  border-radius: 5px;\n  cursor: pointer;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .item[_ngcontent-%COMP%]   .image[_ngcontent-%COMP%] {\n  height: 100vh;\n  max-width: 100vw;\n  object-fit: contain;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%] {\n  width: 40vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-evenly;\n  padding: 0;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-evenly;\n  opacity: 0.4;\n  color: white;\n  background-color: #000000;\n  transition: all 500ms ease;\n  cursor: pointer;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]:hover {\n  opacity: 1;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]   .next-project-image-container[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 50%;\n  overflow: hidden;\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]   .next-project-image-container[_ngcontent-%COMP%]   .next-image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  transition: transform 1s cubic-bezier(0.62, 0.09, 0.19, 1.06);\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]   .next-project-image-container[_ngcontent-%COMP%]   .next-image[_ngcontent-%COMP%]:hover {\n  transform: scale(1.2);\n}\n.images-container[_ngcontent-%COMP%]   .images[_ngcontent-%COMP%]   .next-back-buttons[_ngcontent-%COMP%]   .project-buttons[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  z-index: 1;\n  background-color: #000000;\n  padding: 5px;\n}\n@media only screen and (max-width: 1000px) {\n  .images-container[_ngcontent-%COMP%] {\n    padding-left: 400px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvamVjdC9wcm9qZWN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtBQUNGO0FBQ0U7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUVBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7QUFBSjtBQUVJO0VBQ0UsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQUFOO0FBR0k7RUFDRSxjQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0Esc0JBQUE7QUFETjtBQUlJO0VBQ0UsZUFBQTtBQUZOO0FBSU07RUFDRSxZQUFBO0VBQ0Esa0JBQUE7RUFFQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0FBSFI7QUFLUTtFQUNFLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FBSFY7QUFLVTtFQUNFLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0VBQ0Esb0RBQUE7QUFIWjtBQU1VO0VBQ0UsZ0NBQUE7RUFDQSxVQUFBO0FBSlo7QUFRVTtFQUNFLGdDQUFBO0VBQ0EsVUFBQTtBQU5aO0FBV0k7RUFDRSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGlDQUFBO0FBVE47QUFjQTtFQUNFO0lBQ0Usd0JBQUE7RUFYRjtFQWFBO0lBQ0UsMEJBQUE7RUFYRjtFQWFBO0lBQ0UsMEJBQUE7RUFYRjtFQWFBO0lBQ0UsMEJBQUE7RUFYRjtFQWFBO0lBQ0Usd0JBQUE7RUFYRjtFQWFBO0lBQ0Usd0JBQUE7RUFYRjtBQUNGO0FBY0E7RUFDRSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsTUFBQTtFQUNBLE9BQUE7RUFDQSxrQkFBQTtFQUNBLG9CQUFBO0VBQ0EsVUFBQTtBQVpGO0FBY0U7RUFDRSxZQUFBO0VBRUEsYUFBQTtFQUNBLG1CQUFBO0FBYko7QUFlSTtFQUNFLGtCQUFBO0VBQ0EsdUJBQUE7RUFBQSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0EsNEJBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBQ0EsbUJBQUE7QUFiTjtBQWdCTTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0Esc0JBQUE7RUFDQSwwQkFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUVBLCtCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7QUFmUjtBQWlCUTtFQUNFLG1CQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0FBZlY7QUFrQlE7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQWhCVjtBQW9CTTtFQUNFLGFBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0FBbEJSO0FBc0JJO0VBQ0UsV0FBQTtFQUNBLGFBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQkFBQTtFQUNBLDZCQUFBO0VBQ0EsVUFBQTtBQXBCTjtBQXNCTTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsbUJBQUE7RUFDQSw2QkFBQTtFQUVBLFlBQUE7RUFDQSxZQUFBO0VBQ0EseUJBQUE7RUFDQSwwQkFBQTtFQUNBLGVBQUE7QUFyQlI7QUF1QlE7RUFDRSxVQUFBO0FBckJWO0FBd0JRO0VBQ0Usa0JBQUE7RUFDQSxNQUFBO0VBQ0EsT0FBQTtFQUNBLFdBQUE7RUFDQSxXQUFBO0VBQ0EsZ0JBQUE7QUF0QlY7QUF3QlU7RUFDRSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0VBQ0EsNkRBQUE7QUF0Qlo7QUF3Qlk7RUFDRSxxQkFBQTtBQXRCZDtBQTBCUTtFQUNFLFVBQUE7RUFDQSx5QkFBQTtFQUNBLFlBQUE7QUF4QlY7QUFnQ0E7RUFDRTtJQUNFLG1CQUFBO0VBN0JGO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9wcm9qZWN0L3Byb2plY3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWFpbi1zZWN0aW9uLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgd2lkdGg6IDQwdnc7XG4gIG1pbi13aWR0aDogNDAwcHg7XG4gIGhlaWdodDogMTAwJTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXG4gIC5tYWluLXNlY3Rpb24td3JhcHBlciB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIFxuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xuXG4gICAgLnRpdGxlIHtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgIGZvbnQtc2l6ZTogNTBweDtcbiAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIH1cblxuICAgIC5jdXN0b20tYnIge1xuICAgICAgZGlzcGxheTpibG9jaztcbiAgICAgIHdpZHRoOiAyNSU7XG4gICAgICBoZWlnaHQ6IDJweDtcbiAgICAgIG9wYWNpdHk6IDAuMztcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgfVxuXG4gICAgLmhlYWRlciB7XG4gICAgICBmb250LXNpemU6IDQwcHg7XG4gICAgXG4gICAgICAubmF2aWdhdGlvbiB7XG4gICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xuICAgIFxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xuICAgIFxuICAgICAgICAubGluayB7XG4gICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgICAgICAgIGNvbG9yOiAjZmZmZmZmODg7XG4gICAgICAgICAgbWFyZ2luOiAyMHB4IDA7XG4gICAgICAgICAgXG4gICAgICAgICAgJjpiZWZvcmUge1xuICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgICAgb3BhY2l0eTogMDtcbiAgICAgICAgICAgIGNvbnRlbnQ6IGF0dHIoYWx0KTtcbiAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgICAgICBjb2xvcjogI0ZGRjtcbiAgICAgICAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSA1MDBtcyBlYXNlLCBvcGFjaXR5IDUwMG1zIGVhc2U7XG4gICAgICAgICAgfSBcbiAgICAgICAgICBcbiAgICAgICAgICAmOmhvdmVyOmJlZm9yZSB7XG4gICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtMXB4LCAtMXB4KTtcbiAgICAgICAgICAgIG9wYWNpdHk6IDE7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIC5jdXJyZW50LXBhZ2Uge1xuICAgICAgICAgICY6YmVmb3JlIHtcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC0xcHgsIC0xcHgpO1xuICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gICAgLmFycm93IHtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgIGZvbnQtc2l6ZTogNDBweDtcbiAgICAgIGFuaW1hdGlvbjogYXJyb3cgMnMgZWFzZSBpbmZpbml0ZTtcbiAgICB9XG4gIH1cbn1cbiAgXG5Aa2V5ZnJhbWVzIGFycm93IHtcbiAgMCUge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcbiAgfVxuICAxMi41JSB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDUwJSk7XG4gIH1cbiAgMjUlIHtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMjUlKTtcbiAgfVxuICAzNy41JSB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDUwJSk7XG4gIH1cbiAgNTAlIHtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCk7XG4gIH1cbiAgMTAwJSB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDApO1xuICB9XG59XG5cbi5pbWFnZXMtY29udGFpbmVyIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgcGFkZGluZy1sZWZ0OiA0MHZ3O1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgei1pbmRleDogMTtcbiAgXG4gIC5pbWFnZXMge1xuICAgIGhlaWdodDogMTAwJTtcblxuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICBcbiAgICAuaXRlbSB7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gICAgICBoZWlnaHQ6IDEwMHZoO1xuICAgICAgcGFkZGluZzogMCAxMHB4O1xuICAgICAgdHJhbnNpdGlvbjogd2lkdGggZWFzZSA1MDBtcztcbiAgICAgIGxpc3Qtc3R5bGU6IG5vbmU7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTMxNDE0ZWE7XG4gICAgICBwb2ludGVyLWV2ZW50czogYWxsO1xuXG4gICAgICBcbiAgICAgIC5kZXNjcmlwdGlvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICBoZWlnaHQ6IGNhbGMoMTAwdmggLSAxMHZ3KTtcbiAgICAgICAgd2lkdGg6IDQwdnc7XG4gICAgICAgIG1pbi13aWR0aDogNDAwcHg7XG4gICAgICAgIFxuICAgICAgICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjYpO1xuICAgICAgICBwYWRkaW5nOiA1dnc7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgXG4gICAgICAgIHNwYW4ge1xuICAgICAgICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gICAgICAgICAgdGV4dC1hbGlnbjogc3RhcnQ7XG4gICAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICAubW9kZWwtYnV0dG9uIHtcbiAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgbWFyZ2luLXRvcDogNDBweDtcbiAgICAgICAgICBwYWRkaW5nOiAyMHB4O1xuICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgICAgICAgY29sb3I6ICMwMDA7XG4gICAgICAgICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgfVxuICAgICAgfVxuICAgICAgXG4gICAgICAuaW1hZ2Uge1xuICAgICAgICBoZWlnaHQ6IDEwMHZoO1xuICAgICAgICBtYXgtd2lkdGg6IDEwMHZ3O1xuICAgICAgICBvYmplY3QtZml0OiBjb250YWluO1xuICAgICAgfVxuICAgIH1cblxuICAgIC5uZXh0LWJhY2stYnV0dG9ucyB7XG4gICAgICB3aWR0aDogNDB2dztcbiAgICAgIGhlaWdodDogMTAwdmg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbiAgICAgIHBhZGRpbmc6IDA7XG4gICAgICBcbiAgICAgIC5wcm9qZWN0LWJ1dHRvbnMge1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcblxuICAgICAgICBvcGFjaXR5OiAwLjQ7XG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDUwMG1zIGVhc2U7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIG9wYWNpdHk6IDE7XG4gICAgICAgIH1cblxuICAgICAgICAubmV4dC1wcm9qZWN0LWltYWdlLWNvbnRhaW5lciB7XG4gICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICBsZWZ0OiAwO1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIGhlaWdodDogNTAlO1xuICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAgICAgICAubmV4dC1pbWFnZSB7XG4gICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgIG9iamVjdC1maXQ6IGNvdmVyO1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzIGN1YmljLWJlemllciguNjIsLjA5LC4xOSwxLjA2KTtcbiAgICAgICAgICAgIFxuICAgICAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgICAgIHRyYW5zZm9ybTogc2NhbGUoMS4yKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgc3BhbiB7XG4gICAgICAgICAgei1pbmRleDogMTtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwO1xuICAgICAgICAgIHBhZGRpbmc6IDVweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cblxuICB9XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAwMHB4KSB7XG4gIC5pbWFnZXMtY29udGFpbmVyIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDQwMHB4O1xuICB9XG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ProjectComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -986,284 +988,680 @@ ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-// new
-const urlify = function (a) { return a.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "-").replace(/^-+|-+$/g, ''); };
-;
+const urlify = function (a) {
+    return a
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '-')
+        .replace(/^-+|-+$/g, '');
+};
+//test
 const projects = [
     {
-        "title": "Black Hole",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": false,
-        "titleImage": "/assets/black-hole/blackhole.png",
-        "images": [
-            "/assets/black-hole/blackhole1.png",
-            "/assets/black-hole/blackhole2.png"
-        ],
-        "videos": [],
-        "description": "Inspired by Interstellar's Gargantua Spinning Black Hole"
-    },
-    {
-        "title": "TIE Fighter",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/tie-fighter/tie-fighter.glb",
-            "cameraPosition": {
-                "x": 3,
-                "y": 3,
-                "z": 10
-            }
+        title: "Single Cover for Charlie Hilton's 'CEREBRAL'",
+        path: function () {
+            return '/' + urlify(this.title);
         },
-        "titleImage": "/assets/tie-fighter/tie-fighter.png",
-        "images": [
-            "/assets/tie-fighter/tie-fighter2.png",
-            "/assets/tie-fighter/tie-fighter3.png",
-            "/assets/tie-fighter/tie-fighter4.png"
+        model: false,
+        titleImage: '/assets/Cerebral/Cerebral11.png',
+        images: [
+            '/assets/Cerebral/Cerebral3.png',
+            '/assets/Cerebral/Cerebral4.png',
+            '/assets/Cerebral/Cerebral5.png',
+            '/assets/Cerebral/Cerebral9.png',
+            '/assets/Cerebral/Cerebral6.png',
+            '/assets/Cerebral/Cerebral7.png',
+            '/assets/Cerebral/Cerebral8.png',
+            '/assets/Cerebral/Cerebral10.png',
         ],
-        "videos": [],
-        "description": "The TIE (Twin Ion Engine) fighter is the backbone of the Empire, where it lack in shields, it makes up in speed and maneuverability"
+        videos: [],
+        description: "A cover commisioned for Charlie Hilton for his single 'Cerebral'. Created using a Z-brush -> Blender -> Substance Painter -> Unreal 5 pipeline. I began by using a laser scanner to map Hilton's face. Using Z-brush, I sculpted the rest of his head, due to only having the face scan. I then baked the captured textures onto the model and matched the rest of his skin, creating pores. Once exported to Blender, I used the hair particle editor to create his hair. When exported to Unreal 5.1, I used the groom tools to make the hair look realistic. The environment was created with composited quixel assets. Bespoke models were designed in Blender and exported to Unreal, such as the conveyor flaps, that utilised cloth simulations. I used Nanite and Lumen, to create a realtime photorealistic style. I finalised the Scene with Niagra particle systems (sparks and dust) and volumetic fog. The final design was colour graded in Photoshop.",
     },
     {
-        "title": "Vader",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/vader/vader.glb",
-            "cameraPosition": {
-                "x": 1,
-                "y": 4,
-                "z": 1
-            }
+        title: 'R5 Astromech Droid',
+        path: function () {
+            return '/' + urlify(this.title);
         },
-        "titleImage": "/assets/vader/vader.png",
-        "images": [
-            "/assets/vader/vader2.png",
-            "/assets/vader/vader3.png"
-        ],
-        "videos": [],
-        "description": "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'"
-    },
-    {
-        "title": "Corridor",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": false,
-        "titleImage": "/assets/corridor/corridor.png",
-        "images": [],
-        "videos": ["/assets/corridor/corridor.mp4"],
-        "description": "Infinite corridor animation"
-    },
-    {
-        "title": "Phasmophobia Lobby",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": false,
-        "titleImage": "/assets/phasmo/phasmo.png",
-        "images": [
-            "/assets/phasmo/phasmo2.png",
-            "/assets/phasmo/phasmo3.png",
-            "/assets/phasmo/phasmo4.png",
-            "/assets/phasmo/phasmo5.png"
-        ],
-        "videos": [],
-        "description": "From the Phasmophobia game, this is the operations hub of your ghost hunting business, where you detect paranormal activity"
-    },
-    {
-        "title": "Mandalorian",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/mando/mando.glb",
-            "cameraPosition": {
-                "x": 1,
-                "y": 4,
-                "z": 1
-            }
+        model: {
+            path: '/assets/R5/R5 Astro.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
         },
-        "titleImage": "/assets/mando/mando.png",
-        "images": [
-            "/assets/mando/mando2.png",
-            "/assets/mando/mando3.png"
+        titleImage: '/assets/R5/R5_9.png',
+        images: [
+            '/assets/R5/R5_10.png',
+            '/assets/R5/R5_13.png',
+            '/assets/R5/R5_12.png',
+            '/assets/R5/R5_4.png',
+            '/assets/R5/R5.png',
         ],
-        "videos": [],
-        "description": "The Mandolorian's helmet from 'Star Wars: The Mandalorian'"
+        videos: [],
+        description: 'R5 Astromech droid modelled in Blender and textured in Substance Painter. This was my first time using the Blender -> Substance pipeline. Notable uses of normal maps to create detail without additional poligons, with a high to low poly bake. Scenes were created and rendered in Blender. ',
     },
     {
-        "title": "Bergmann",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": false,
-        "titleImage": "/assets/bergman/bergman.jpg",
-        "images": [
-            "/assets/bergman/bergman2.jpg"
-        ],
-        "videos": [],
-        "description": "The Bergmann was a 19th-century semi-automatic pistol developed by German designer Louis Schmeisser and sold by Theodor Bergmann's company."
-    },
-    {
-        "title": "Wands",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/wands/wands.glb",
-            "cameraPosition": {
-                "x": 1,
-                "y": 4,
-                "z": 1
-            }
+        title: 'Dalek',
+        path: function () {
+            return '/' + urlify(this.title);
         },
-        "titleImage": "/assets/wands/wands.png",
-        "images": [
-            "/assets/wands/wands2.png",
-            "/assets/wands/wands3.png"
-        ],
-        "videos": [],
-        "description": "Custom designed and made Harry Potter inspired Wands"
-    },
-    {
-        "title": "Sabers",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/sabers/sabers.glb",
-            "cameraPosition": {
-                "x": 1,
-                "y": 5,
-                "z": 1
-            }
+        model: {
+            path: '/assets/Dalek/Dalek.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
         },
-        "titleImage": "/assets/sabers/sabers.png",
-        "images": [
-            "/assets/sabers/sabers1.png",
-            "/assets/sabers/sabers2.png",
-            "/assets/sabers/sabers3.png",
-            "/assets/sabers/sabers4.png"
+        titleImage: '/assets/Dalek/Dalek 4.png',
+        images: [
+            '/assets/Dalek/Dalek5.png',
+            '/assets/Dalek/Dalek 3.png',
+            '/assets/Dalek/Dalek 1.png',
+            '/assets/Dalek/Dalek 2.png',
         ],
-        "videos": [],
-        "description": "Lightsabers from the movie Star Wars."
+        videos: [],
+        description: 'The infamous antagonists of the Doctor Who franchise. Made using a Blender -> Substance -> Unreal 5 pipeline. Low and high poly models designed in blender, then exported to substance painter. Baked the high poly mesh to the low poly, to generate normals. Exported the textures to Unreal 5.1 and composed a scene using Quixel assets.',
     },
     {
-        "title": "Screw Drivers",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/screw-drivers/sonic.glb",
-            "cameraPosition": {
-                "x": 3,
-                "y": 3,
-                "z": 0
-            }
+        title: 'Orcs',
+        path: function () {
+            return '/' + urlify(this.title);
         },
-        "titleImage": "/assets/screw-drivers/sonic.png",
-        "images": [
-            "/assets/screw-drivers/sonic1.png",
-            "/assets/screw-drivers/sonic2.png",
-            "/assets/screw-drivers/sonic3.png",
-            "/assets/screw-drivers/sonic4.png",
-            "/assets/screw-drivers/sonic5.png",
-            "/assets/screw-drivers/sonic6.png",
-            "/assets/screw-drivers/sonic7.png",
-            "/assets/screw-drivers/sonic8.png",
-            "/assets/screw-drivers/sonic9.png",
-            "/assets/screw-drivers/sonic10.png",
-            "/assets/screw-drivers/sonic11.png"
+        model: false,
+        titleImage: '/assets/Orcs/orcs7.png',
+        images: [
+            '/assets/Orcs/Shagflak.png',
+            '/assets/Orcs/Flarg.png',
+            '/assets/Orcs/Targul.png',
+            '/assets/Orcs/Regrodz.png',
+            '/assets/Orcs/Gorlog.png',
+            '/assets/Orcs/Bolg.png',
         ],
-        "videos": [],
-        "description": "Sonic screwdrivers from the show 'Doctor Who'"
+        videos: [],
+        description: 'A group of orcs inspired by the Lord of the Rings trilogy and games. Sculpted and textured in Z-brush. Rendered and retopologized in Blender. Bolg is inspired by the character of the same name in the Hobbit trilogy.',
     },
     {
-        "title": "Catwalk",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/catwalk/catwalk.glb",
-            "cameraPosition": {
-                "x": 10,
-                "y": 3,
-                "z": 0
-            }
+        title: 'Everus Harbor',
+        path: function () {
+            return '/' + urlify(this.title);
         },
-        "titleImage": "/assets/catwalk/catwalk.png",
-        "images": [
-            "/assets/catwalk/catwalk2.png",
-            "/assets/catwalk/catwalk3.png"
-        ],
-        "videos": [],
-        "description": "Inspired by Star Wars 'I am your father' scene in Episode V: The Empire Strikes Back. Smoke simulation was used to recreate this iconic environment"
-    },
-    {
-        "title": "Sonic Gun",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/sonic-gun/sonicgun.glb",
-            "cameraPosition": {
-                "x": 2,
-                "y": 3,
-                "z": 2
-            }
+        model: {
+            path: '/assets/everus-harbor/everus harbor.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
         },
-        "titleImage": "/assets/sonic-gun/sonicgun.png",
-        "images": [
-            "/assets/sonic-gun/sonicgun1.png",
-            "/assets/sonic-gun/sonicgun2.png",
-            "/assets/sonic-gun/sonicgun3.png"
+        titleImage: '/assets/everus-harbor/everus_harbor1.png',
+        images: [
+            '/assets/everus-harbor/everus_harbor2.png',
+            '/assets/everus-harbor/everus_harbor3.png',
         ],
-        "videos": [],
-        "description": "A combination of lightsaber, sonic screwdriver and sci-fi shit"
+        videos: ['/assets/everus-harbor/everus_vid1.mp4'],
+        description: 'Inspired by Everus Harbor spacestation from the Star Citizen MMO Videogame. The design utilizes a streamlined workflow, by using generated textures with alpha maps, to create the illusion of layered 3D modelling. This reduced the modelling time and poly count significantly',
     },
     {
-        "title": "Sofa",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": false,
-        "titleImage": "/assets/sofa/sofa.png",
-        "images": [
-            "/assets/sofa/sofa1.png",
-            "/assets/sofa/sofa2.png"
-        ],
-        "videos": [],
-        "description": "Sofa model with cloth simulation and inflation algorithms"
-    },
-    {
-        "title": "Bulb Table",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/bulb-table/bulbtable.glb",
-            "cameraPosition": {
-                "x": 2,
-                "y": 2,
-                "z": 2
-            }
+        title: 'Battle of the Zomme',
+        path: function () {
+            return '/' + urlify(this.title);
         },
-        "titleImage": "/assets/bulb-table/bulbtable.png",
-        "images": [
-            "/assets/bulb-table/bulbtable1.png",
-            "/assets/bulb-table/bulbtable2.png",
-            "/assets/bulb-table/bulbtable3.png",
-            "/assets/bulb-table/bulbtable4.png"
+        model: false,
+        titleImage: '/assets/Zombies/zomme4.png',
+        images: [
+            '/assets/Zombies/zomme1.png',
+            '/assets/Zombies/zomme2.png',
+            '/assets/Zombies/zomme3.png',
+            '/assets/Zombies/zomme5.png',
         ],
-        "videos": [],
-        "description": "Used in design ideas of A Level Design and Technology. Bulb table is a table made of reused bulbs"
+        videos: ['/assets/Zombies/Zombies.mp4'],
+        description: ' This level was presented for Level Design Fundametals module, which scored a mark of 84%. The level is based around COD zombies and inspired by the Somme battlefield. Software used: Asset modelling - Maya, Blender ; Asset texturing - Sunstance Painter, Substance Designer ; Scene composition - Unreal Engine 4 ; Programming and blueprints - Unreal Engine 4 ; Cinematics - Unreal Engine 4.',
     },
     {
-        "title": "Bic Pen",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": {
-            "path": "/assets/bic-pen/bicpen.glb",
-            "cameraPosition": {
-                "x": 3,
-                "y": 10,
-                "z": 3
-            }
+        title: 'Fishing Fiasco',
+        path: function () {
+            return '/' + urlify(this.title);
         },
-        "titleImage": "/assets/bic-pen/bicpen.png",
-        "images": [
-            "/assets/bic-pen/bicpen1.png"
+        model: false,
+        titleImage: '/assets/Fishing_Diorama/FishingFiasco10.png',
+        images: [
+            '/assets/Fishing_Diorama/FishingFiasco7.png',
+            '/assets/Fishing_Diorama/FishingFiasco5.png',
+            '/assets/Fishing_Diorama/FishingFiasco4.png',
+            '/assets/Fishing_Diorama/FishingFiasco1.png',
+            '/assets/Fishing_Diorama/DNDelephant2.png',
         ],
-        "videos": [],
-        "description": "Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens"
+        videos: [],
+        description: 'A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in Blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in Blender. The environment was created with some imported assets from Megascans. Humanoid character creations were created with MetaHuman and rigged in Blender. Postprocessing and colour grading were done in Photoshop. ',
     },
     {
-        "title": "Bin",
-        "path": function () { return "/" + urlify(this.title); },
-        "model": false,
-        "titleImage": "/assets/dt-bin/dtbin.png",
-        "images": [
-            "/assets/dt-bin/dtbin1.png",
-            "/assets/dt-bin/dtbin2.png"
+        title: 'Lancia Stratos',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/Lancia/Lancia Stratos.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
+        },
+        titleImage: '/assets/Lancia/Lancia.png',
+        images: ['/assets/Lancia/Lancia2.png', '/assets/Lancia/Lancia3.png'],
+        videos: [],
+        description: 'Replica of a Lancia Stratos, made for the Lighting and Texturing module. Given a First. A low poly 15k poly, that was created using a low to high poly workflow. Optimized for games Modelled in Maya and textured in Sunstance painter using the Unreal engine -> substance bridge. Rendered in Blender.',
+    },
+    {
+        title: 'Black Cabin Blunder',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/Cabin/BlackCabinBlunder8.png',
+        images: [
+            '/assets/Cabin/BlackCabinBlunder5.png',
+            '/assets/Cabin/BlackCabinBlunder4.png',
+            '/assets/Cabin/BlackCabinBlunder.png',
         ],
-        "videos": [],
-        "description": "Used in design ideas of A Level Design and Technology. Modular bin with expandable and contractable compartments along with magnetic slider for separation of ferrous metals"
-    }
+        videos: [],
+        description: 'A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in Blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in Blender. Notable use of particle hair simulations for the trees. Humanoid character creations were created with MetaHuman and rigged in Blender. Postprocessing and colour grading were done in Photoshop.  ',
+    },
+    {
+        title: 'TIE Fighter',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/tie-fighter/tie-fighter.glb',
+            cameraPosition: {
+                x: 3,
+                y: 3,
+                z: 10,
+            },
+        },
+        titleImage: '/assets/tie-fighter/tie-fighter.png',
+        images: [
+            '/assets/tie-fighter/tie-fighter2.png',
+            '/assets/tie-fighter/tie-fighter3.png',
+            '/assets/tie-fighter/tie-fighter4.png',
+        ],
+        videos: [],
+        description: 'A 3D model of a TIE Fighter from the Star Wars franchise. Modelled and textured to a very high degree of acuracy in Blender. Uses colour ramp nodes in conjuction with edge detection to create the metal edgware effect',
+    },
+    {
+        title: 'Bog Fisher (Bournemouth Modelling Competition Winner)',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/BogFisher/BogFisher.glb',
+            cameraPosition: {
+                x: 0,
+                y: 6,
+                z: 0,
+            },
+        },
+        titleImage: '/assets/BogFisher/Bog Fisher3.png',
+        images: [
+            '/assets/BogFisher/Bog Fisher5.png',
+            '/assets/BogFisher/Bog Fisher1.png',
+        ],
+        videos: [],
+        description: "Winning design for Bournemouth University first year game modelling competition. Descibed as:'An inpired design using great low poly modelling techniques'. The competition was to model a new mode of transport. I decided on a distopian stilt walker design that uses wind power to move. Modelled in Maya, with scene composition, texturing and rendering done in Blender",
+    },
+    {
+        title: 'Spartan Helmet',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/Spartan/Spartan Vader.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
+        },
+        titleImage: '/assets/Spartan/Spartan Vader.png',
+        images: [
+            '/assets/Spartan/Spartan Vader1.png',
+            '/assets/Spartan/Spartan Vader2.png',
+        ],
+        videos: [],
+        description: 'Original design inspired by the Spartan helmet. Modelled in Blender and textured in Substance painter. particle hair simulation done in Blender.',
+    },
+    {
+        title: 'Black Hole',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/black-hole/blackhole.png',
+        images: [
+            '/assets/black-hole/blackhole1.png',
+            '/assets/black-hole/blackhole2.png',
+        ],
+        videos: [],
+        description: "Inspired by Interstellar's Gargantua Spinning Black Hole. Uses volumetrics and some camera normals effects.",
+    },
+    {
+        title: 'DeLorean',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/DMC/DMC.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
+        },
+        titleImage: '/assets/DMC/DMC3.png',
+        images: ['/assets/DMC/DMC2.png', '/assets/DMC/DMC.png'],
+        videos: [],
+        description: 'Model of the DMC DeLorean, designed for the Game Modelling Fundamentals module. Received a First. Under 10k poly for game optimisation. Created using a low to high poly workflow with a high poly bake to the low poly. Modelled in Maya, textured in Substance Painter and rendered in Blender.',
+    },
+    {
+        title: 'Seismic Charge',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/Seismic/charge.glb',
+            cameraPosition: {
+                x: 0,
+                y: 4,
+                z: 0,
+            },
+        },
+        titleImage: '/assets/Seismic/seismic charge4.png',
+        images: [
+            '/assets/Seismic/seismic charge8.png',
+            '/assets/Seismic/seismic charge.png',
+        ],
+        videos: [],
+        description: 'Replica of the siemic charge from Star Wars: Attack of The Clones. Modelled and textured in Blender',
+    },
+    {
+        title: 'Tardis Console',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/Tardis/tardis42.png',
+        images: [
+            "/assets/Tardis/lara's sonic.png",
+            '/assets/Tardis/tardis.png',
+            '/assets/Tardis/tardis2.png',
+            '/assets/Tardis/tardis3.png',
+        ],
+        videos: [],
+        description: ' Renewed design of the original 1963 Tardis console from Dr who. Modelled and textured in Blender. Post processing and colour grading were done in Photoshop.',
+    },
+    {
+        title: 'Rings of Power',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/Rings/Rings of power7.png',
+        images: [
+            '/assets/Rings/Rings of power6.png',
+            '/assets/Rings/Rings of power.png',
+        ],
+        videos: [],
+        description: ' Rings inspired by the Lord of the Rings trilogy. Modelled and textured in Blender. Some testing with LOD creation with a high to low poly work flow.',
+    },
+    {
+        title: "Man O' War",
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: "/assets/man-o'-war/Man o' war.glb",
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
+        },
+        titleImage: "/assets/man-o'-war/man-o'-war1.png",
+        images: [],
+        videos: [],
+        description: 'A depiction of the Portuguese Man-O-War Siphonophore. Sculpted and Textured in Blender',
+    },
+    {
+        title: 'Vader',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/vader/vader.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
+        },
+        titleImage: '/assets/vader/vader.png',
+        images: ['/assets/vader/vader2.png', '/assets/vader/vader3.png'],
+        videos: [],
+        description: "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'. Modelled using primitive, box and edge modelling techniques, in Blender",
+    },
+    {
+        title: 'Starkiller Base',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/StarKiller/starkiller_base3.png',
+        images: ['/assets/StarKiller/starkiller base2-4.png'],
+        videos: ['/assets/StarKiller/0000-02805.mp4'],
+        description: 'Origninal design inspired by Starkiller base from Starwars The Force Awakens. Modelled in Blender using alpha maps to produce low poly complicated designs to replicate complex extrusions. The postprocessing and colour grading were done in Photoshop.  ',
+    },
+    {
+        title: 'Sci-fi Mask Design',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/Custom_mask_design/Jegrah Fough helmet.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
+        },
+        titleImage: '/assets/Custom_mask_design/Jegrah_fough_helmet2.png',
+        images: [],
+        videos: [],
+        description: 'Custom Designed Sci-fi helmet. Mostly using edge modelling methods',
+    },
+    {
+        title: 'Ocean in a Box',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/ocean-diorama/oceandiorama.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
+        },
+        titleImage: '/assets/ocean-diorama/oceandiorama1.png',
+        images: ['/assets/ocean-diorama/oceandiorama2.png'],
+        videos: [],
+        description: 'A diorama of a raft lost at sea. The water effect was created with the ocean modifier; this was used in conjuction with caustic effects to show the refraction of light without increasing render time. Modelled. textured and lit in Blender. ',
+    },
+    {
+        title: 'The World is on the Corner',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/ricochet/Ricochet2.jpg',
+        images: [],
+        videos: [],
+        description: 'Art render, depicting a Line from Ricochet-David Bowie. Uses volumetric raytracing and shot compositional techniques.',
+    },
+    {
+        title: 'Corridor',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/corridor/corridor.png',
+        images: [],
+        videos: ['/assets/corridor/corridor.mp4'],
+        description: 'Infinite corridor animation made and rendered in Blender.',
+    },
+    {
+        title: 'Phasmophobia Lobby',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/phasmo/phasmo.png',
+        images: [
+            '/assets/phasmo/phasmo2.png',
+            '/assets/phasmo/phasmo3.png',
+            '/assets/phasmo/phasmo4.png',
+            '/assets/phasmo/phasmo5.png',
+        ],
+        videos: [],
+        description: 'A redesign of the lobby from the game Phasmophobia. As a fan of the game, I created a design of higher aesthetic fidelity, utilizing my level design skills. This was to see if I could make a more coherent design, enabling a chilling atmosphere.',
+    },
+    {
+        title: 'Mandalorian',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/mando/mando.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
+        },
+        titleImage: '/assets/mando/mando.png',
+        images: ['/assets/mando/mando2.png', '/assets/mando/mando3.png'],
+        videos: [],
+        description: "The Mandolorian's helmet from 'Star Wars: The Mandalorian'",
+    },
+    {
+        title: 'Bergmann',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/bergman/bergman.jpg',
+        images: ['/assets/bergman/bergman2.jpg'],
+        videos: [],
+        description: 'A digital replica of a Bergman pistol on a beach. Mostly using primitive and edge modelling techniques to achieve the iconic form  of the weapon. hair particle effects were used to make a realistic distribution for the grass.',
+    },
+    {
+        title: 'Wands',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/wands/wands.glb',
+            cameraPosition: {
+                x: 1,
+                y: 4,
+                z: 1,
+            },
+        },
+        titleImage: '/assets/wands/wands.png',
+        images: ['/assets/wands/wands2.png', '/assets/wands/wands3.png'],
+        videos: [],
+        description: 'Custom designed and made Harry Potter inspired Wands. Modelled and textured in Blender',
+    },
+    {
+        title: 'Sabers',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/sabers/sabers.glb',
+            cameraPosition: {
+                x: 1,
+                y: 5,
+                z: 1,
+            },
+        },
+        titleImage: '/assets/sabers/sabers.png',
+        images: [
+            '/assets/sabers/sabers1.png',
+            '/assets/sabers/sabers2.png',
+            '/assets/sabers/sabers3.png',
+            '/assets/sabers/sabers4.png',
+        ],
+        videos: [],
+        description: 'Original designs based of the weapons from Star Wars. Modelled and textured in Blender',
+    },
+    {
+        title: 'Sonic Screwdrivers',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/screw-drivers/sonic.glb',
+            cameraPosition: {
+                x: 3,
+                y: 3,
+                z: 0,
+            },
+        },
+        titleImage: '/assets/screw-drivers/sonic.png',
+        images: [
+            '/assets/screw-drivers/sonic1.png',
+            '/assets/screw-drivers/sonic2.png',
+            '/assets/screw-drivers/sonic3.png',
+            '/assets/screw-drivers/sonic4.png',
+            '/assets/screw-drivers/sonic5.png',
+            '/assets/screw-drivers/sonic6.png',
+            '/assets/screw-drivers/sonic7.png',
+            '/assets/screw-drivers/sonic8.png',
+            '/assets/screw-drivers/sonic9.png',
+            '/assets/screw-drivers/sonic10.png',
+            '/assets/screw-drivers/sonic11.png',
+        ],
+        videos: [],
+        description: "Original Designs of Sonic screwdrivers from the show 'Doctor Who. Modelled and textured in Blender'",
+    },
+    {
+        title: 'Catwalk',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/catwalk/catwalk.glb',
+            cameraPosition: {
+                x: 10,
+                y: 3,
+                z: 0,
+            },
+        },
+        titleImage: '/assets/catwalk/catwalk.png',
+        images: ['/assets/catwalk/catwalk2.png', '/assets/catwalk/catwalk3.png'],
+        videos: [],
+        description: "Inspired by Star Wars 'I am your father' scene in Episode V: The Empire Strikes Back. Smoke simulations were used to recreate this iconic environment",
+    },
+    {
+        title: 'Sci-fi Gun',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/sonic-gun/sonicgun.glb',
+            cameraPosition: {
+                x: 2,
+                y: 3,
+                z: 2,
+            },
+        },
+        titleImage: '/assets/sonic-gun/sonicgun.png',
+        images: [
+            '/assets/sonic-gun/sonicgun1.png',
+            '/assets/sonic-gun/sonicgun2.png',
+            '/assets/sonic-gun/sonicgun3.png',
+        ],
+        videos: [],
+        description: 'A Sci-fi gun designed in Blender using primitive modelling methods.',
+    },
+    {
+        title: 'Sofa',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/sofa/sofa.png',
+        images: ['/assets/sofa/sofa1.png', '/assets/sofa/sofa2.png'],
+        videos: [],
+        description: 'High poly sofa model with cloth simulation and the inflate modifier to create organic looking cloth.',
+    },
+    {
+        title: 'Bulb Table',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/bulb-table/bulbtable.glb',
+            cameraPosition: {
+                x: 2,
+                y: 2,
+                z: 2,
+            },
+        },
+        titleImage: '/assets/bulb-table/bulbtable.png',
+        images: [
+            '/assets/bulb-table/bulbtable1.png',
+            '/assets/bulb-table/bulbtable2.png',
+            '/assets/bulb-table/bulbtable3.png',
+            '/assets/bulb-table/bulbtable4.png',
+        ],
+        videos: [],
+        description: 'Used in design ideas of A Level Design and Technology. Bulb table is a table made of reused bulbs. Utilizes transparent materials to create refreactive light effects.',
+    },
+    {
+        title: 'Bic Pen',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: {
+            path: '/assets/bic-pen/bicpen.glb',
+            cameraPosition: {
+                x: 3,
+                y: 10,
+                z: 3,
+            },
+        },
+        titleImage: '/assets/bic-pen/bicpen.png',
+        images: ['/assets/bic-pen/bicpen1.png'],
+        videos: [],
+        description: 'Recreation of Bic Pen in Blender. Includes pot and multi-coloured pens',
+    },
+    {
+        title: 'S and N UI Elements',
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/SandN_UI/SandN_Template.png',
+        images: [
+            '/assets/SandN_UI/Background 1 Intro.png',
+            '/assets/SandN_UI/Background 2 precinct.png',
+            '/assets/SandN_UI/Background 3 the Hub.png',
+            "/assets/SandN_UI/Background 4 Vicars' flashback.png",
+            '/assets/SandN_UI/Background 5 Car Chase.png',
+            '/assets/SandN_UI/Background 6 Casino.png',
+            '/assets/SandN_UI/Background 7 Ginger Factory.png',
+            '/assets/SandN_UI/Background 8 Gingerbread House.png',
+            '/assets/SandN_UI/Background 9 Gingerbread interior.png',
+            '/assets/SandN_UI/Boarder.png',
+            '/assets/SandN_UI/Character info 1 Vicars.png',
+            '/assets/SandN_UI/Character info 2 Witch.png',
+            '/assets/SandN_UI/Character info 3 Guy.png',
+            '/assets/SandN_UI/Character info 4 Nero.png',
+            '/assets/SandN_UI/Character info 5 Hunt.png',
+            '/assets/SandN_UI/Character info 6 Byrd.png',
+            '/assets/SandN_UI/Character info Deceased.png',
+            '/assets/SandN_UI/Character info Deceased2.png',
+            '/assets/SandN_UI/Character info Deceased3.png',
+            '/assets/SandN_UI/Player Gretel.png',
+            '/assets/SandN_UI/Player Hansel.png',
+        ],
+        videos: [],
+        description: '.',
+    },
 ];
 /* harmony default export */ __webpack_exports__["default"] = (projects);
 
@@ -1331,7 +1729,7 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["platformBrowser"]().boot
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/joshlucpoll/repos/alfred-website/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/runner/work/alfred-website/alfred-website/src/main.ts */"./src/main.ts");
 
 
 /***/ })

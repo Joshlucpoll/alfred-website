@@ -439,7 +439,7 @@ module.exports = content.locals || {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/joshlucpoll/repos/alfred-website/src/styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! /home/runner/work/alfred-website/alfred-website/src/styles.scss */"./src/styles.scss");
 
 
 /***/ })
