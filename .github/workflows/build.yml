@@ -9,7 +9,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: export NODE_OPTIONS=--openssl-legacy-provider
       - name: Angular Deploy gh-pages Actions
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:
