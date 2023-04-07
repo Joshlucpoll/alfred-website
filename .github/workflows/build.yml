@@ -5,14 +5,14 @@ on:
       - master
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Angular Deploy gh-pages Actions
-      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
-      with:
-        angular_project_dir: "./"
-        build_configuration: "production" # The build environment for the app. please look configurations in your angular.json
-        github_access_token: ${{ secrets.ACCESS_TOKEN }}
+      - uses: actions/checkout@v2
+      - run: export NODE_OPTIONS=--openssl-legacy-provider
+      - name: Angular Deploy gh-pages Actions
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+        with:
+          angular_project_dir: "./"
+          build_configuration: "production" # The build environment for the app. please look configurations in your angular.json
+          github_access_token: ${{ secrets.ACCESS_TOKEN }}
