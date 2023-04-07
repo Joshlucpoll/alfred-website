@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Angular Deploy gh-pages Actions
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
         with:
           angular_project_dir: "./"
           build_configuration: "production" # The build environment for the app. please look configurations in your angular.json
