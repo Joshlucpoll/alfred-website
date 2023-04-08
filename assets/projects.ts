@@ -727,6 +727,7 @@ const projects: Projects = [
       '/assets/SandN UI/Character info Deceased3.png',
       '/assets/SandN UI/Player Gretel.png',
       '/assets/SandN UI/Player Hansel.png',
+      '/assets/SandN UI/Player Both.png',
     ],
     videos: [],
     description: '',
