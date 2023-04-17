@@ -1655,6 +1655,7 @@ const projects = [
             '/assets/SandN UI/Character info 4 Nero.png',
             '/assets/SandN UI/Character info 5 Hunt.png',
             '/assets/SandN UI/Character info 6 Byrd.png',
+            '/assets/SandN UI/Character info 7 New kid.png',
             '/assets/SandN UI/Character info Deceased.png',
             '/assets/SandN UI/Character info Deceased2.png',
             '/assets/SandN UI/Character info Deceased3.png',
