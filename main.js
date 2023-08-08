@@ -998,6 +998,22 @@ const urlify = function (a) {
 //test
 const projects = [
     {
+        title: "Album Cover for Charlie Hilton's 'Vanishing Point'",
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/VanishingPoint/VanishingPoint10.png',
+        images: [
+            '/assets/VanishingPoint/VanishingPoint7.png',
+            '/assets/VanishingPoint/VanishingPoint2.png',
+            '/assets/VanishingPoint/TrialFrames17.png',
+            '/assets/VanishingPoint/VanishingPoint11.png',
+        ],
+        videos: [],
+        description: "A cover commisioned by Charlie Hilton for his Album 'Vanishing Point'. Modelled and textured in Blender. Colour grading and postprocessing in Photoshop.",
+    },
+    {
         title: "Single Cover for Charlie Hilton's 'CEREBRAL'",
         path: function () {
             return '/' + urlify(this.title);
@@ -1015,7 +1031,7 @@ const projects = [
             '/assets/Cerebral/Cerebral10.png',
         ],
         videos: [],
-        description: "A cover commisioned for Charlie Hilton for his single 'Cerebral'. Created using a Z-brush -> Blender -> Substance Painter -> Unreal 5 pipeline. I began by using a laser scanner to map Hilton's face. Using Z-brush, I sculpted the rest of his head, due to only having the face scan. I then baked the captured textures onto the model and matched the rest of his skin, creating pores. Once exported to Blender, I used the hair particle editor to create his hair. When exported to Unreal 5.1, I used the groom tools to make the hair look realistic. The environment was created with composited quixel assets. Bespoke models were designed in Blender and exported to Unreal, such as the conveyor flaps, that utilised cloth simulations. I used Nanite and Lumen, to create a realtime photorealistic style. I finalised the Scene with Niagra particle systems (sparks and dust) and volumetic fog. The final design was colour graded in Photoshop.",
+        description: "A cover commisioned by Charlie Hilton for his single 'Cerebral'. Created using a Z-brush -> Blender -> Substance Painter -> Unreal 5 pipeline. I began by using a laser scanner to map Hilton's face. Using Z-brush, I sculpted the rest of his head, due to only having the face scan. I then baked the captured textures onto the model and matched the rest of his skin, creating pores. Once exported to Blender, I used the hair particle editor to create his hair. When exported to Unreal 5.1, I used the groom tools to make the hair look realistic. The environment was created with composited quixel assets. Bespoke models were designed in Blender and exported to Unreal, such as the conveyor flaps, that utilised cloth simulations. I used Nanite and Lumen, to create a realtime photorealistic style. I finalised the Scene with Niagra particle systems (sparks and dust) and volumetic fog. The final design was colour graded in Photoshop.",
     },
     {
         title: 'R5 Astromech Droid',
