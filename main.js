@@ -998,6 +998,34 @@ const urlify = function (a) {
 //test
 const projects = [
     {
+        title: "Hottus Choccus",
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/Hottus/Hottus3.png',
+        images: [
+            '/assets/Hottus/Hottus1.png',
+            '/assets/Hottus/Hottus2.png',
+        ],
+        videos: [],
+        description: "A cover commisioned by Charlie Hilton for his Single 'Hottus Choccus'. Modelled in Blender, textured in Substance Painter. Postprocessing and editing was done in Photoshop.",
+    },
+    {
+        title: "Cosmic Happenstance",
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/Cosmic/Cosmic2.png',
+        images: [
+            '/assets/Cosmic/Cosmic13.png',
+            '/assets/Cosmic/Cosmic1.png',
+        ],
+        videos: [],
+        description: "A cover commisioned by Charlie Hilton for his Single 'Cosmic Happenstance'. Modelled and textured in Blender. Postprocessing and editing was done in Photoshop.",
+    },
+    {
         title: "Album Cover for Charlie Hilton's 'Vanishing Point'",
         path: function () {
             return '/' + urlify(this.title);
@@ -1011,10 +1039,10 @@ const projects = [
             '/assets/VanishingPoint/VanishingPoint11.png',
         ],
         videos: [],
-        description: "A cover commisioned by Charlie Hilton for his Album 'Vanishing Point'. Modelled and textured in Blender. Colour grading and postprocessing in Photoshop.",
+        description: "A cover commisioned by Charlie Hilton for his Album 'Vanishing Point'. Modelled and textured in Blender. Colour graded and postprocessed in Photoshop.",
     },
     {
-        title: "Single Cover for Charlie Hilton's 'CEREBRAL'",
+        title: "CEREBRAL",
         path: function () {
             return '/' + urlify(this.title);
         },
