@@ -61,7 +61,7 @@ const projects: Projects = [
       "A cover commisioned by Charlie Hilton for his Single 'Cosmic Happenstance'. Modelled and textured in Blender. Postprocessing and editing was done in Photoshop.",
   },
   {
-    title: "Album Cover for Charlie Hilton's 'Vanishing Point'",
+    title: "Vanishing Point",
     path: function () {
       return '/' + urlify(this.title);
     },
