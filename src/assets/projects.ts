@@ -292,6 +292,7 @@ const projects: Projects = [
     images: [
       '/assets/wands/Wands5.png',
       '/assets/wands/wands2.png',
+      '/assets/wands/Evas Wands6.png',
 
     
     ],
