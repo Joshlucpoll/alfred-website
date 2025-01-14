@@ -181,23 +181,7 @@ const projects: Projects = [
     description:
       'Inspired by Everus Harbor spacestation from the Star Citizen MMO Videogame. The design utilizes a streamlined workflow, by using generated textures with alpha maps, to create the illusion of layered 3D modelling. This reduced the modelling time and poly count significantly',
   },
-  {
-    title: 'Battle of the Zomme',
-    path: function () {
-      return '/' + urlify(this.title);
-    },
-    model: false,
-    titleImage: '/assets/Zombies/zomme4.png',
-    images: [
-      '/assets/Zombies/zomme1.png',
-      '/assets/Zombies/zomme2.png',
-      '/assets/Zombies/zomme3.png',
-      '/assets/Zombies/zomme5.png',
-    ],
-    videos: ['/assets/Zombies/Zombies.mp4'],
-    description:
-      ' This level was presented for Level Design Fundametals module, which scored a mark of 84%. The level is based around COD zombies and inspired by the Somme battlefield. Software used: Asset modelling - Maya, Blender ; Asset texturing - Sunstance Painter, Substance Designer ; Scene composition - Unreal Engine 4 ; Programming and blueprints - Unreal Engine 4 ; Cinematics - Unreal Engine 4.',
-  },
+  
   /*{
     title: 'Fishing Fiasco',
     path: function () {
@@ -216,25 +200,6 @@ const projects: Projects = [
     description:
       'A Diorama of a scene from a Dungeons and Dragons campaign. The elephant character was sculpted in Z-brush, then retopologized and rigged in Blender. Modelling, texturing, cloth simulation, scene composition and rendering were done in Blender. The environment was created with some imported assets from Megascans. Humanoid character creations were created with MetaHuman and rigged in Blender. Postprocessing and colour grading were done in Photoshop. ',
   },*/
-  {
-    title: 'Lancia Stratos',
-    path: function () {
-      return '/' + urlify(this.title);
-    },
-    model: {
-      path: '/assets/Lancia/Lancia Stratos.glb',
-      cameraPosition: {
-        x: 1,
-        y: 4,
-        z: 1,
-      },
-    },
-    titleImage: '/assets/Lancia/Lancia.png',
-    images: ['/assets/Lancia/Lancia2.png', '/assets/Lancia/Lancia3.png'],
-    videos: [],
-    description:
-      'Replica of a Lancia Stratos, made for the Lighting and Texturing module. Given a First. A low poly 15k poly, that was created using a low to high poly workflow. Optimized for games Modelled in Maya and textured in Sunstance painter using the Unreal engine -> substance bridge. Rendered in Blender.',
-  },
 
   /*{
     title: 'Black Cabin Blunder',
@@ -276,6 +241,30 @@ const projects: Projects = [
       'A 3D model of a TIE Fighter from the Star Wars franchise. Modelled and textured to a very high degree of acuracy in Blender. Uses colour ramp nodes in conjuction with edge detection to create the metal edgware effect',
   },
   {
+    title: 'Lightsabers',
+    path: function () {
+      return '/' + urlify(this.title);
+    },
+    model: {
+      path: '/assets/sabers/sabers.glb',
+      cameraPosition: {
+        x: 1,
+        y: 5,
+        z: 1,
+      },
+    },
+    titleImage: '/assets/sabers/Alfie Lightsaber3.png',
+    images: [
+      '/assets/sabers/Alfie Lightsaber5.png',
+      '/assets/sabers/Alfie Lightsaber9.png',
+      '/assets/sabers/Jen Lightsaber.png',
+
+    ],
+    videos: [],
+    description:
+      'Original designs based on the weapons from Star Wars. Modelled and textured in Blender',
+  },
+  {
     title: 'Wands',
     path: function () {
       return '/' + urlify(this.title);
@@ -298,31 +287,7 @@ const projects: Projects = [
     ],
     videos: [],
     description:
-      'Custom designed and made Harry Potter inspired Wands. Modelled and textured in Blender',
-  },
-  {
-    title: 'Lightsabers',
-    path: function () {
-      return '/' + urlify(this.title);
-    },
-    model: {
-      path: '/assets/sabers/sabers.glb',
-      cameraPosition: {
-        x: 1,
-        y: 5,
-        z: 1,
-      },
-    },
-    titleImage: '/assets/sabers/Alfie Lightsaber3.png',
-    images: [
-      '/assets/sabers/Alfie Lightsaber5.png',
-      '/assets/sabers/Alfie Lightsaber9.png',
-      '/assets/sabers/Jen Lightsaber.png',
-
-    ],
-    videos: [],
-    description:
-      'Original designs based of the weapons from Star Wars. Modelled and textured in Blender',
+      'Custom design Harry Potter inspired Wands. Modelled and textured in Blender and Substance Painter',
   },
   {
     title: 'Bog Fisher (Bournemouth Modelling Competition Winner)',
@@ -475,6 +440,25 @@ const projects: Projects = [
       "Darth Vader's helmet from 'Star Wars: Episode III – Revenge of the Sith'. Modelled using primitive, box and edge modelling techniques, in Blender",
   },
   {
+    title: 'Lancia Stratos',
+    path: function () {
+      return '/' + urlify(this.title);
+    },
+    model: {
+      path: '/assets/Lancia/Lancia Stratos.glb',
+      cameraPosition: {
+        x: 1,
+        y: 4,
+        z: 1,
+      },
+    },
+    titleImage: '/assets/Lancia/Lancia.png',
+    images: ['/assets/Lancia/Lancia2.png', '/assets/Lancia/Lancia3.png'],
+    videos: [],
+    description:
+      'Game optimised Replica of a Lancia Stratos. 15k poly, created using a low to high poly workflow. Modelled in Maya and textured in Sunstance painter using the Unreal engine -> substance bridge. Rendered in Blender.',
+  },
+  {
     title: 'Spartan Helmet',
     path: function () {
       return '/' + urlify(this.title);
@@ -526,6 +510,23 @@ const projects: Projects = [
     videos: [],
     description:
       'Custom Designed Sci-fi helmet. Mostly using edge modelling methods',
+  },
+  {
+    title: 'Battle of the Zomme',
+    path: function () {
+      return '/' + urlify(this.title);
+    },
+    model: false,
+    titleImage: '/assets/Zombies/zomme4.png',
+    images: [
+      '/assets/Zombies/zomme1.png',
+      '/assets/Zombies/zomme2.png',
+      '/assets/Zombies/zomme3.png',
+      '/assets/Zombies/zomme5.png',
+    ],
+    videos: ['/assets/Zombies/Zombies.mp4'],
+    description:
+      ' This level was presented for Level Design Fundametals module, which scored a mark of 84%. The level is based around COD zombies and inspired by the Somme battlefield. Software used: Asset modelling - Maya, Blender ; Asset texturing - Sunstance Painter, Substance Designer ; Scene composition - Unreal Engine 4 ; Programming and blueprints - Unreal Engine 4 ; Cinematics - Unreal Engine 4.',
   },
   /*{
     title: 'Ocean in a Box',
