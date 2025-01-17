@@ -100,10 +100,10 @@ const projects: Projects = [
     },
     model: false,
     titleImage: '/assets/Touch Gloves/Touch Gloves Front cover.png',
-    videos: ['/assets/Touch Gloves/Touch Gloves 1.mp4'],
-    images: ['/assets/Touch Gloves/Touch Glves-Poster.png',
+    images: [
+      '/assets/Touch Gloves/Touch Glves-Poster.png',
     ],
-
+    videos: ['/assets/Touch Gloves/Touch Gloves 1.mp4'],
     description:
       "'Touch Gloves' is a multimodal interactive simulator game for training boxing referees, using a combination of hand gesture recognition and voice command processing. By integrating Leap Motion technology and advanced word recognition, the game accurately simulates the gestures and verbal commands referees must perform in real-life scenarios, such as signaling 'Break', 'Box', and more. This innovative approach provides a comprehensive training environment, allowing referees to refine their skills through natural, simultaneous interactions of both physical and verbal inputs.",
   },
