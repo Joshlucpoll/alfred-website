@@ -38,10 +38,10 @@ const projects: Projects = [
     model: false,
     titleImage: '/assets/ETA/liminal Space1.png',
     images: [
-      '/assets/EAT/Meat Carriage.png',
-      '/assets/EAT/Zapper in Use.png',
-      '/assets/EAT/Original game assets.png',
-      '/assets/EAT/Megascans assets.png',
+      '/assets/ETA/Meat Carriage.png',
+      '/assets/ETA/Zapper in Use.png',
+      '/assets/ETA/Original game assets.png',
+      '/assets/ETA/Megascans assets.png',
     ],
     videos: ['/assets/ETA/ETA.mp4'],
     description:
