@@ -1057,6 +1057,18 @@ const projects = [
         description: "A cover commisioned by Charlie Hilton for his single 'Cerebral'. Created using a Z-brush -> Blender -> Substance Painter -> Unreal 5 pipeline. I began by using a laser scanner to map Hilton's face. Using Z-brush, I sculpted the rest of his head, due to only having the face scan. I then baked the captured textures onto the model and matched the rest of his skin, creating pores. Once exported to Blender, I used the hair particle editor to create his hair. When exported to Unreal 5.1, I used the groom tools to make the hair look realistic. The environment was created with composited quixel assets. Bespoke models were designed in Blender and exported to Unreal, such as the conveyor flaps, that utilised cloth simulations. I used Nanite and Lumen, to create a realtime photorealistic style. I finalised the Scene with Niagra particle systems (sparks and dust) and volumetic fog. The final design was colour graded in Photoshop.",
     },
     {
+        title: "TouchGloves",
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/Touch Gloves/Touch Gloves Front cover.png',
+        videos: ['/assets/Touch Gloves/Touch Gloves 1.mp4'],
+        images: ['/assets/Touch Gloves/Touch Glves-Poster.png'
+        ],
+        description: "'Touch Gloves' is a multimodal interactive simulator game for training boxing referees, using a combination of hand gesture recognition and voice command processing. By integrating Leap Motion technology and advanced word recognition, the game accurately simulates the gestures and verbal commands referees must perform in real-life scenarios, such as signaling 'Break', 'Box', and more. This innovative approach provides a comprehensive training environment, allowing referees to refine their skills through natural, simultaneous interactions of both physical and verbal inputs.",
+    },
+    {
         title: 'R5 Astromech Droid',
         path: function () {
             return '/' + urlify(this.title);
