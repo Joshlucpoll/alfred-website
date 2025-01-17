@@ -31,7 +31,7 @@ interface Projects extends Array<Project> {}
 
 const projects: Projects = [
   {
-    title: "ETA - An Escape Room game (TIGA award Winning)",
+    title: "ETA - An Escape Room game (TIGA Award Winning)",
     path: function () {
       return '/' + urlify(this.title);
     },
@@ -288,7 +288,7 @@ const projects: Projects = [
     images: [
       '/assets/sabers/Alfie Lightsaber5.png',
       '/assets/sabers/Alfie Lightsaber9.png',
-      '/assets/sabers/Jen Lightsaber.png',
+      '/assets/sabers/Jen lightsaber.png',
 
     ],
     videos: [],
