@@ -31,7 +31,7 @@ interface Projects extends Array<Project> {}
 
 const projects: Projects = [
   {
-    title: "ETA - An Escape Room game (TIGA award Winning)",
+    title: "ETA - An Escape Room game (TIGA Award Winning)",
     path: function () {
       return '/' + urlify(this.title);
     },
@@ -118,7 +118,7 @@ const projects: Projects = [
     model: false,
     titleImage: '/assets/Touch Gloves/Touch Gloves Front cover.png',
     images: [
-      '/assets/Touch Gloves/Touch Glves-Poster.png',
+      '/assets/Touch Gloves/Touch Gloves-Poster.png',
     ],
     videos: ['/assets/Touch Gloves/Touch Gloves 1.mp4'],
     description:
@@ -288,7 +288,7 @@ const projects: Projects = [
     images: [
       '/assets/sabers/Alfie Lightsaber5.png',
       '/assets/sabers/Alfie Lightsaber9.png',
-      '/assets/sabers/Jen Lightsaber.png',
+      '/assets/sabers/Jen lightsaber.png',
 
     ],
     videos: [],
