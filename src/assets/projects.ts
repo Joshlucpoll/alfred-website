@@ -118,7 +118,7 @@ const projects: Projects = [
     model: false,
     titleImage: '/assets/Touch Gloves/Touch Gloves Front cover.png',
     images: [
-      '/assets/Touch Gloves/Touch Glves-Poster.png',
+      '/assets/Touch Gloves/Touch Gloves-Poster.png',
     ],
     videos: ['/assets/Touch Gloves/Touch Gloves 1.mp4'],
     description:
