@@ -998,6 +998,22 @@ const urlify = function (a) {
 //test
 const projects = [
     {
+        title: "ETA - An Escape Room game (TIGA award Winning)",
+        path: function () {
+            return '/' + urlify(this.title);
+        },
+        model: false,
+        titleImage: '/assets/ETA/liminal Space1.png',
+        images: [
+            '/assets/EAT/Meat Carriage.png',
+            '/assets/EAT/Zapper in Use.png',
+            '/assets/EAT/Original game assets.png',
+            '/assets/EAT/Megascans assets.png',
+        ],
+        videos: ['/assets/ETA/ETA.mp4'],
+        description: "ETA is a narrative escape room game exploring mimetic puzzles. Players take on the role of a corrupt CEO trapped on a subway train, forced to solve morally charged challenges devised by a mysterious voice over the tannoy. The player must use repurposed bug zapper to reveal hidden messages using UV light. Game play spans from solving muder mysteries to weighing pounds of flesh from rotting pig carcasses. Developed as proof of a university dissertation, the game showcases how narrative-driven puzzles can deepen immersion and storytelling in escape room design.",
+    },
+    {
         title: "Hottus Choccus",
         path: function () {
             return '/' + urlify(this.title);
