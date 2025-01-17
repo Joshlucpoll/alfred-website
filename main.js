@@ -1260,10 +1260,10 @@ const projects = [
                 z: 1,
             },
         },
-        titleImage: '/assets/wands/wands.png',
+        titleImage: '/assets/wands/wands 1.png',
         images: [
-            '/assets/wands/Wands5.png',
-            '/assets/wands/wands2.png',
+            '/assets/wands/wands 2.png',
+            '/assets/wands/wands 3.png',
             '/assets/wands/Evas Wands6.png',
         ],
         videos: [],
@@ -1288,7 +1288,7 @@ const projects = [
             '/assets/BogFisher/Bog Fisher1.png',
         ],
         videos: [],
-        description: "Winning design for Bournemouth University first year game modelling competition. Descibed as:'An inpired design using great low poly modelling techniques'. The competition was to model a new mode of transport. I decided on a distopian stilt walker design that uses wind power to move. Modelled in Maya, with scene composition, texturing and rendering done in Blender",
+        description: "Winning design for Bournemouth University first year game modelling competition. Descibed as: 'An inpired design using great low poly modelling techniques'. The competition was to model a new mode of transport. I decided on a distopian stilt walker design that uses wind power to move. Modelled in Maya, with scene composition, texturing and rendering done in Blender",
     },
     /*{
       title: 'Black Hole',
