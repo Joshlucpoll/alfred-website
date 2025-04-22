@@ -31,6 +31,26 @@ interface Projects extends Array<Project> {}
 
 const projects: Projects = [
   {
+    title: "Marvel's Spider-Man Redesign",
+    path: function () {
+      return '/' + urlify(this.title);
+    },
+    model: false,
+    titleImage: '/Spiderman/Spiderman 2.png',
+    images: [
+      '/Spiderman/Spiderman 1.png',
+      '/Spiderman/Spiderman 3.png',
+      '/Spiderman/Spiderman 4.png',
+      '/Spiderman/Spiderman 5.png',
+      '/Spiderman/Spiderman 6.png',
+      '/Spiderman/Spiderman 7.png',
+      '/Spiderman/Spiderman 9.png',
+    ],
+    videos: ['/assets/everus-harbor/everus_vid1.mp4'],
+    description:
+      "This project features a fully reimagined version of the Sam Raimi suit, created for Marvel’s Spider-Man Remastered. The original model and textures were extracted using SMPC Modding tools, and the suit was then remodeled in Blender, including a custom-designed chest emblem. Textures were developed in Substance Painter and Photoshop, with careful attention to material definition and visual fidelity. Weight painting was manually refined to ensure accurate deformation. The final assets were integrated back into the game",
+  },
+  {
     title: "ETA - An Escape Room game (TIGA Award Winning)",
     path: function () {
       return '/' + urlify(this.title);
