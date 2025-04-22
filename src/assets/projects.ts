@@ -36,15 +36,15 @@ const projects: Projects = [
       return '/' + urlify(this.title);
     },
     model: false,
-    titleImage: '/Spiderman/Spiderman 2.png',
+    titleImage: '/assets/Spiderman/Spiderman 2.png',
     images: [
-      '/Spiderman/Spiderman 1.png',
-      '/Spiderman/Spiderman 3.png',
-      '/Spiderman/Spiderman 4.png',
-      '/Spiderman/Spiderman 5.png',
-      '/Spiderman/Spiderman 6.png',
-      '/Spiderman/Spiderman 7.png',
-      '/Spiderman/Spiderman 9.png',
+      '/assets/Spiderman/Spiderman 1.png',
+      '/assets/Spiderman/Spiderman 3.png',
+      '/assets/Spiderman/Spiderman 4.png',
+      '/assets/Spiderman/Spiderman 5.png',
+      '/assets/Spiderman/Spiderman 6.png',
+      '/assets/Spiderman/Spiderman 7.png',
+      '/assets/Spiderman/Spiderman 9.png',
     ],
     videos: ['/assets/everus-harbor/everus_vid1.mp4'],
     description:
