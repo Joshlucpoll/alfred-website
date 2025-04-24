@@ -1004,16 +1004,16 @@ const projects = [
         },
         model: false,
         titleImage: '/assets/Spiderman/Spiderman 2.png',
+        videos: ['/assets/Spiderman/Spiderman Video.mp4'],
         images: [
+            '/assets/Spiderman/Spiderman 8.png',
             '/assets/Spiderman/Spiderman 1.png',
-            '/assets/Spiderman/Spiderman 3.png',
             '/assets/Spiderman/Spiderman 4.png',
             '/assets/Spiderman/Spiderman 5.png',
             '/assets/Spiderman/Spiderman 6.png',
             '/assets/Spiderman/Spiderman 7.png',
             '/assets/Spiderman/Spiderman 9.png',
         ],
-        videos: ['/assets/everus-harbor/everus_vid1.mp4'],
         description: "This project features a fully reimagined version of the Sam Raimi suit, created for Marvel’s Spider-Man Remastered. The original model and textures were extracted using SMPC Modding tools, and the suit was then remodeled in Blender, including a custom-designed chest emblem. Textures were developed in Substance Painter and Photoshop, with careful attention to material definition and visual fidelity. Weight painting was manually refined to ensure accurate deformation. The final assets were integrated back into the game",
     },
     {
