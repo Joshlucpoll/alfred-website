@@ -31,6 +31,24 @@ interface Projects extends Array<Project> {}
 
 const projects: Projects = [
   {
+    title: "Ages of Avebury - AR Experince",
+    path: function () {
+      return '/' + urlify(this.title);
+    },
+    model: false,
+    titleImage: '/assets/Avebury/Avebury UI Redesign.png',
+    images: [
+      '/assets/Avebury/Village with Brushstroke Falloff.png',
+      '/assets/Avebury/Stone 1 Example.png',
+      '/assets/Avebury/Church example.png',
+      '/assets/Avebury/Additional Assets.png',
+      '/assets/Avebury/Texture Atlas.png',
+    ],
+    videos: [],
+    description:
+      "LoGaCulture and University of Southampton with the National Trust. For the Ages of Avebury AR app, developed for the National Trust, I created a full 3D recreation of the village of Avebury, including all surrounding buildings and, most importantly, the Avebury stone circle. Each stone was individually created from scratch to preserve the unique character and form of every megalith. I carried out on-site photogrammetry at Avebury, then retopologised each stone in Blender and retextured them in Substance Painter. The final assets were styled using a watercolour-inspired aesthetic to align with the National Trust’s visual identity and to give the experience a soft, illustrative feel. Village buildings were textured using projected textures from an atlas, maintaining a cohesive hand-painted, watercolour look across the environment. In Unity, I handled extensive shader work, including custom outlines and texture treatments, to ensure the models translated effectively into AR while maintaining visual clarity and charm. This project combined technical accuracy, artistic interpretation, and real-world site capture to create an immersive and respectful digital representation of a historic landscape.",
+  },
+  {
     title: "Marvel's Spider-Man Redesign",
     path: function () {
       return '/' + urlify(this.title);
